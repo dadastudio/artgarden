@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import 'tailwindcss';
+
+@plugin "@tailwindcss/typography";
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -9,4 +12,67 @@
 
 @theme {
 	--font-sans: 'Montserrat', sans-serif;
+
+
+
+--color-*: initial;
+--color-white: #FFFFFF;
+
+--color-gray-50: #FFFFFF;
+--color-gray-100: #F2F2F2;
+--color-gray-200: #DEDEDE;
+--color-gray-300: #C9C9C8;
+--color-gray-400: #B5B4B1;
+--color-gray-500: #A19F9A;
+--color-gray-600: #8C8A85;
+
+--color-gray-700: #78766F;
+
+--color-gray-800: #63615B;
+--color-gray-900: #4F4D47;
+--color-gray-950: #3C3934;
+
+--color-green-50: #FBFFFA;
+--color-green-100: #F0FFED;
+--color-green-200: #E5FFDF;
+--color-green-300: #D9FFD2;
+--color-green-400: #BDE8B;
+--color-green-500: #9DCB94;
+--color-green-600: #80AE77;
+
+--color-green-700: #65915C;
+
+--color-green-800: #4C7444;
+--color-green-900: #35562F;
+--color-green-950: #21391C;
+
+
+--color-black: #020B00;
+--color-error: #E21B1;
+
+
+
+
+
+}
+
+@layer base {
+  /* h1 {
+
+		@apply text-4xl font-semibold text-gray-800 mb-6;
+
+  }*/
+  h2 {
+		@apply text-xl font-semibold text-gray-950 ;
+  } 
+
+
+	.btn{
+		@apply uppercase tracking-widest text-sm transition duration-300 ease-out;
+
+		&:hover {
+			opacity: .5;
+		}
+
+	}
 }
