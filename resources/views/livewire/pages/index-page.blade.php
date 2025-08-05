@@ -20,7 +20,7 @@ new class extends Component {
     }
 }; ?>
 
-<x-ui.spacer class="lg:-mt-42 -mt-30" type="md">
+<x-ui.spacer class="lg:-mt-42 mt-30" type="md">
 	<div>
 		<img alt="Hero" class="w-full" src="/img/Hero.png">
 
@@ -90,21 +90,31 @@ new class extends Component {
 			<img class="w-full" src="img/konsultacje.png" />
 		</div>
 
-		<div class="grid gap-8 px-8 py-10 md:grid-cols-2">
+		<div class="grid gap-8 py-10 md:grid-cols-2 md:px-8">
 
-			<div class="prose">
-				<h2>Telefon</h2>
-				<p>+48 538 543 307</br>
-					+48 698 227 022</p>
+			<x-ui.spacer type="md">
+				<x-ui.spacer type="xs">
 
-				<h2>Email</h2>
-				<p>office@artgarden.waw.pl</p>
-				<h2>Godziny pracy</h2>
-				<p>poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14
-				</p>
+					<h2>Telefon</h2>
+					<p>+48 538 543 307</br>
+						+48 698 227 022</p>
+				</x-ui.spacer>
 
-			</div>
-			<x-ui.spacer class="border-l pl-8">
+				<x-ui.spacer type="xs">
+
+					<h2>Email</h2>
+					<p><a href="mailto:office@artgarden.waw.pl">office@artgarden.waw.pl</a></p>
+				</x-ui.spacer>
+
+				<x-ui.spacer type="xs">
+
+					<h2>Godziny pracy</h2>
+					<p>poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14
+					</p>
+				</x-ui.spacer>
+
+			</x-ui.spacer>
+			<x-ui.spacer class="md:border-l md:pl-8">
 
 				<h2>Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
 
