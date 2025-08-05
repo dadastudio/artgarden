@@ -13,7 +13,8 @@
 
 <body class="font-sans antialiased" data-route="{{ Route::currentRouteName() }}">
 
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+	<div class="container mx-auto">
+		{{-- <div class="container mx-auto px-4 sm:px-6 lg:px-8"> --}}
 
 		@livewire('menu-bar')
 		{{ $slot }}

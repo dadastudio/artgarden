@@ -26,7 +26,7 @@ new class extends Component {
 
 		<x-index.baner quoteAuthor="Marc Chagall" quote="Dla mnie kwiaty</br> są sposobem życia" />
 	</div>
-	<div class="flex flex-col gap-y-8 md:flex-row md:gap-24 md:px-24">
+	<div class="flex flex-col gap-y-8 px-4 md:flex-row md:gap-24 md:px-24">
 
 		<img alt="Hero" class="border border-gray-100 p-5 md:w-2/3" src="/img/oferta.jpg">
 
@@ -38,7 +38,7 @@ new class extends Component {
 		</div>
 	</div>
 
-	<div class="grid gap-y-4 md:grid-cols-4">
+	<div class="grid gap-y-4 px-4 md:grid-cols-4">
 		<x-ui.spacer class="place-self-end pb-5 max-md:pl-4 md:pr-8">
 			<div class="prose prose-sm">
 				<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p>
@@ -90,7 +90,7 @@ new class extends Component {
 			<img class="w-full" src="img/konsultacje.png" />
 		</div>
 
-		<div class="grid gap-8 py-10 md:grid-cols-2 md:px-8">
+		<div class="grid gap-8 px-4 py-10 md:grid-cols-2">
 
 			<x-ui.spacer type="md">
 				<x-ui.spacer type="xs">
