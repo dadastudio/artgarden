@@ -20,7 +20,7 @@ new class extends Component {
     }
 }; ?>
 
-<x-ui.spacer class="lg:-mt-42 mt-30" type="md">
+<x-ui.spacer class="lg:-mt-42" type="md">
 	<div>
 		<img alt="Hero" class="w-full" src="/img/Hero.png">
 
