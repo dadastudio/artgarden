@@ -19,6 +19,7 @@
 
 		@livewire('menu-bar')
 		{{ $slot }}
+		@livewire('footer')
 
 	</div>
 

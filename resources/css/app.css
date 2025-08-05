@@ -36,7 +36,7 @@
 --color-green-100: #F0FFED;
 --color-green-200: #E5FFDF;
 --color-green-300: #D9FFD2;
---color-green-400: #BDE8B;
+--color-green-400: #BDE8B4;
 --color-green-500: #9DCB94;
 --color-green-600: #80AE77;
 
@@ -62,13 +62,20 @@
 		@apply text-4xl font-semibold text-gray-800 mb-6;
 
   }*/
+
+	.prose-sm{
+
+		@apply !leading-snug;
+	}
+
+
   h2 {
 		@apply text-xl font-semibold text-gray-950 ;
   } 
 
 
 	.btn{
-		@apply uppercase tracking-widest text-sm transition duration-300 ease-out;
+		@apply text-gray-950 uppercase tracking-widest text-sm transition duration-300 ease-out;
 
 		&:hover {
 			opacity: .5;
