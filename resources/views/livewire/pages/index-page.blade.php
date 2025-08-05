@@ -45,12 +45,12 @@ new class extends Component {
 
 				<p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>
 			</div>
-			<a class="btn" href="{{ route('index') }}">skontaktuj się z nami</a>
+			<flux:button href="{{ route('index') }}" icon:trailing="arrow" inset variant="ghost">skontaktuj się z nami</flux:button>
 
 		</x-ui.spacer>
 		<x-slot img="oferta1.jpg" text="Planujesz ślub? Pozwól nam zadbać o kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną." title="florystyka</br>ślubna" />
-		<x-slot img="oferta2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="florystyka</br>okolicznościowa" />
-		<x-slot img="oferta3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z przyjemnością się tym zajmiemy." title="florystyka</br>dla firm" />
+		<x-slot class="-ml-px" img="oferta2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="florystyka</br>okolicznościowa" />
+		<x-slot class="-ml-px" img="oferta3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z przyjemnością się tym zajmiemy." title="florystyka</br>dla firm" />
 	</div>
 
 	<div>
@@ -77,99 +77,122 @@ new class extends Component {
 							</p>
 						</div>
 
-						<a class="btn text-white" href="{{ route('index') }}">obejrzyj więcej</br>naszych realizacji</a>
+						{{-- <a class="btn text-white" href="{{ route('index') }}">obejrzyj więcej</br>naszych realizacji</a> --}}
+
+						<flux:button class="!text-white" href="{{ route('index') }}" icon:trailing="arrow" inset variant="ghost">obejrzyj więcej</br>naszych realizacji</flux:button>
+
 					</x-ui.spacer>
+
 				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="grid gap-y-4 px-4 md:grid-cols-4">
+		<x-ui.spacer class="place-self-end pb-5 max-md:pl-4 md:pr-8">
+			<div class="prose prose-sm">
+				<h2>Blog</h2>
+				<p>Zapraszamy do regularnego odwiedzania naszego bloga florystycznego, gdzie znajdziesz inspirujące fotorelacje z wykonanych przez nas dekoracji kwiatowych oraz ciekawe artykuły na temat trendów i porad z zakresu florystyki.</p>
 
 			</div>
+			<flux:button href="{{ route('index') }}" icon:trailing="arrow" inset variant="ghost">przeglądaj artykuły</flux:button>
 
-		</div>
+		</x-ui.spacer>
+		<x-slot img="blog1.jpg" text="Planujesz ślub? Pozwól nam zadbać o&nbsp;kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną." title="Bukiety warzywne i&nbsp;owocowe " />
+		<x-slot class="-ml-px" img="blog2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="dwór konstancin - ślub w plenerze" />
+		<x-slot class="-ml-px" img="blog3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy." title="hotel borowina *** - przyjęcie pod Warszawą" />
+	</div>
 
-		<div>
+	<div>
+		<img class="w-full" src="img/konsultacje.png" />
+	</div>
 
-			<img class="w-full" src="img/konsultacje.png" />
-		</div>
+	<div class="grid gap-8 px-4 py-10 md:grid-cols-2">
 
-		<div class="grid gap-8 px-4 py-10 md:grid-cols-2">
+		<x-ui.spacer type="md">
+			<x-ui.spacer type="xs">
 
-			<x-ui.spacer type="md">
-				<x-ui.spacer type="xs">
-
-					<h2>Telefon</h2>
-					<p>+48 538 543 307</br>
-						+48 698 227 022</p>
-				</x-ui.spacer>
-
-				<x-ui.spacer type="xs">
-
-					<h2>Email</h2>
-					<p><a href="mailto:office@artgarden.waw.pl">office@artgarden.waw.pl</a></p>
-				</x-ui.spacer>
-
-				<x-ui.spacer type="xs">
-
-					<h2>Godziny pracy</h2>
-					<p>poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14
-					</p>
-				</x-ui.spacer>
-
+				<h2>Telefon</h2>
+				<p>+48 538 543 307</br>
+					+48 698 227 022</p>
 			</x-ui.spacer>
-			<x-ui.spacer class="md:border-l md:pl-8">
 
-				<h2 class="text-pretty">Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
+			<x-ui.spacer type="xs">
 
-				<form>
-					<x-ui.spacer type="xs">
+				<h2>Email</h2>
+				<p><a href="mailto:office@artgarden.waw.pl">office@artgarden.waw.pl</a></p>
+			</x-ui.spacer>
 
-						<flux:input label="Email" type="email" />
+			<x-ui.spacer type="xs">
 
-						<flux:input label="Imię" />
-						<flux:input label="Telefon" />
+				<h2>Godziny pracy</h2>
+				<p>poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14
+				</p>
+			</x-ui.spacer>
 
-						<flux:select label="Rodzaj uroczystości/zamówienia" placeholder="Wybierz..." wire:model="industry">
-							<flux:select.option>Ślub</flux:select.option>
-							<flux:select.option>Komunia</flux:select.option>
-							<flux:select.option>Impreza firmowa</flux:select.option>
-							<flux:select.option>Urodziny</flux:select.option>
-							<flux:select.option>Rocznica</flux:select.option>
-							<flux:select.option>Inna</flux:select.option>
-						</flux:select>
+		</x-ui.spacer>
+		<x-ui.spacer class="md:border-l md:pl-8">
 
-						<flux:input label="Data uroczystości/realizacji zamówienia" max="2999-12-31" type="date" />
+			<h2 class="text-pretty">Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
 
-						<flux:input label="Miejsce uroczystości/realizacji zamówienia" />
+			<form>
+				<x-ui.spacer type="xs">
 
-						<flux:textarea label="Dodatkowe informacje" />
+					<flux:input label="Email" type="email" />
 
-						<flux:field variant="inline">
-							<flux:checkbox wire:model="terms" />
-							<flux:label>I agree to the terms and conditions</flux:label>
-							<flux:error name="terms" />
-						</flux:field>
+					<flux:input label="Imię" />
+					<flux:input label="Telefon" />
 
-						<x-ui.spacer py type="sm">
-							<h2 class="text-pretty">Skąd dowiedziałaś/eś się o ArtGarden?</h2>
+					<flux:select label="Rodzaj uroczystości/zamówienia" placeholder="Wybierz..." wire:model="industry">
+						<flux:select.option>Ślub</flux:select.option>
+						<flux:select.option>Komunia</flux:select.option>
+						<flux:select.option>Impreza firmowa</flux:select.option>
+						<flux:select.option>Urodziny</flux:select.option>
+						<flux:select.option>Rocznica</flux:select.option>
+						<flux:select.option>Inna</flux:select.option>
+					</flux:select>
 
-							<flux:radio.group>
-								<flux:radio label="Internet (Google, Yahoo, etc.)" value="cc" />
-								<flux:radio label="Social Media" value="paypal" />
-								<flux:radio label="Google Ad" value="ach" />
-								<flux:radio label="Polecenie znajomego" value="ach" />
-								<flux:radio label="Inne" value="ach" />
-							</flux:radio.group>
-						</x-ui.spacer>
+					<flux:input label="Data uroczystości/realizacji zamówienia" max="2999-12-31" type="date" />
 
-						<div class="flex justify-end">
-							<button class="btn" type="submit">Wyślij</button>
-						</div>
+					<flux:input label="Miejsce uroczystości/realizacji zamówienia" />
 
+					<flux:textarea label="Dodatkowe informacje" />
+
+					<flux:field variant="inline">
+						<flux:checkbox wire:model="terms" />
+						<flux:label>I agree to the terms and conditions</flux:label>
+						<flux:error name="terms" />
+					</flux:field>
+
+					<x-ui.spacer py type="sm">
+						<h2 class="text-pretty">Skąd dowiedziałaś/eś się o ArtGarden?</h2>
+
+						<flux:radio.group>
+							<flux:radio label="Internet (Google, Yahoo, etc.)" value="cc" />
+							<flux:radio label="Social Media" value="paypal" />
+							<flux:radio label="Google Ad" value="ach" />
+							<flux:radio label="Polecenie znajomego" value="ach" />
+							<flux:radio label="Inne" value="ach" />
+						</flux:radio.group>
 					</x-ui.spacer>
 
-				</form>
-			</x-ui.spacer>
-		</div>
+					<div class="flex justify-end">
+						{{-- <button class="btn" type="submit">Wyślij</button> --}}
+
+						<flux:button icon:trailing="arrow" type="submit" variant="ghost">Wyślij</flux:button>
+
+						{{-- <flux:icon.arrow /> --}}
+
+					</div>
+
+				</x-ui.spacer>
+
+			</form>
+		</x-ui.spacer>
 	</div>
+
 </x-ui.spacer>
+
 @script
 	<script></script>
 @endscript

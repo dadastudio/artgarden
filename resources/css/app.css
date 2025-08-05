@@ -81,13 +81,21 @@
 			opacity: .5;
 		}
 
+		&:after {
+			content: url("/img/arrow.svg");
+			@apply ml-2;
+		}
+
 	}
 }
 
 
 [data-flux-control] {
-	@apply !border-x-0 !border-t-0 !rounded-none;
+	@apply !border-x-0 !border-t-0 !border-b-gray-900 !rounded-none;
 }
 [data-flux-label]{
 	@apply !text-gray-500 !mb-0;
+}
+[data-flux-button]{	
+	@apply !text-left !text-gray-950 !uppercase !tracking-widest !text-sm;
 }
