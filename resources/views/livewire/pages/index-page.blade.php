@@ -26,11 +26,11 @@ new class extends Component {
 
 		<x-index.baner quoteAuthor="Marc Chagall" quote="Dla mnie kwiaty</br> są sposobem życia" />
 	</div>
-	<div class="flex flex-row gap-24 px-24">
+	<div class="flex flex-col gap-y-8 md:flex-row md:gap-24 md:px-24">
 
-		<img alt="Hero" class="w-2/3 border border-gray-100 p-5" src="/img/oferta.jpg">
+		<img alt="Hero" class="border border-gray-100 p-5 md:w-2/3" src="/img/oferta.jpg">
 
-		<div class="flex items-end pb-6 text-sm">
+		<div class="flex text-sm md:items-end md:pb-6">
 			<div class="prose prose-sm">
 				<h2>Oferta</h2>
 				<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z profesjonalną florystyką, obecną w naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>
@@ -38,8 +38,8 @@ new class extends Component {
 		</div>
 	</div>
 
-	<div class="grid grid-cols-4">
-		<x-ui.spacer class="place-self-end pb-5 pr-8">
+	<div class="grid gap-y-4 md:grid-cols-4">
+		<x-ui.spacer class="place-self-end pb-5 max-md:pl-4 md:pr-8">
 			<div class="prose prose-sm">
 				<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p>
 
@@ -56,32 +56,107 @@ new class extends Component {
 	<div>
 		<x-index.baner quoteAuthor="przysłowie Japońskie" quote="Piękno kwiatu nie tkwi w jego kształcie,</br> lecz w tym, jak go postrzegasz" />
 
-		<img alt="Hero" class="w-full" src="/img/Foto1.png">
+		<img class="w-full" src="/img/Foto1.png">
 
 		<div class="bg-green-950 px-10 py-10 text-center text-white">
 
-			<div class="flex flex-row gap-24 px-20">
-				<div class="flex w-2/3 flex-row items-end gap-2">
+			<div class="flex flex-col gap-y-8 xl:flex-row xl:gap-24 xl:px-20">
+				<div class="flex flex-row items-end gap-2 xl:w-2/3">
 					<img alt="Hero" class="w-2/3 border border-green-900 p-2" src="/img/realizacje1.jpg">
 					<div class="flex w-1/3 flex-col gap-2">
 						<img alt="Hero" class="w-full border border-green-900 p-2" src="/img/realizacje2.jpg">
 						<img alt="Hero" class="w-full border border-green-900 p-2" src="/img/realizacje3.jpg">
 					</div>
 				</div>
-				<div class="f flex items-end pb-6 text-left text-sm">
+				<div class="flex items-end pb-6 text-left text-sm">
 					<x-ui.spacer>
 						<div class="prose prose-sm prose-invert">
 							<h2>Realizacje</h2>
-							<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z&nbsp;profesjonalną florystyką, obecną w&nbsp;naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w&nbsp;stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>
+							<p>
+								Zainspiruj się naszymi projektami i zobacz, jak możemy przemienić Twoje wydarzenie w niezapomnianą, kwiatową opowieść. Zajrzyj do naszego portfolio!
+							</p>
 						</div>
 
-						<a class="btn" href="{{ route('index') }}">obejrzyj więcej</br>naszych realizacji</a>
+						<a class="btn text-white" href="{{ route('index') }}">obejrzyj więcej</br>naszych realizacji</a>
 					</x-ui.spacer>
 				</div>
+
 			</div>
 
 		</div>
 
+		<div>
+
+			<img class="w-full" src="img/konsultacje.png" />
+		</div>
+
+		<div class="grid gap-8 px-8 py-10 md:grid-cols-2">
+
+			<div class="prose">
+				<h2>Telefon</h2>
+				<p>+48 538 543 307</br>
+					+48 698 227 022</p>
+
+				<h2>Email</h2>
+				<p>office@artgarden.waw.pl</p>
+				<h2>Godziny pracy</h2>
+				<p>poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14
+				</p>
+
+			</div>
+			<x-ui.spacer class="border-l pl-8">
+
+				<h2>Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
+
+				<form>
+					<x-ui.spacer type="xs">
+
+						<flux:input label="Email" type="email" />
+
+						<flux:input label="Imię" />
+						<flux:input label="Telefon" />
+
+						<flux:select label="Rodzaj uroczystości/zamówienia" placeholder="Wybierz..." wire:model="industry">
+							<flux:select.option>Ślub</flux:select.option>
+							<flux:select.option>Komunia</flux:select.option>
+							<flux:select.option>Impreza firmowa</flux:select.option>
+							<flux:select.option>Urodziny</flux:select.option>
+							<flux:select.option>Rocznica</flux:select.option>
+							<flux:select.option>Inna</flux:select.option>
+						</flux:select>
+
+						<flux:input label="Data uroczystości/realizacji zamówienia" max="2999-12-31" type="date" />
+
+						<flux:input label="Miejsce uroczystości/realizacji zamówienia" />
+
+						<flux:textarea label="Dodatkowe informacje" />
+
+						<flux:field variant="inline">
+							<flux:checkbox wire:model="terms" />
+							<flux:label>I agree to the terms and conditions</flux:label>
+							<flux:error name="terms" />
+						</flux:field>
+						<x-ui.spacer py type="sm">
+							<h2>Skąd dowiedziałaś/dowiedziałeś się o ArtGarden?</h2>
+
+							<flux:radio.group>
+								<flux:radio label="Internet (Google, Yahoo, etc.)" value="cc" />
+								<flux:radio label="Social Media" value="paypal" />
+								<flux:radio label="Google Ad" value="ach" />
+								<flux:radio label="Polecenie znajomego" value="ach" />
+								<flux:radio label="Inne" value="ach" />
+							</flux:radio.group>
+						</x-ui.spacer>
+
+						<div class="flex justify-end">
+							<button class="btn" type="submit">Wyślij</button>
+						</div>
+
+					</x-ui.spacer>
+
+				</form>
+			</x-ui.spacer>
+		</div>
 	</div>
 </x-ui.spacer>
 @script

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="mydark" lang="{{ LaravelLocalization::getCurrentLocale() }}">
-{{-- <html :class="dark ? 'dark' : ''" lang="{{ LaravelLocalization::getCurrentLocale() }}" x-bind:data-theme="dark ? 'mydark' : 'mylight'" x-cloak x-data="{ dark: true }" x-ref="htmlElement"> --}}
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}">
 
 <head>
 	<meta charset="utf-8" />
@@ -10,7 +9,6 @@
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="font-sans antialiased" data-route="{{ Route::currentRouteName() }}">
@@ -22,7 +20,7 @@
 		@livewire('footer')
 
 	</div>
-
+	@fluxScripts
 </body>
 
 </html>
