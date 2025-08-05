@@ -16,10 +16,12 @@
 
 
 
---color-*: initial;
---color-white: #FFFFFF;
 
---color-gray-50: #FFFFFF;
+
+
+/* --color-white: #FFFFFF; */
+
+/* --color-gray-50: #FFFFFF;
 --color-gray-100: #F2F2F2;
 --color-gray-200: #DEDEDE;
 --color-gray-300: #C9C9C8;
@@ -31,7 +33,7 @@
 
 --color-gray-800: #63615B;
 --color-gray-900: #4F4D47;
---color-gray-950: #3C3934;
+--color-gray-950: #3C3934; */
 
 --color-green-50: #FBFFFA;
 --color-green-100: #F0FFED;
@@ -52,9 +54,6 @@
 --color-error: #E21B1;
 
 
-
-
-
 }
 
 @layer base {
@@ -71,16 +70,24 @@
 
 
   h2 {
-		@apply text-xl font-semibold text-gray-950 ;
+		@apply text-base md:text-lg xl:text-xl font-semibold text-gray-950 ;
   } 
 
 
 	.btn{
-		@apply text-gray-950 uppercase tracking-widest text-sm transition duration-300 ease-out;
+		@apply text-gray-950 uppercase tracking-widest text-xs md:text-sm xl:text-sm transition duration-300 ease-out;
 
 		&:hover {
 			opacity: .5;
 		}
 
 	}
+}
+
+
+[data-flux-control] {
+	@apply !border-x-0 !border-t-0 !rounded-none;
+}
+[data-flux-label]{
+	@apply !text-gray-500 !mb-0;
 }

@@ -116,7 +116,7 @@ new class extends Component {
 			</x-ui.spacer>
 			<x-ui.spacer class="md:border-l md:pl-8">
 
-				<h2>Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
+				<h2 class="text-pretty">Proszę wypełnić formularz abyśmy mogli stworzyć indywidualną ofertę.</h2>
 
 				<form>
 					<x-ui.spacer type="xs">
@@ -146,8 +146,9 @@ new class extends Component {
 							<flux:label>I agree to the terms and conditions</flux:label>
 							<flux:error name="terms" />
 						</flux:field>
+
 						<x-ui.spacer py type="sm">
-							<h2>Skąd dowiedziałaś/dowiedziałeś się o ArtGarden?</h2>
+							<h2 class="text-pretty">Skąd dowiedziałaś/eś się o ArtGarden?</h2>
 
 							<flux:radio.group>
 								<flux:radio label="Internet (Google, Yahoo, etc.)" value="cc" />
