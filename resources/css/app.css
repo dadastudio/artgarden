@@ -21,7 +21,7 @@
 
 /* --color-white: #FFFFFF; */
 
-/* --color-gray-50: #FFFFFF;
+ --color-gray-50: #FFFFFF;
 --color-gray-100: #F2F2F2;
 --color-gray-200: #DEDEDE;
 --color-gray-300: #C9C9C8;
@@ -33,7 +33,7 @@
 
 --color-gray-800: #63615B;
 --color-gray-900: #4F4D47;
---color-gray-950: #3C3934; */
+--color-gray-950: #3C3934;
 
 --color-green-50: #FBFFFA;
 --color-green-100: #F0FFED;
@@ -54,6 +54,27 @@
 --color-error: #E21B1;
 
 
+
+--color-zinc-50: var(--color-gray-50);
+--color-zinc-100: var(--color-gray-100);
+--color-zinc-200: var(--color-gray-200);
+--color-zinc-300: var(--color-gray-300);
+--color-zinc-400: var(--color-gray-400);
+--color-zinc-500: var(--color-gray-500);
+--color-zinc-600: var(--color-gray-600);
+--color-zinc-700: var(--color-gray-700);
+--color-zinc-800: var(--color-gray-800);
+--color-zinc-900: var(--color-gray-900);
+--color-zinc-950: var(--color-gray-950);
+
+
+
+--color-accent: var(--color-green-700);
+--color-accent-content: var(--color-green-950);
+--color-accent-foreground: var(--color-white);
+
+
+
 }
 
 @layer base {
@@ -65,10 +86,12 @@
 
 	.prose-sm{
 
-		@apply !leading-snug;
+		@apply !leading-[150%] ;
 	}
 
-
+	h1 {
+		@apply text-[34px] font-semibold text-gray-800 ;
+  } 
   h2 {
 		@apply text-base md:text-lg xl:text-xl font-semibold text-gray-950 ;
   } 
@@ -97,5 +120,39 @@
 	@apply !text-gray-500 !mb-0;
 }
 [data-flux-button]{	
-	@apply !text-left !text-gray-950 !uppercase !tracking-widest !text-sm;
+	@apply hover:!bg-zinc-800/0 hover:!text-green-700/100 transition-colors !text-left !text-gray-950 !uppercase !tracking-widest !text-sm;
+}
+
+[data-flux-checkbox-indicator]{
+	@apply shrink-0 size-[1.125rem] rounded-[.3rem] flex justify-center items-center text-sm text-gray-700 dark:text-gray-800 shadow-xs [ui-checkbox[disabled]_&]:opacity-75 [ui-checkbox[data-checked][disabled]_&]:opacity-50 [ui-checkbox[disabled]_&]:shadow-none [ui-checkbox[data-checked]_&]:shadow-none [ui-checkbox[data-indeterminate]_&]:shadow-none [ui-checkbox[data-checked]:not([data-indeterminate])_&>svg:first-child]:block [ui-checkbox[data-indeterminate]_&>svg:last-child]:block border border-gray-300 dark:border-white/10 [ui-checkbox[disabled]_&]:border-gray-200 dark:[ui-checkbox[disabled]_&]:border-white/5 [ui-checkbox[data-checked]_&]:border-transparent [ui-checkbox[data-indeterminate]_&]:border-transparent [ui-checkbox[disabled][data-checked]_&]:border-transparent [ui-checkbox[disabled][data-indeterminate]_&]:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-checkbox[data-checked]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-checked]_&]:bg-(--color-accent) focus:[ui-checkbox[data-checked]_&]:bg-(--color-accent) [ui-checkbox[data-indeterminate]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent) focus:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent)
+}
+
+
+
+.carousel {
+  @apply inline-flex overflow-x-scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+
+.carousel-item {
+  @apply box-content flex flex-none;
+  scroll-snap-align: start;
+}
+.carousel-center {
+  .carousel-item {
+    scroll-snap-align: center;
+  }
+}
+
+.carousel-start {
+  .carousel-item {
+    scroll-snap-align: start;
+  }
 }

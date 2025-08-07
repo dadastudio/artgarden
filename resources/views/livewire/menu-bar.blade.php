@@ -6,7 +6,7 @@ new class extends Component {
     //
 }; ?>
 
-<nav class="xl:h-42 relative z-10 flex h-24 items-center gap-x-6 border-b border-gray-200 px-6 max-lg:grid max-lg:grid-cols-2 md:h-28 md:justify-between">
+<nav class="xl:h-42 md:backdrop-blur-xs h-34 relative z-10 flex items-center gap-x-6 border-b border-gray-200 px-6 max-lg:grid max-lg:grid-cols-2 md:h-28 md:justify-between">
 
 	<img alt="ArtGardenLogo" class="flex-initial" src="{{ asset('img/logo.svg') }}">
 
