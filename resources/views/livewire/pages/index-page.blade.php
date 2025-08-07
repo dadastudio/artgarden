@@ -1,21 +1,18 @@
 <?php
 
+use App\Models\Post;
 use Livewire\Volt\Component;
 
 new class extends Component {
     public $terms = false;
     public $industry = false;
-    // public function with(): array
-    // {
-    //     return [
-    //         'fonts' => Font::with(['designers', 'weights', 'packs'])
-    //             ->where('enabled', 1)
-    //             ->orderBy('created_at', 'desc')
-    //             ->limit(9)
-
-    //             ->get(),
-    //     ];
-    // }
+    public function with(): array
+    {
+        return [
+            'blogItems' => Post::factory()->count(6)->make(),
+            'workItems' => Post::factory()->count(6)->make(),
+        ];
+    }
     public function rendering(\Illuminate\View\View $view): void
     {
         // seo()->title('Capitalics Warsaw Type Foundry', template: false);
@@ -57,8 +54,11 @@ new class extends Component {
 		<x-index.hero-text text="<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z&nbsp;profesjonalną florystyką, obecną w&nbsp;naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w&nbsp;stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>" title="Oferta" />
 
 	</div>
+	<x-index.blog-items :items="$workItems" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>  " text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p>
 
-	<div class="grid gap-y-4 px-4 md:grid-cols-4">
+				<p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" title="" />
+
+	<div class="grid hidden gap-y-4 px-4 md:grid-cols-4">
 		<x-ui.spacer class="place-self-end pb-5 max-md:pl-4 md:pr-8" type="xs">
 			<div>
 				<img src="/img/up_rect.svg" />
@@ -79,6 +79,7 @@ new class extends Component {
 		<x-slot img="oferta1.jpg" text="Planujesz ślub? Pozwól nam zadbać o kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną." title="florystyka</br>ślubna" />
 		<x-slot class="-ml-px" img="oferta2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="florystyka</br>okolicznościowa" />
 		<x-slot class="-ml-px" img="oferta3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z przyjemnością się tym zajmiemy." title="florystyka</br>dla firm" />
+
 	</div>
 
 	<div>
@@ -134,6 +135,6 @@ new class extends Component {
 		</div>
 
 	</div>
-	<x-index.blog-items buttonText="przeglądaj artykuły" text="<p>Zapraszamy do regularnego odwiedzania naszego bloga florystycznego, gdzie znajdziesz inspirujące fotorelacje z wykonanych przez nas dekoracji kwiatowych oraz ciekawe artykuły na temat trendów i porad z zakresu florystyki.</p>" title="Blog" />
+	<x-index.blog-items :items="$blogItems" buttonText="<span class='hidden lg:inline'>przeglądaj</span> artykuły" text="<p>Zapraszamy do regularnego odwiedzania naszego bloga florystycznego, gdzie znajdziesz inspirujące fotorelacje z wykonanych przez nas dekoracji kwiatowych oraz ciekawe artykuły na temat trendów i porad z zakresu florystyki.</p>" title="Blog" />
 
 </x-ui.spacer>

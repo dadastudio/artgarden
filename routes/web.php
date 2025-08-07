@@ -9,6 +9,17 @@ Route::group(
 	],
 	function () {
 		Volt::route('/', 'pages.index-page')->name('index');
+		Volt::route('/blog', 'pages.blog-page')->name('blog');
+		Volt::route('/blog/{slug}', 'pages.blog-show-page')->name('blog.show');
+
+		Volt::route('/work', 'pages.work-page')->name('work');
+		Volt::route('/work/{slug}', 'pages.work-show-page')->name('work.show');
+
+
+		Volt::route('/contact', 'pages.contact-page')->name('contact');
+		Volt::route('/offer', 'pages.	offer-page')->name('offer');
+
+
 
 
 	}

@@ -93,7 +93,7 @@
 		@apply text-[34px] font-semibold text-gray-800 ;
   } 
   h2 {
-		@apply text-base md:text-lg xl:text-xl font-semibold text-gray-950 ;
+		@apply text-sm sm:text-base md:text-base lg:text-lg xl:text-xl font-semibold text-gray-950 leading-snug;
   } 
 
 
@@ -156,3 +156,4 @@
     scroll-snap-align: start;
   }
 }
+

@@ -12,11 +12,11 @@ new class extends Component {
 
 	<div class="flex h-full flex-row items-center uppercase tracking-wider text-gray-800 max-lg:hidden md:text-sm xl:text-base">
 
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('index') }}" wire:navigate>Oferta</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('index') }}" wire:navigate>Realizacje</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('index') }}" wire:navigate>Blog</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('index') }}" wire:navigate>Kontakt</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('index') }}" wire:navigate>PL / EN</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('offer') }}" wire:navigate>Oferta</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('work') }}" wire:navigate>Realizacje</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('blog') }}" wire:navigate>Blog</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('contact') }}" wire:navigate>Kontakt</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="#">PL / EN</a></div>
 	</div>
 
 	<div class="h-full text-sm uppercase tracking-wider text-gray-800 lg:hidden">
