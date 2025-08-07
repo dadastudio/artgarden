@@ -12,11 +12,25 @@ new class extends Component {
 
 	<div class="flex h-full flex-row items-center uppercase tracking-wider text-gray-800 max-lg:hidden md:text-sm xl:text-base">
 
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('offer') }}" wire:navigate>Oferta</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('work') }}" wire:navigate>Realizacje</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('blog') }}" wire:navigate>Blog</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="{{ route('contact') }}" wire:navigate>Kontakt</a></div>
-		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10"><a href="#">PL / EN</a></div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ route('offer') }}" inset variant="ghost">Oferta</flux:button>
+		</div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ route('work') }}" inset variant="ghost">Realizacje</flux:button>
+		</div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ route('blog') }}" inset variant="ghost">Blog</flux:button>
+		</div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ route('contact') }}" inset variant="ghost">Kontakt</flux:button>
+		</div>
+		<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ LaravelLocalization::getLocalizedURL('pl', null, [], true) }}" inset variant="ghost">PL</flux:button>
+			&nbsp; / &nbsp;
+			<flux:button class="md:!text-sm xl:!text-base" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" inset variant="ghost">EN</flux:button>
+
+		</div>
 	</div>
 
 	<div class="h-full text-sm uppercase tracking-wider text-gray-800 lg:hidden">

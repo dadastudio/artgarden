@@ -18,4 +18,4 @@ new class extends Component {
         // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
-<div>x-index.blog-items</div>
+<div>faq</div>

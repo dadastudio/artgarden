@@ -17,29 +17,14 @@ Route::group(
 
 
 		Volt::route('/contact', 'pages.contact-page')->name('contact');
-		Volt::route('/offer', 'pages.	offer-page')->name('offer');
+		Volt::route('/offer', 'pages.offer-page')->name('offer');
 
-
-
+		Volt::route("privacy", "pages.privacy-page")->name("privacy");
+		Volt::route("terms", "pages.terms-page")->name("terms");
+		Volt::route("cookies", "pages.cookies-page")->name("cookies");
+		Volt::route("faq", "pages.faq-page")->name("faq");
 
 	}
 );
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
-
-// Route::view('dashboard', 'dashboard')
-//     ->middleware(['auth', 'verified'])
-//     ->name('dashboard');
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::redirect('settings', 'settings/profile');
-
-//     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-//     Volt::route('settings/password', 'settings.password')->name('settings.password');
-//     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
-// });
-
-// require __DIR__ . '/auth.php';

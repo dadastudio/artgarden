@@ -125,10 +125,10 @@
 
 			<div class="flex justify-center md:basis-1/3">
 				<div class="flex flex-col gap-y-5 py-10">
-					<a href="{{ route('index') }}" wire:navigate>Oferta</a>
-					<a href="{{ route('index') }}" wire:navigate>Realizacje</a>
-					<a href="{{ route('index') }}" wire:navigate>Blog</a>
-					<a href="{{ route('index') }}" wire:navigate>Kontakt</a>
+					<a href="{{ route('offer') }}" wire:navigate>Oferta</a>
+					<a href="{{ route('work') }}" wire:navigate>Realizacje</a>
+					<a href="{{ route('blog') }}" wire:navigate>Blog</a>
+					<a href="{{ route('contact') }}" wire:navigate>Kontakt</a>
 				</div>
 			</div>
 
