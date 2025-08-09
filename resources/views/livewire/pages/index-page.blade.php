@@ -23,7 +23,7 @@ new class extends Component {
 	<div>
 
 		<div class="relative">
-			<div class="lg:aspect-100/55 aspect-9/10 bg-[url(/public/img/hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/hero.jpg)] lg:bg-right">
+			<div class="lg:aspect-100/55 aspect-9/10 bg-[url(/public/img/hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/Hero.jpg)] lg:bg-right">
 
 				{{-- <x-index.hero-text buttonText="odkryj więcej" text="<p>Florystyką zajmujemy się od ponad 10 lat, czerpiemy inspiracje ze wszystkich zakamarków życia i wciąż nie zwalniamy tempa - bo to nasza pasja. Chętnie podejmujemy wyzwania i realizujemy wyjątkowe aranżacje, ale także wyręczymy Cię i pomożemy zrealizować małą potrzebę serca, czy własny projekt.</p>" title="O nas" /> --}}
 
