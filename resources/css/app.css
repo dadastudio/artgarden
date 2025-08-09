@@ -83,7 +83,15 @@
 		@apply text-4xl font-semibold text-gray-800 mb-6;
 
   }*/
+	.current{
 
+		&:before {
+			content: url("/public/img/dot.svg");
+			@apply mr-0.5 mb-0.5;
+
+		}
+
+	}
 	.prose-sm{
 
 		@apply !leading-[150%] ;
@@ -105,7 +113,7 @@
 		}
 
 		&:after {
-			content: url("/img/arrow.svg");
+			content: url("/public/img/arrow.svg");
 			@apply ml-2;
 		}
 

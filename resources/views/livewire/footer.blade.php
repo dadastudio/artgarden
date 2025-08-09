@@ -1,7 +1,37 @@
 <footer class="">
 
-	<x-ui.spacer pt type="md">
-		<div class="md:px-25 flex aspect-video flex-row-reverse items-end bg-[url(/public/img/konsultacje.jpg)] bg-cover bg-bottom bg-no-repeat md:aspect-[1440/531] md:bg-left">
+	<x-ui.spacer type="md">
+
+		<div class="relative">
+			<div class="lg:aspect-100/40 aspect-13/8 bg-[url(/public/img/konsultacje.jpg)] bg-cover bg-left bg-no-repeat lg:bg-[url(/public/img/konsultacje.jpg)] lg:bg-left">
+
+			</div>
+
+			<div class="right-15 bottom-5 max-lg:px-5 max-lg:py-5 lg:absolute">
+				<x-ui.spacer>
+
+					<div>
+						<img src="/img/up_rect.svg" />
+						<h1 class="text-pretty">Konsultacje</h1>
+					</div>
+
+					<div class="prose prose-sm relative lg:max-w-[325px]">
+						<p>
+						<p>Zapraszamy na dyskretne i indywidualne konsultacje - online lub osobiście - w dogodnym dla Ciebie miejscu.
+							Jeśli chcesz zamówić wyjątkowe kompozycje kwiatowe na specjalne okazje - zarówno prywatne jak i firmowe - z przyjemnością Ci pomożemy!</p>
+						</p>
+						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+					</div>
+					<p class="max-xl:hidden">&nbsp;</p>
+
+					<flux:button class="mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
+
+				</x-ui.spacer>
+
+			</div>
+		</div>
+
+		{{-- <div class="md:px-25 flex aspect-video flex-row-reverse items-end bg-[url(/public/img/konsultacje.jpg)] bg-cover bg-bottom bg-no-repeat md:aspect-[1440/531] md:bg-left">
 
 			<x-index.hero-text text="<p>Zapraszamy na dyskretne i indywidualne konsultacje - online lub osobiście - w dogodnym dla Ciebie miejscu.
 							Jeśli chcesz zamówić wyjątkowe kompozycje kwiatowe na specjalne okazje - zarówno prywatne jak i firmowe - z przyjemnością Ci pomożemy!</p>" title="Konsultacje" />
@@ -25,7 +55,7 @@
 
 			</x-ui.spacer>
 
-		</div>
+		</div> --}}
 		<div class="grid gap-8 px-4 md:grid-cols-2">
 
 			<x-ui.spacer type="md">
@@ -134,20 +164,20 @@
 
 			<div class="flex justify-center border-l-[0.5px] border-green-50 md:basis-1/3">
 				<div class="flex flex-col gap-y-5 py-10">
-					<a href="{{ route('index') }}" wire:navigate>FAQ</a>
-					<a href="{{ route('index') }}" wire:navigate>Polityka Prywatności</a>
-					<a href="{{ route('index') }}" wire:navigate>Regulamin</a>
-					<a href="{{ route('index') }}" wire:navigate>Cookies</a>
+					<a href="{{ route('faq') }}" wire:navigate>FAQ</a>
+					<a href="{{ route('privacy') }}" wire:navigate>Polityka Prywatności</a>
+					<a href="{{ route('terms') }}" wire:navigate>Regulamin</a>
+					<a href="{{ route('cookies') }}" wire:navigate>Cookies</a>
 
 				</div>
 
 			</div>
 			<div class="flex justify-center border-green-50 max-md:border-t md:basis-1/3 md:border-l">
 				<div class="flex flex-col gap-y-5 py-10">
-					<a href="{{ route('index') }}" wire:navigate>Facebook</a>
-					<a href="{{ route('index') }}" wire:navigate>Instagram</a>
-					<a class="max-md:hidden" href="{{ route('index') }}" wire:navigate>Kontakt</a>
-					<a class="max-md:hidden" href="{{ route('index') }}" wire:navigate>Katalog do pobrania</a>
+					<a href="{{ route('index') }}" target="_blank">Facebook</a>
+					<a href="{{ route('index') }}" target="_blank">Instagram</a>
+					<a class="max-md:hidden" href="{{ route('contact') }}" wire:navigate>Kontakt</a>
+					<a class="max-md:hidden" href="{{ route('download') }}">Katalog do pobrania</a>
 
 				</div>
 

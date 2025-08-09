@@ -5,7 +5,8 @@
     'invert' => false,
 ])
 
-<div class="backdrop-blur-xs flex basis-1/4 items-end text-left max-md:hidden">
+{{-- <div class="backdrop-blur-xs max-md:hiddens flex basis-1/4 items-end px-5 text-left"> --}}
+<div class="right-15 bottom-5 max-lg:px-5 max-lg:py-5 lg:absolute">
 
 	<x-ui.spacer>
 
@@ -13,12 +14,13 @@
 			<img src="/img/up_rect.svg" />
 			<h1 class="{{ $invert ? 'text-white' : '' }} text-pretty">{{ $title }}</h1>
 		</div>
-		<div class="prose prose-sm {{ $invert ? 'prose-invert' : '' }} relative">
+
+		<div class="prose prose-sm {{ $invert ? 'prose-invert' : '' }} relative lg:max-w-[325px]">
 			{!! $text !!}
 			<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 		</div>
 
-		<p>&nbsp;</p>
+		<p class="max-xl:hidden">&nbsp;</p>
 
 		@if ($buttonText)
 			<flux:button class="{{ $invert ? '!text-white' : '' }} mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">{!! $buttonText !!}</flux:button>
