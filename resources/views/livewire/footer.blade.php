@@ -16,7 +16,7 @@
 					</div>
 
 					<div class="prose prose-sm relative lg:max-w-[325px]">
-						<p>
+
 						<p>Zapraszamy na dyskretne i indywidualne konsultacje - online lub osobiście - w dogodnym dla Ciebie miejscu.
 							Jeśli chcesz zamówić wyjątkowe kompozycje kwiatowe na specjalne okazje - zarówno prywatne jak i firmowe - z przyjemnością Ci pomożemy!</p>
 						</p>
@@ -156,7 +156,7 @@
 			<div class="flex justify-center md:basis-1/3">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="{{ route('offer') }}" wire:navigate>Oferta</a>
-					<a href="{{ route('work') }}" wire:navigate>Realizacje</a>
+					<a href="{{ route('works') }}" wire:navigate>Realizacje</a>
 					<a href="{{ route('blog') }}" wire:navigate>Blog</a>
 					<a href="{{ route('contact') }}" wire:navigate>Kontakt</a>
 				</div>
@@ -200,7 +200,7 @@
 
 	</x-ui.spacer>
 	<div class="flex flex-row justify-between bg-green-950 p-4 text-xs text-white md:p-10">
-		<div>by Joanna Dyczkowska </div>
+		<div>by <a href="https://www.linkedin.com/in/joanna-dyczkowska-b3543850/" target="_blank">Joanna Dyczkowska</a></div>
 		<div>© ArtGarden | 2025</div>
 	</div>
 </footer>

@@ -10,10 +10,10 @@ Route::group(
 	function () {
 		Volt::route('/', 'pages.index-page')->name('index');
 		Volt::route('/blog', 'pages.blog-page')->name('blog');
-		Volt::route('/blog/{slug}', 'pages.blog-show-page')->name('blog.show');
+		Volt::route('/blog/{slug}', 'pages.post-page')->name('blog.show');
 
-		Volt::route(LaravelLocalization::transRoute('routes.work'), 'pages.work-page')->name('work');
-		Volt::route('/work/{slug}', 'pages.work-show-page')->name('work.show');
+		Volt::route(LaravelLocalization::transRoute('routes.work'), 'pages.works-page')->name('works');
+		Volt::route('/work/{slug}', 'pages.work-page')->name('work');
 
 
 		Volt::route(LaravelLocalization::transRoute('routes.contact'), 'pages.contact-page')->name('contact');

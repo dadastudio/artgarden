@@ -3,7 +3,7 @@
 	{{-- <div class="relative flex flex-col gap-y-8 xl:flex-row xl:gap-24 xl:px-20"> --}}
 	<div class="relative flex-row lg:flex">
 
-		<div class="flex w-3/5 flex-row items-end gap-2 px-16 py-10 max-lg:hidden xl:w-2/3 xl:px-20">
+		<div class="2xl:w-75/100 xl:w-70/100 lg:w-63/100 flex flex-row items-end gap-2 px-16 py-10 max-lg:hidden xl:px-20">
 			<img class="w-2/3 border border-green-900 p-2" src="/img/realizacje1.jpg">
 			<div class="flex w-1/3 flex-col gap-2">
 				<img class="w-full border border-green-900 p-2" src="/img/realizacje2.jpg">

@@ -10,20 +10,21 @@
 
 	<x-ui.spacer>
 
-		<div>
+		<div class="lg:max-w-[325px]">
 			<img src="/img/up_rect.svg" />
-			<h1 class="{{ $invert ? 'text-white' : '' }} text-pretty">{{ $title }}</h1>
+			<h1 class="{{ $invert ? 'text-white' : '' }} text-pretty">{!! $title !!}</h1>
 		</div>
 
 		<div class="prose prose-sm {{ $invert ? 'prose-invert' : '' }} relative lg:max-w-[325px]">
 			{!! $text !!}
-			<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+			{{ $slot }}
+			<img class="absolute -bottom-4 right-0 rotate-180" src="/img/up_rect.svg" />
 		</div>
 
 		<p class="max-xl:hidden">&nbsp;</p>
 
 		@if ($buttonText)
-			<flux:button class="{{ $invert ? '!text-white' : '' }} mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">{!! $buttonText !!}</flux:button>
+			<flux:button class="{{ $invert ? '!text-white' : '' }} mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle" wire:navigate>{!! $buttonText !!}</flux:button>
 		@endif
 	</x-ui.spacer>
 </div>

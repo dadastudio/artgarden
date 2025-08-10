@@ -7,7 +7,7 @@
 
 	    'lg' => 'space-y-10 sm:space-y-12 md:space-y-16 lg:space-y-20 xl:space-y-24 2xl:space-y-32',
 
-	    'md' => 'space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 xl:space-y-16 2xl:space-y-20',
+	    'md' => 'space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 xl:space-y-16 2xl:space-y-18',
 
 	    'sm' => 'space-y-4 sm:space-y-5 md:space-y-5 lg:space-y-6 xl:space-y-7 2xl:space-y-8',
 

@@ -98,7 +98,7 @@
 	}
 
 	h1 {
-		@apply text-[34px] font-semibold text-gray-800 ;
+		@apply tracking-tight text-[34px] font-semibold text-gray-800 leading-snug ;
   } 
   h2 {
 		@apply text-sm sm:text-base md:text-base lg:text-lg xl:text-xl font-semibold text-gray-950 leading-snug;
@@ -128,7 +128,7 @@
 	@apply !text-gray-500 !mb-0;
 }
 [data-flux-button]{	
-	@apply hover:!bg-zinc-800/0 hover:!text-green-700/100 transition-colors !text-left !text-gray-950 !uppercase !tracking-widest !text-sm;
+	@apply !font-normal hover:!bg-zinc-800/0 hover:!text-green-700/100 transition-colors !text-left !text-gray-950 !uppercase !tracking-widest !text-[14px];
 }
 
 [data-flux-checkbox-indicator]{

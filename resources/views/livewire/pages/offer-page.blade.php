@@ -21,23 +21,25 @@ new class extends Component {
 <div>
 	<x-ui.spacer pt type="md">
 
-		<div class="flex flex-col gap-x-6 gap-y-5 lg:flex-row">
-			<div class="flex justify-center px-5 md:basis-2/3">
+		<div class="relative flex-row lg:flex">
+
+			<div class="2xl:w-75/100 xl:w-70/100 lg:w-65/100 flex flex-row px-5 md:w-full lg:px-16 lg:py-10 xl:px-20">
+
 				@if ($currentRoute === 'offer')
-					<img class="border border-gray-100 p-5" src="/img/oferta.jpg">
+					<img class="max-h-max w-full border border-gray-100 p-5" src="/img/oferta.jpg">
 				@elseif ($currentRoute === 'offer-2')
-					<img class="border border-gray-100 p-5" src="/img/oferta.jpg">
+					<img class="max-h-max w-full border border-gray-100 p-5" src="/img/oferta.jpg">
 				@elseif ($currentRoute === 'offer-3')
-					<img class="border border-gray-100 p-5" src="/img/oferta.jpg">
+					<img class="max-h-max w-full border border-gray-100 p-5" src="/img/oferta.jpg">
 				@endif
 			</div>
 
 			@if ($currentRoute === 'offer')
-				<x-index.hero-text text="<p>Śluby kochamy ponad wszystko! Zadbamy o to czego potrzebujesz podczas uroczystości związanych ze ślubem, zarówno własnym jak i takim, gdzie występujesz jako gość - realizujemy zamówienia dla/od pary młodej, świadków, zaproszonych gości. Podejmiemy się aranżacji wystroju sali weselnej, kościoła itp.</p>" title="Florystyka Ślubna" />
+				<x-index.hero-text text="<p>Śluby kochamy ponad wszystko! Zadbamy o to czego potrzebujesz podczas uroczystości związanych ze ślubem, zarówno własnym jak i takim, gdzie występujesz jako gość - realizujemy zamówienia dla/od pary młodej, świadków, zaproszonych gości. Podejmiemy się aranżacji wystroju sali weselnej, kościoła itp.</p>" title="Florystyka</br>Ślubna" />
 			@elseif ($currentRoute === 'offer-2')
-				<x-index.hero-text text="<p>W naszej pracowni powstają wyjątkowe aranżacje, stawiamy na kreatywność i unikalne kompozycje. Łączymy różne gatunki roślin w niebanalny sposób.</p>" title="Florystyka okolicznościowa" />
+				<x-index.hero-text text="<p>W naszej pracowni powstają wyjątkowe aranżacje, stawiamy na kreatywność i unikalne kompozycje. Łączymy różne gatunki roślin w niebanalny sposób.</p>" title="Florystyka</br>okolicznościowa" />
 			@elseif ($currentRoute === 'offer-3')
-				<x-index.hero-text text="<p>Twoja recepcja, sala konferencyjna, studio, bar/restauracja/kawiarnia, poczekalnia, przymierzalnia - regularnie potrzebuje odrobiny piękna a nie bardzo masz czas się tym zajmować? Jesteśmy chętni do długoterminowej współpracy, aby zdjąć Ci problem z głowy. Będzie różnorodnie, spersonalizowanie i na czas!</p>" title="Florystyka dla firm" />
+				<x-index.hero-text text="<p>Twoja recepcja, sala konferencyjna, studio, bar/restauracja/kawiarnia, poczekalnia, przymierzalnia - regularnie potrzebuje odrobiny piękna a nie bardzo masz czas się tym zajmować? Jesteśmy chętni do długoterminowej współpracy, aby zdjąć Ci problem z głowy. Będzie różnorodnie, spersonalizowanie i na czas!</p>" title="Florystyka</br>dla firm" />
 			@endif
 
 		</div>

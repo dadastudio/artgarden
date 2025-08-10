@@ -2,13 +2,13 @@
     'title' => '',
     'text' => '',
     'buttonText' => '',
-    'buttonLink' => 'index',
+    'buttonLink' => 'blog',
     'items' => [],
 ])
 
 <div class="grid grid-cols-1 gap-8 px-4 md:grid-cols-3 xl:grid-cols-4">
 
-	<x-ui.spacer class="md:place-self-end" type="xs">
+	<x-ui.spacer class="mb-5 md:place-self-end" type="xs">
 
 		<div>
 			<img src="/img/up_rect.svg" />
@@ -29,35 +29,15 @@
 	</x-ui.spacer>
 
 	<div class="relative col-span-1 md:col-span-2 xl:col-span-3">
-		<div class="relative flex flex-wrap items-center justify-center gap-2 overflow-x-hidden border border-gray-300">
+		<div class="borders relative m-0.5 flex flex-wrap items-center justify-center gap-2 overflow-x-hidden border-gray-300">
 
 			<div class="carousel carousel-start">
 
 				@foreach ($items as $item)
 					<div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="{{ $loop->iteration }}">
-						<x-slot img="{{ $item->img }}" text="{{ $item->text }}" title="{{ $item->title }}" />
+						<x-slot img="{{ $item->img }}" loop="{{ $loop->iteration }}" route="{{ route('blog.show', ['slug' => Str::slug($item->title)]) }}" text="{{ $item->text }}" title="{{ $item->title }}" />
 					</div>
 				@endforeach
-
-				{{-- <div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="2">
-					<x-slot class="" img="blog2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="dwór konstancin - ślub w&nbsp;plenerze" />
-				</div>
-
-				<div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="3">
-					<x-slot class="" img="blog3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy." title="hotel borowina *** - przyjęcie pod Warszawą" />
-				</div>
-
-				<div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="4">
-					<x-slot img="blog1.jpg" text="Planujesz ślub? Pozwól nam zadbać o&nbsp;kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną." title="Bukiety warzywne i&nbsp;owocowe " />
-				</div> --}}
-
-				{{-- <div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="5">
-					<x-slot class="" img="blog2.jpg" text="Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową." title="dwór konstancin - ślub w&nbsp;plenerze" />
-				</div>
-
-				<div class="carousel-item w-full md:w-1/2 xl:w-1/3" id="6">
-					<x-slot class="" img="blog3.jpg" text="Chcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy." title="hotel borowina *** - przyjęcie pod Warszawą" />
-				</div> --}}
 
 			</div>
 
