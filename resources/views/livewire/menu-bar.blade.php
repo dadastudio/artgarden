@@ -6,7 +6,8 @@ new class extends Component {
     //
 }; ?>
 
-<nav class="relative">
+<nav class="container inset-x-0 z-50 mx-auto">
+
 	<div class="xl:h-42 md:backdrop-blur-xs h-34 relative z-50 flex items-center gap-x-6 border-b border-gray-200 px-6 max-lg:grid max-lg:grid-cols-2 md:h-28 md:justify-between">
 		<a href="/" wire:navigate><img alt="ArtGardenLogo" class="flex-initial" src="{{ asset('img/logo.svg') }}"></a>
 
@@ -99,5 +100,27 @@ new class extends Component {
 			document.body.classList.toggle('overflow-y-hidden');
 
 		});
+
+
+		let prevScrollpos = window.pageYOffset;
+
+		window.onscroll = function() {
+			var currentScrollPos = window.pageYOffset;
+			if (prevScrollpos > currentScrollPos) {
+
+				document.querySelector('nav').classList.add('fixed');
+				document.querySelector('nav').classList.add('top-0');
+				document.querySelector('nav').classList.add('bg-white');
+
+			} else {
+				document.querySelector('nav').classList.remove('fixed');
+				document.querySelector('nav').classList.remove('top-0');
+				document.querySelector('nav').classList.remove('bg-white');
+
+
+
+			}
+			prevScrollpos = currentScrollPos;
+		};
 	</script>
 @endscript
