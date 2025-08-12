@@ -26,8 +26,8 @@ new class extends Component {
 
 			</div>
 
-			<x-index.hero-text buttonText="skontaktuj się z nami" text="<p>Zapraszamy do zapoznania się z naszym portfolio, w którym prezentujemy wybrane realizacje – od kameralnych bukietów po aranżacje na duże uroczystości. Każda kompozycja to efekt pasji, doświadczenia i indywidualnego podejścia do potrzeb klienta.  </p><p>Wierzymy, że nasze projekty przemówią do Twojej wyobraźni i pomogą Ci podjąć decyzję o współpracy. Kwiaty opowiadają historie –zobacz, jaką możemy stworzyć razem :)</p>"
-				title="Realizacje">
+			<x-index.hero-text buttonText="skontaktuj się z nami" link="{{ route('contact') }}"
+				text="<p>Zapraszamy do zapoznania się z naszym portfolio, w którym prezentujemy wybrane realizacje – od kameralnych bukietów po aranżacje na duże uroczystości. Każda kompozycja to efekt pasji, doświadczenia i indywidualnego podejścia do potrzeb klienta.  </p><p>Wierzymy, że nasze projekty przemówią do Twojej wyobraźni i pomogą Ci podjąć decyzję o współpracy. Kwiaty opowiadają historie –zobacz, jaką możemy stworzyć razem :)</p>" title="Realizacje">
 
 				<div class="flex flex-row items-center gap-x-5">
 

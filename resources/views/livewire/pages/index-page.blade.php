@@ -32,32 +32,31 @@ new class extends Component {
 
 					<div>
 						<img src="/img/up_rect.svg" />
-						<h1 class="text-pretty">O nas</h1>
+						<h1 class="text-pretty">@lang('texts.about_header')</h1>
 					</div>
 
 					<div class="prose prose-sm relative lg:max-w-[325px]">
-						<p>Florystyką zajmujemy się od ponad 10 lat, czerpiemy inspiracje ze wszystkich zakamarków życia i wciąż nie zwalniamy tempa - bo to nasza pasja. Chętnie podejmujemy wyzwania i realizujemy wyjątkowe aranżacje, ale także wyręczymy Cię i pomożemy zrealizować małą potrzebę serca, czy własny projekt.</p>
+						<p>@lang('texts.about')</p>
 						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 					</div>
 					<p class="max-xl:hidden">&nbsp;</p>
 
-					<flux:button class="mb-3" href="#oferta-hero" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
+					<flux:button class="mb-3" href="#oferta-hero" icon:trailing="arrow" inset variant="subtle">@lang('ui.more_btn')</flux:button>
 
 				</x-ui.spacer>
 
 			</div>
 		</div>
 
-		<x-index.baner quoteAuthor="Marc Chagall" quote="Dla mnie kwiaty</br> są sposobem życia" />
+		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
 	</div>
 
-	<x-oferta.hero id="oferta-hero" img="oferta.jpg"
-		text="<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z&nbsp;profesjonalną florystyką, obecną w&nbsp;naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w&nbsp;stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>" title="Oferta" />
+	<x-oferta.hero id="oferta-hero" img="oferta.jpg" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
 
 	{{-- <x-index.blog-items :items="$workItems" buttonLink="contact" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>" buttonsText="dowiedz się więcej" text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p><p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" /> --}}
 
 	<div>
-		<x-index.baner quoteAuthor="przysłowie Japońskie" quote="Piękno kwiatu nie tkwi w&nbsp;jego kształcie, lecz w&nbsp;tym, jak go postrzegasz" />
+		<x-index.baner quoteAuthor="{{ __('quotes.q_2_a') }}" quote="{{ __('quotes.q_2') }}" />
 
 		{{-- WIANEK I KORSARZ --}}
 
@@ -92,6 +91,6 @@ new class extends Component {
 	</div>
 
 	{{-- BLOG ITEMS --}}
-	<x-index.blog-items :items="$blogItems" buttonText="<span class='hidden lg:inline'>przeglądaj</span> artykuły" text="<p>Zapraszamy do regularnego odwiedzania naszego bloga florystycznego, gdzie znajdziesz inspirujące fotorelacje z wykonanych przez nas dekoracji kwiatowych oraz ciekawe artykuły na temat trendów i porad z zakresu florystyki.</p>" title="Blog" />
+	<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{{ __('texts.blog') }}" title="Blog" />
 
 </x-ui.spacer>

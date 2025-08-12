@@ -14,16 +14,16 @@ new class extends Component {
 		<div class="flex h-full flex-row items-center uppercase tracking-wider text-gray-800 max-lg:hidden md:text-sm xl:text-base">
 
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
-				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>Oferta</flux:button>
+				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.offer')</flux:button>
 			</div>
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
-				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>Realizacje</flux:button>
+				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
 			</div>
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
-				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>Blog</flux:button>
+				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.blog')</flux:button>
 			</div>
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
-				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>Kontakt</flux:button>
+				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.contact')</flux:button>
 			</div>
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 
@@ -58,16 +58,16 @@ new class extends Component {
 					</div>
 					<flux:separator />
 					<div>
-						<flux:button class="!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>Oferta</flux:button>
+						<flux:button class="!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.offer')</flux:button>
 					</div>
 					<div>
-						<flux:button class="!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>Realizacje</flux:button>
+						<flux:button class="!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
 					</div>
 					<div>
-						<flux:button class="!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>Blog</flux:button>
+						<flux:button class="!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.blog')</flux:button>
 					</div>
 					<div>
-						<flux:button class="!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>Kontakt</flux:button>
+						<flux:button class="!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.contact')</flux:button>
 					</div>
 				</x-ui.spacer>
 			</div>

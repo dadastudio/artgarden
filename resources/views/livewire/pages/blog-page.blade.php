@@ -34,16 +34,12 @@ new class extends Component {
 				</div>
 
 				<div class="prose prose-sm relative lg:max-w-[325px]">
-					<p>Witamy na blogu naszego studia florystycznego ArtGarden!</p>
-
-					<p>Jeśli kochasz kwiaty, interesujesz się florystyką lub szukasz inspiracji na aranżacje kwiatowe – jesteś we właściwym miejscu. Na naszym blogu znajdziesz relacje z najciekawszych realizacji, pomysły na bukiety ślubne, dekoracje na różne okazje, a także praktyczne porady od profesjonalnych florystów.</p>
-
-					<p>Dodaj blog do ulubionych i bądź na bieżąco z najnowszymi trendami florystycznymi!.</p>
+					@lang('texts.blog_page')
 					<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 				</div>
 				<p class="max-xl:hidden">&nbsp;</p>
 
-				<flux:button class="mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
+				<flux:button class="mb-3" href="#" icon:trailing="arrow" inset variant="subtle">@lang('ui.more_btn')</flux:button>
 
 			</x-ui.spacer>
 
@@ -57,9 +53,9 @@ new class extends Component {
 				<x-ui.spacer class="flex h-full flex-col p-5" type="xs">
 
 					{{ $item->getFirstMedia()->img('main')->attributes(['class' => 'object-center aspect-4/3 object-cover']) }}
-					<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
+					<h2 class="flex-1s line-clamp-2 truncate text-pretty uppercase">{!! $item->title !!}</h2>
 
-					<div class="prose line-clamp-4 flex-1 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
+					<div class="prose flex-1s line-clamp-4 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
 					<p>&nbsp;</p>
 
 					<flux:button class="flex-none place-self-start" href="{{ route('blog.show', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>czytaj więcej</flux:button>
