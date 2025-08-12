@@ -2,6 +2,7 @@
     'title' => '',
     'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus vel ante bibendum facilisis.',
     'buttonText' => '',
+    'link' => route('index'),
     'invert' => false,
 ])
 
@@ -24,7 +25,7 @@
 		<p class="max-xl:hidden">&nbsp;</p>
 
 		@if ($buttonText)
-			<flux:button class="{{ $invert ? '!text-white' : '' }} mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle" wire:navigate>{!! $buttonText !!}</flux:button>
+			<flux:button class="{{ $invert ? '!text-white' : '' }} mb-3" href="{{ $link }}" icon:trailing="arrow" inset variant="subtle" wire:navigate>{!! $buttonText !!}</flux:button>
 		@endif
 	</x-ui.spacer>
 </div>

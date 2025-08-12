@@ -30,7 +30,7 @@
 			<img class="w-full border border-green-900 p-2" src="/img/realizacje3.jpg">
 		</div>
 
-		<x-index.hero-text buttonText="obejrzyj więcej" invert text="<p>Zainspiruj się naszymi projektami i zobacz, jak możemy przemienić Twoje wydarzenie w&nbsp;niezapomnianą, kwiatową opowieść. Zajrzyj do naszego portfolio!</p>" title="Realizacje" />
+		<x-index.hero-text buttonText="obejrzyj więcej" invert link="{{ route('works') }}" text="<p>Zainspiruj się naszymi projektami i zobacz, jak możemy przemienić Twoje wydarzenie w&nbsp;niezapomnianą, kwiatową opowieść. Zajrzyj do naszego portfolio!</p>" title="Realizacje" />
 
 	</div>
 </div>

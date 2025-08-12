@@ -101,7 +101,7 @@
 		@apply tracking-tight text-[34px] font-semibold text-gray-800 leading-snug ;
   } 
   h2 {
-		@apply text-sm sm:text-base md:text-base lg:text-lg xl:text-xl font-semibold text-gray-950 leading-snug;
+		@apply   text-sm sm:text-base md:text-base lg:text-lg xl:text-[19px] font-semibold text-gray-950 leading-snug;
   } 
 
 
@@ -149,19 +149,13 @@
 }
 
 
-.carousel-item {
-  @apply box-content flex flex-none;
-  scroll-snap-align: start;
-}
-.carousel-center {
-  .carousel-item {
-    scroll-snap-align: center;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+
+	&::-webkit-scrollbar {
+    @apply hidden;
   }
 }
-
-.carousel-start {
-  .carousel-item {
-    scroll-snap-align: start;
-  }
-}
-

@@ -12,10 +12,14 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Post extends Model implements HasMedia
+
+class Post extends Model implements Sortable, HasMedia
 {
 	//
+	use SortableTrait;
+
 	use HasFactory;
 
 	use HasTranslations;
@@ -26,12 +30,12 @@ class Post extends Model implements HasMedia
 		'title',
 		'slug',
 		'text',
-		'img',
+		'order_column',
 
 		'enabled',
 
 	];
-	public $translatable = ['title', 'text'];
+	public $translatable = ['title', 'text', 'slug'];
 	public function next()
 	{
 		$nextProject = self::enabled()->where('id', '>', $this->id)->ordered()->first();
@@ -50,5 +54,35 @@ class Post extends Model implements HasMedia
 		$query->where('enabled', 1);
 	}
 
+	public function photos(): HasMany
+	{
+		return $this->hasMany(Photo::class)->ordered();
+	}
+	public function registerMediaConversions(Media|null $media = null): void
+	{
+		$this
+			->addMediaConversion('preview')
+			->fit(Fit::Contain, 40, 40)
+			->nonQueued();
 
+
+		$this->addMediaConversion('main')
+			->fit(Fit::Contain, 950, 950)
+			->withResponsiveImages()
+			->nonQueued();
+		;
+
+
+	}
+
+	public function getRouteKeyName()
+	{
+		if (request()->is('admin*')) {
+			return "id";//$this->getKeyName(); // usually 'id'
+		}
+		return 'slug->' . app()->getLocale();
+
+
+		return "id";
+	}
 }

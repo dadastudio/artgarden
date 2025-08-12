@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="right-15 bottom-5 max-lg:px-5 max-lg:py-5 lg:absolute">
-				<x-ui.spacer>
+				<x-ui.spacer pb>
 
 					<div>
 						<img src="/img/up_rect.svg" />
@@ -22,40 +22,12 @@
 						</p>
 						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 					</div>
-					<p class="max-xl:hidden">&nbsp;</p>
-
-					<flux:button class="mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
 
 				</x-ui.spacer>
 
 			</div>
 		</div>
 
-		{{-- <div class="md:px-25 flex aspect-video flex-row-reverse items-end bg-[url(/public/img/konsultacje.jpg)] bg-cover bg-bottom bg-no-repeat md:aspect-[1440/531] md:bg-left">
-
-			<x-index.hero-text text="<p>Zapraszamy na dyskretne i indywidualne konsultacje - online lub osobiście - w dogodnym dla Ciebie miejscu.
-							Jeśli chcesz zamówić wyjątkowe kompozycje kwiatowe na specjalne okazje - zarówno prywatne jak i firmowe - z przyjemnością Ci pomożemy!</p>" title="Konsultacje" />
-
-		</div>
-		<div class="px-5 md:hidden">
-
-			<x-ui.spacer pb>
-
-				<div>
-					<img src="/img/up_rect.svg" />
-					<h1>Konsultacje</h1>
-				</div>
-				<div class="relative">
-					<p class="prose prose-sm">Zapraszamy na dyskretne i indywidualne konsultacje - online lub osobiście - w dogodnym dla Ciebie miejscu.
-						Jeśli chcesz zamówić wyjątkowe kompozycje kwiatowe na specjalne okazje - zarówno prywatne jak i firmowe - z przyjemnością Ci pomożemy!</p>
-					<img class="absolute right-0 rotate-180" src="/img/up_rect.svg" />
-				</div>
-
-				<p>&nbsp;</p>
-
-			</x-ui.spacer>
-
-		</div> --}}
 		<div class="grid gap-8 px-4 md:grid-cols-2">
 
 			<x-ui.spacer type="md">
@@ -149,7 +121,7 @@
 
 	</x-ui.spacer>
 
-	<x-ui.spacer class="bg-green-950 text-white" pt type="md">
+	<x-ui.spacer class="mt-10 bg-green-950 text-white" pt type="md">
 
 		<div class="grid grid-cols-2 border-y border-green-50 text-sm md:flex md:flex-row md:justify-around">
 
@@ -174,8 +146,8 @@
 			</div>
 			<div class="flex justify-center border-green-50 max-md:border-t md:basis-1/3 md:border-l">
 				<div class="flex flex-col gap-y-5 py-10">
-					<a href="{{ route('index') }}" target="_blank">Facebook</a>
-					<a href="{{ route('index') }}" target="_blank">Instagram</a>
+					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Facebook</a>
+					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a>
 					<a class="max-md:hidden" href="{{ route('contact') }}" wire:navigate>Kontakt</a>
 					<a class="max-md:hidden" href="{{ route('download') }}">Katalog do pobrania</a>
 

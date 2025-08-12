@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\Builder;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\Image\Enums\Fit;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+
+class Photo extends Model implements Sortable, HasMedia
+{
+	use SortableTrait;
+	use HasTranslations;
+
+	use InteractsWithMedia;
+
+
+	public $translatable = ['title'];
+
+	protected $fillable = [
+
+		'title',
+		'post_id',
+
+		'enabled',
+
+	];
+
+	public function scopeEnabled(Builder $query): void
+	{
+		$query->where('enabled', 1);
+	}
+
+
+	public function registerMediaConversions(Media|null $media = null): void
+	{
+		$this
+			->addMediaConversion('preview')
+			->fit(Fit::Contain, 40, 40)
+			->nonQueued();
+
+
+		$this->addMediaConversion('main')
+			->fit(Fit::Contain, 950, 950)
+			->withResponsiveImages()
+			->nonQueued();
+		;
+
+
+	}
+
+
+}

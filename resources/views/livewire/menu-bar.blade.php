@@ -102,25 +102,25 @@ new class extends Component {
 		});
 
 
-		let prevScrollpos = window.pageYOffset;
+		// let prevScrollpos = window.pageYOffset;
 
-		window.onscroll = function() {
-			var currentScrollPos = window.pageYOffset;
-			if (prevScrollpos > currentScrollPos) {
+		// window.onscroll = function() {
+		// 	var currentScrollPos = window.pageYOffset;
+		// 	if (prevScrollpos > currentScrollPos) {
 
-				document.querySelector('nav').classList.add('fixed');
-				document.querySelector('nav').classList.add('top-0');
-				document.querySelector('nav').classList.add('bg-white');
+		// 		document.querySelector('nav').classList.add('fixed');
+		// 		document.querySelector('nav').classList.add('top-0');
+		// 		document.querySelector('nav').classList.add('bg-white');
 
-			} else {
-				document.querySelector('nav').classList.remove('fixed');
-				document.querySelector('nav').classList.remove('top-0');
-				document.querySelector('nav').classList.remove('bg-white');
+		// 	} else {
+		// 		document.querySelector('nav').classList.remove('fixed');
+		// 		document.querySelector('nav').classList.remove('top-0');
+		// 		document.querySelector('nav').classList.remove('bg-white');
 
 
 
-			}
-			prevScrollpos = currentScrollPos;
-		};
+		// 	}
+		// 	prevScrollpos = currentScrollPos;
+		// };
 	</script>
 @endscript

@@ -9,8 +9,8 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'blogItems' => Post::factory()->count(6)->make(),
-            'workItems' => Post::factory()->count(6)->make(),
+            'blogItems' => Post::all(),
+            'workItems' => collect([(object) ['title' => 'Florystyka</br>ślubna', 'slug' => 'florystyka-slubna', 'text' => 'Planujesz ślub? Pozwól nam zadbać o&nbsp;kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną.', 'img' => '/img/oferta1.jpg'], (object) ['title' => 'Florystyka</br>okolicznościowa', 'slug' => 'florystyka-okolicznościowa', 'text' => 'Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową.', 'img' => '/img/oferta2.jpg'], (object) ['title' => 'Florystyka</br>dla firm', 'slug' => 'florystyka-dla-firm', 'text' => 'lChcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy.', 'img' => '/img/oferta3.jpg']]),
         ];
     }
     public function rendering(\Illuminate\View\View $view): void
@@ -41,7 +41,7 @@ new class extends Component {
 					</div>
 					<p class="max-xl:hidden">&nbsp;</p>
 
-					<flux:button class="mb-3" href="{{ route('index') }}" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
+					<flux:button class="mb-3" href="#oferta-hero" icon:trailing="arrow" inset variant="subtle">ODKRYJ WIĘCEJ</flux:button>
 
 				</x-ui.spacer>
 
@@ -51,10 +51,10 @@ new class extends Component {
 		<x-index.baner quoteAuthor="Marc Chagall" quote="Dla mnie kwiaty</br> są sposobem życia" />
 	</div>
 
-	<x-oferta.hero img="oferta.jpg" text="<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z&nbsp;profesjonalną florystyką, obecną w&nbsp;naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w&nbsp;stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>"
-		title="Oferta" />
+	<x-oferta.hero id="oferta-hero" img="oferta.jpg"
+		text="<p>Art Garden z wielką troską zajmuje się kompleksową realizacją zadań związanych z&nbsp;profesjonalną florystyką, obecną w&nbsp;naszym życiu przy różnych okazjach. Oprócz pięknych aranżacji kwiatowych pomagamy stworzyć klimatyczny dekor, tak, aby wszystko tworzyło niezapomniany efekt. Podchodzimy bardzo indywidualnie do Waszych potrzeb, jesteśmy w&nbsp;stanie zaproponować wiele ciekawych rozwiązań bazując na naszym wieloletnim doświadczeniu.</p>" title="Oferta" />
 
-	<x-index.blog-items :items="$workItems" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>" text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p><p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" />
+	{{-- <x-index.blog-items :items="$workItems" buttonLink="contact" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>" buttonsText="dowiedz się więcej" text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p><p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" /> --}}
 
 	<div>
 		<x-index.baner quoteAuthor="przysłowie Japońskie" quote="Piękno kwiatu nie tkwi w&nbsp;jego kształcie, lecz w&nbsp;tym, jak go postrzegasz" />

@@ -9,7 +9,8 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'blogItems' => Post::factory()->count(11)->make(),
+            'blogItems' => Post::all(),
+            // 'blogItems' => Post::factory()->count(11)->make(),
         ];
     }
     public function rendering(\Illuminate\View\View $view): void
@@ -55,15 +56,13 @@ new class extends Component {
 			<div class="-ml-px -mt-px border border-gray-300">
 				<x-ui.spacer class="flex h-full flex-col p-5" type="xs">
 
-					<div class="aspect-4/3 flex-none overflow-hidden">
-						<img class="w-full object-cover" src="https://picsum.photos/400/300?random={{ $loop->index }}">
-					</div>
+					{{ $item->getFirstMedia()->img('main')->attributes(['class' => 'object-center aspect-4/3 object-cover']) }}
+					<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
 
-					<h2 class="flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
-					<p class="prose line-clamp-4 flex-1 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</p>
+					<div class="prose line-clamp-4 flex-1 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
 					<p>&nbsp;</p>
 
-					<flux:button class="flex-none place-self-start" href="{{ route('blog.show', ['slug' => Str::slug($item->title)]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>czytaj więcej</flux:button>
+					<flux:button class="flex-none place-self-start" href="{{ route('blog.show', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>czytaj więcej</flux:button>
 				</x-ui.spacer>
 			</div>
 		@endforeach

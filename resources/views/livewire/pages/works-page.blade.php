@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Post;
+use App\Models\Work;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -9,7 +9,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'workItems' => Post::factory()->count(20)->make(),
+            'workItems' => Work::ordered()->get(),
         ];
     }
     public function rendering(\Illuminate\View\View $view): void

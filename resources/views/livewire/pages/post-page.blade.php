@@ -6,13 +6,18 @@ use Livewire\Volt\Component;
 new class extends Component {
     public $terms = false;
     public $industry = false;
+    public Post $post;
+
     public function with(): array
     {
         return [
             'blogItem' => Post::factory()->make(),
-            'blogItems' => Post::factory()->count(6)->make(),
+            'blogItems' => Post::whereNot('id', $this->post->id)->take(3)->get(),
 
             'workItems' => Post::factory()->count(13)->make(),
+
+            'mediaItem' => $this->post->getFirstMedia(),
+            'photos' => $this->post->photos,
         ];
     }
     public function rendering(\Illuminate\View\View $view): void
@@ -27,19 +32,20 @@ new class extends Component {
 		<div class="relative flex-row lg:flex">
 			<div class="2xl:w-75/100 xl:w-70/100 lg:w-65/100 flex flex-row px-5 md:w-full lg:px-16 lg:py-10 xl:px-20">
 
-				<img class="max-h-max w-full border border-gray-100 p-5" src="/img/oferta.jpg">
-				<x-index.hero-text text="<p>Mamy w ofercie niezwykle oryginalne, nadające się na prezenty i zawsze wzbudzające ogromne emocje bukiety warzywne i owocowe.
+				<div class="max-h-max w-full border border-gray-100 p-5">
+					{{-- {{ $post->getFirstMedia()('main') }} --}}
 
-Fantastycznie sprawdzają się także jako ozdoba recepcji hotelowej, czy restauracji.
+					{{ $post->getFirstMedia()->img('main')->attributes(['class' => '']) }}
 
-Ostatnio mieliśmy przyjemność pokazać nasze piękne kompozycje w So-An Sushi Club - ku uciesze gości i załogi, którzy mogli na bieżąco się nimi delektować.
+				</div>
 
-</p>" title="{{ $blogItem->title }}" />
+				<x-index.hero-text text="{!! $post->text !!}" title="{{ $post->title }}" />
 
 			</div>
 
 		</div>
-		<x-works.masonry :workItems="$workItems" />
+		<x-works.masonry :workItems="$photos" />
+
 		{{-- <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-12">
 			@php
 				$spanPatterns = [

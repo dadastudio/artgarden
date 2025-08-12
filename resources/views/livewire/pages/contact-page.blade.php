@@ -10,7 +10,7 @@ new class extends Component {
     {
         return [
             'blogItems' => Post::factory()->count(6)->make(),
-            'workItems' => Post::factory()->count(6)->make(),
+            'workItems' => Post::factory()->count(12)->make(),
         ];
     }
     public function rendering(\Illuminate\View\View $view): void
@@ -18,4 +18,6 @@ new class extends Component {
         // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
-<div></div>
+<div>
+
+</div>
