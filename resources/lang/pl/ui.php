@@ -26,6 +26,7 @@ return [
 
 
 
+	"contact_us_btn" => "Skontaktuj się z nami",
 	"more_btn" => "odkryj więcej",
 	"read_more_btn" => "czytaj więcej",
 	"see_more_btn" => "obejrzy więcej",
@@ -33,4 +34,9 @@ return [
 
 	"hours_of_work" => "Godziny pracy",
 	"hours" => "poniedziałek - piątek: 9 – 18</br>sobota: 9 – 14",
+
+	"catalog_info" => "Jeśli chcesz zobaczyć pełen przekrój naszych prac, pobierz katalog ze wszystkimi realizacjami.",
+
+
+
 ];

@@ -26,13 +26,12 @@ new class extends Component {
 
 			</div>
 
-			<x-index.hero-text buttonText="skontaktuj się z nami" link="{{ route('contact') }}"
-				text="<p>Zapraszamy do zapoznania się z naszym portfolio, w którym prezentujemy wybrane realizacje – od kameralnych bukietów po aranżacje na duże uroczystości. Każda kompozycja to efekt pasji, doświadczenia i indywidualnego podejścia do potrzeb klienta.  </p><p>Wierzymy, że nasze projekty przemówią do Twojej wyobraźni i pomogą Ci podjąć decyzję o współpracy. Kwiaty opowiadają historie –zobacz, jaką możemy stworzyć razem :)</p>" title="Realizacje">
+			<x-index.hero-text buttonText="{{ __('ui.contact_us_btn') }}" link="{{ route('contact') }}" text="{!! __('texts.works') !!}" title="{{ __('ui.work') }}">
 
 				<div class="flex flex-row items-center gap-x-5">
 
 					<img class="max-w-max" src="/img/download.svg" />
-					<p class="max-w-[220px] text-[10px]/snug uppercase">Jeśli chcesz zobaczyć pełen przekrój naszych prac, pobierz katalog ze wszystkimi realizacjami.
+					<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('ui.catalog_info') }}
 					</p>
 				</div>
 			</x-index.hero-text>

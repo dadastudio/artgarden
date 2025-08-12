@@ -2,9 +2,9 @@
 // resources/lang/en/routes.php
 return [
 	"blog" => "Blog",
-	"work" => "Works",
+	"work" => "Portfolio",
 	"contact" => "Contact",
-	"offer" => "Offer",
+	"offer" => "Services",
 
 	"offer-1" => "Wedding Floristry",
 	"offer-2" => "Event Floristry",
@@ -23,6 +23,7 @@ return [
 	"type_option_5" => "Anniversary",
 	"type_option_6" => "Other",
 
+	"contact_us_btn" => "Contact us",
 
 	"more_btn" => "Discover more",
 
@@ -35,5 +36,5 @@ return [
 	"hours_of_work" => "Working hours",
 	"hours" => "Monday - Friday: 9 – 18</br>Saturday: 9 – 14",
 
-
+	"catalog_info" => "If you want to see the full range of our works, download our catalogue.",
 ];

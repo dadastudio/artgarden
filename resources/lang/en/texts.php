@@ -28,4 +28,10 @@ return [
 
 ",
 
+
+	"works" => "<p>We invite you to review our portfolio, which presents selected projects - from intimate bouquets to arrangements for large events. Each composition is the result of passion, experience and individual approach to the client's needs.  </p><p>We believe that our projects will inspire your imagination and help you make a decision about cooperation. Flowers tell stories - see what we can create together :)</p>
+
+",
+
+
 ];

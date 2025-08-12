@@ -29,4 +29,11 @@ return [
 
 ",
 
+
+	"works" => "<p>Zapraszamy do zapoznania się z naszym portfolio, w którym prezentujemy wybrane realizacje – od kameralnych bukietów po aranżacje na duże uroczystości. Każda kompozycja to efekt pasji, doświadczenia i indywidualnego podejścia do potrzeb klienta.  </p><p>Wierzymy, że nasze projekty przemówią do Twojej wyobraźni i pomogą Ci podjąć decyzję o współpracy. Kwiaty opowiadają historie –zobacz, jaką możemy stworzyć razem :)</p>
+
+",
+
+
+
 ];
