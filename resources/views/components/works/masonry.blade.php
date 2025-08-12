@@ -4,11 +4,14 @@
 <div class="grid gap-5 px-2.5 md:grid-cols-12 xl:gap-y-20">
 
 	<div class="hidden">
-		<div class="md:col-span-4"> </div>
-		<div class="md:col-span-3"> </div>
 		<div class="md:col-span-5"> </div>
 		<div class="md:col-span-6"> </div>
 		<div class="md:col-span-7"> </div>
+
+		<div class="xl:col-span-4"> </div>
+		<div class="xl:col-span-3"> </div>
+		<div class="xl:col-span-5"> </div>
+
 	</div>
 	@php
 		$spanPatterns = [
@@ -62,7 +65,7 @@
 
 		@endphp
 
-		<div class="xl:col-span-{{ $span }} md:col-span-{{ $spanMd }}">
+		<div class="md:col-span-{{ $spanMd }} xl:col-span-{{ $span }}">
 			{{-- {{ $row + 1 }} --}}
 			<div class="border border-gray-100 p-5">
 
