@@ -55,26 +55,25 @@ class WorkResource extends Resource
 	{
 		return $table
 			->columns([
-				Tables\Columns\SpatieMediaLibraryImageColumn::make("images")
-					->conversion("preview")
-					->label(""),
 
-				Tables\Columns\TextColumn::make('title')->grow()
-					->searchable(),
-				Tables\Columns\TextColumn::make('post.title')->label('Linked to '),
-				Tables\Columns\IconColumn::make('enabled')->boolean(),
+				Tables\Columns\Layout\Stack::make([
+					// Columns
 
 
-				// Tables\Columns\TextColumn::make('created_at')
-				// 	->since()->dateTimeTooltip()
-				// 	->sortable()
-				// ,
-				// Tables\Columns\TextColumn::make('updated_at')
-				// 	->dateTime()
-				// 	->sortable()
-				// 	->toggleable(isToggledHiddenByDefault: true),
+
+
+					Tables\Columns\SpatieMediaLibraryImageColumn::make("images")
+						->conversion("main")
+						->label(""),
+
+					Tables\Columns\TextColumn::make('title')->grow()
+						->searchable(),
+					Tables\Columns\TextColumn::make('post.title')->label('Linked to '),
+					Tables\Columns\IconColumn::make('enabled')->boolean(),
+				]),
+
+
 			])
-
 			->reorderable('order_column')
 
 			->filters([
@@ -89,7 +88,11 @@ class WorkResource extends Resource
 				Tables\Actions\BulkActionGroup::make([
 					Tables\Actions\DeleteBulkAction::make(),
 				]),
-			]);
+			])->contentGrid([
+					'sm' => 2,
+					'xl' => 3,
+				])
+		;
 	}
 
 	public static function getRelations(): array

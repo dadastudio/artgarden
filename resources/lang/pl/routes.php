@@ -3,6 +3,7 @@
 return [
 	"blog" => "blog",
 	"post" => "post/{post}",
+	"offer" => "oferta/{service?}",
 
 	"work" => "realizacje",
 	"contact" => "kontakt",

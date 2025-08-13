@@ -17,9 +17,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
 use Spatie\Sluggable\HasTranslatableSlug;
 use Spatie\Sluggable\SlugOptions;
-class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
+
+class Service extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 {
-	//
 	use SortableTrait;
 
 	use HasFactory;
@@ -28,39 +28,26 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 	use HasTranslatableSlug;
 
 	use InteractsWithMedia;
+
+
 	protected $fillable = [
 
 		'title',
 		'slug',
-		'text',
+		'subtitle',
+
+		'intro',
+
+		'text_1',
+		'text_2',
+
 		'order_column',
 
-		'enabled',
-
 	];
-	public $translatable = ['title', 'text', 'slug'];
-	public function next()
-	{
-		$nextProject = self::enabled()->where('id', '>', $this->id)->ordered()->first();
-		return $nextProject ?? self::enabled()->ordered()->first();
-	}
 
-	public function prev()
-	{
-		$prevProject = self::enabled()->where('id', '<', $this->id)->ordered("desc")->first();
-		return $prevProject ?? self::enabled()->ordered("desc")->first();
-	}
+	public $translatable = ['title', 'subtitle', 'intro', 'text_1', 'text_2', 'slug'];
 
 
-	public function scopeEnabled(Builder $query): void
-	{
-		$query->where('enabled', 1);
-	}
-
-	public function photos(): HasMany
-	{
-		return $this->hasMany(Photo::class)->ordered();
-	}
 	public function registerMediaConversions(Media|null $media = null): void
 	{
 		$this
@@ -78,11 +65,15 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 
 	}
 
+
 	public function getRouteKeyName()
 	{
+
+
 		if (request()->is('admin*') || request()->is('livewire*')) {
 			return "id";
 		}
+
 		return 'slug->' . app()->getLocale();
 
 
@@ -90,15 +81,11 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 
 	public function getSlugOptions(): SlugOptions
 	{
-
 		return SlugOptions::createWithLocales(['en', 'pl'])
 			->generateSlugsFrom(function ($model, $locale) {
 				return $model->title;
 			})
 			->saveSlugsTo('slug');
-
-
-
 
 	}
 
@@ -107,8 +94,6 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 	{
 		return $this->getTranslation('slug', $locale);
 	}
-
-
 	public function resolveRouteBinding($value, $field = null)
 	{
 
@@ -117,7 +102,5 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 
 
 	}
-
-
 
 }

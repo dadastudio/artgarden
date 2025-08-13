@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
-use App\Models\Post;
+use App\Filament\Resources\ServiceResource\Pages;
+use App\Filament\Resources\ServiceResource\RelationManagers;
+use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PostResource extends Resource
+class ServiceResource extends Resource
 {
-	protected static ?string $model = Post::class;
+	protected static ?string $model = Service::class;
+
+
 
 	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 	protected static ?array $rteButtons = [
@@ -33,15 +35,11 @@ class PostResource extends Resource
 		'underline',
 		'undo',
 	];
-
-	// protected static ?string $recordTitleAttribute = 'id';
-
-
-
 	public static function form(Form $form): Form
 	{
 		return $form
 			->schema([
+
 
 
 				Forms\Components\Tabs::make()->tabs([
@@ -57,15 +55,51 @@ class PostResource extends Resource
 				]),
 
 
+				Forms\Components\Tabs::make()->tabs([
+					Forms\Components\Tabs\Tab::make('Subtitle PL')
+						->schema([
+							Forms\Components\TextInput::make('subtitle.pl')->label(''),
+						]),
 
-				Forms\Components\Tabs::make("Text")->tabs([
+					Forms\Components\Tabs\Tab::make('Subtitle EN')
+						->schema([
+							Forms\Components\TextInput::make('subtitle.en')->label(''),
+						]),
+				]),
+
+				Forms\Components\Tabs::make("Intro Text ")->tabs([
+					Forms\Components\Tabs\Tab::make('Intro Text EN')
+						->schema([
+							Forms\Components\RichEditor::make('intro.en')->label('')->toolbarButtons(self::$rteButtons),
+						]),
+					Forms\Components\Tabs\Tab::make('Intro Text PL')
+						->schema([
+							Forms\Components\RichEditor::make('intro.pl')->label('')->toolbarButtons(self::$rteButtons),
+						]),
+
+				]),
+
+
+				Forms\Components\Tabs::make("Text 1")->tabs([
 					Forms\Components\Tabs\Tab::make('Text EN')
 						->schema([
-							Forms\Components\RichEditor::make('text.en')->label('')->toolbarButtons(self::$rteButtons),
+							Forms\Components\RichEditor::make('text_1.en')->label('')->toolbarButtons(self::$rteButtons),
 						]),
 					Forms\Components\Tabs\Tab::make('Text PL')
 						->schema([
-							Forms\Components\RichEditor::make('text.pl')->label('')->toolbarButtons(self::$rteButtons),
+							Forms\Components\RichEditor::make('text_1.pl')->label('')->toolbarButtons(self::$rteButtons),
+						]),
+
+				]),
+
+				Forms\Components\Tabs::make("Text 2")->tabs([
+					Forms\Components\Tabs\Tab::make('Text EN')
+						->schema([
+							Forms\Components\RichEditor::make('text_2.en')->label('')->toolbarButtons(self::$rteButtons),
+						]),
+					Forms\Components\Tabs\Tab::make('Text PL')
+						->schema([
+							Forms\Components\RichEditor::make('text_2.pl')->label('')->toolbarButtons(self::$rteButtons),
 						]),
 
 				]),
@@ -82,8 +116,9 @@ class PostResource extends Resource
 					])
 				,
 
-				Forms\Components\Toggle::make('enabled')
-				,
+
+
+
 			])->columns(1);
 	}
 
@@ -91,19 +126,17 @@ class PostResource extends Resource
 	{
 		return $table
 			->columns([
-
 				Tables\Columns\SpatieMediaLibraryImageColumn::make("images")
 					->conversion("preview")
 					->label(""),
 
 				Tables\Columns\TextColumn::make('title')->grow()
-					->searchable(),
-				// Tables\Columns\TextColumn::make('order_column')->sortable(),
+				,
 
-				Tables\Columns\IconColumn::make('enabled')->label('')
-					->boolean(),
 
-			])->defaultSort('order_column', 'asc')
+
+			])
+			->defaultSort('order_column', 'asc')
 			->reorderable('order_column')
 
 			->filters([
@@ -112,7 +145,7 @@ class PostResource extends Resource
 			->actions([
 				Tables\Actions\EditAction::make(),
 				Tables\Actions\Action::make('Live')
-					->url(fn(Post $record): string => route('post', $record->slug))
+					->url(fn(Service $record): string => route('offer', $record->slug))
 					->icon('heroicon-m-link')
 					->openUrlInNewTab()
 			])
@@ -126,21 +159,16 @@ class PostResource extends Resource
 	public static function getRelations(): array
 	{
 		return [
-				//
-			RelationManagers\PhotosRelationManager::class,
+			//
 		];
-	}
-	public static function getNavigationBadge(): ?string
-	{
-		return Post::all()->count();
 	}
 
 	public static function getPages(): array
 	{
 		return [
-			'index' => Pages\ListPosts::route('/'),
-			'create' => Pages\CreatePost::route('/create'),
-			'edit' => Pages\EditPost::route('/{record}/edit'),
+			'index' => Pages\ListServices::route('/'),
+			'create' => Pages\CreateService::route('/create'),
+			'edit' => Pages\EditService::route('/{record}/edit'),
 		];
 	}
 }

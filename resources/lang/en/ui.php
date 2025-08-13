@@ -29,6 +29,7 @@ return [
 
 	"read_more_btn" => "Read more",
 	"see_more_btn" => "See more",
+	"know_more_btn" => "<span class='hidden lg:inline'>Learn </span>more",
 
 	"browse_posts_btn" => "<span class='hidden lg:inline'>Browse</span> posts",
 

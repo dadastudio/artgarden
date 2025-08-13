@@ -15,14 +15,17 @@ Route::group(
 		Volt::route(LaravelLocalization::transRoute('routes.post'), 'pages.post-page')->name('post');
 
 		Volt::route(LaravelLocalization::transRoute('routes.work'), 'pages.works-page')->name('works');
-		// Volt::route('/work/{slug}', 'pages.work-page')->name('work');
-	
+
 
 		Volt::route(LaravelLocalization::transRoute('routes.contact'), 'pages.contact-page')->name('contact');
 
-		Volt::route(LaravelLocalization::transRoute('routes.offer-1'), 'pages.offer-page')->name('offer');
-		Volt::route(LaravelLocalization::transRoute('routes.offer-2'), 'pages.offer-page')->name('offer-2');
-		Volt::route(LaravelLocalization::transRoute('routes.offer-3'), 'pages.offer-page')->name('offer-3');
+		// Volt::route(LaravelLocalization::transRoute('routes.offer-1'), 'pages.offer-page')->name('offer');
+		// Volt::route(LaravelLocalization::transRoute('routes.offer-2'), 'pages.offer-page')->name('offer-2');
+		// Volt::route(LaravelLocalization::transRoute('routes.offer-3'), 'pages.offer-page')->name('offer-3');
+	
+		Volt::route(LaravelLocalization::transRoute('routes.offer'), 'pages.offer-page')->name('offer');
+
+
 
 		Volt::route(LaravelLocalization::transRoute('routes.privacy'), "pages.privacy-page")->name("privacy");
 		Volt::route(LaravelLocalization::transRoute('routes.terms'), "pages.terms-page")->name("terms");

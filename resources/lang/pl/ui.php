@@ -30,6 +30,7 @@ return [
 	"more_btn" => "odkryj więcej",
 	"read_more_btn" => "czytaj więcej",
 	"see_more_btn" => "obejrzy więcej",
+	"know_more_btn" => "<span class='hidden lg:inline'>dowiedz się </span>więcej",
 	"browse_posts_btn" => "<span class='hidden lg:inline'>przeglądaj</span> artykuły",
 
 	"hours_of_work" => "Godziny pracy",
