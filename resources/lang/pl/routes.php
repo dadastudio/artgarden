@@ -2,6 +2,8 @@
 // resources/lang/en/routes.php
 return [
 	"blog" => "blog",
+	"post" => "post/{post}",
+
 	"work" => "realizacje",
 	"contact" => "kontakt",
 	"offer-1" => "oferta/florystyka-slubna",

@@ -14,8 +14,10 @@ use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
-class Post extends Model implements Sortable, HasMedia
+use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
+use Spatie\Sluggable\HasTranslatableSlug;
+use Spatie\Sluggable\SlugOptions;
+class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 {
 	//
 	use SortableTrait;
@@ -23,7 +25,7 @@ class Post extends Model implements Sortable, HasMedia
 	use HasFactory;
 
 	use HasTranslations;
-
+	use HasTranslatableSlug;
 	use InteractsWithMedia;
 	protected $fillable = [
 
@@ -77,12 +79,46 @@ class Post extends Model implements Sortable, HasMedia
 
 	public function getRouteKeyName()
 	{
+		return 'slug';
 		if (request()->is('admin*')) {
 			return "id";//$this->getKeyName(); // usually 'id'
 		}
 		return 'slug->' . app()->getLocale();
 
 
-		return "id";
 	}
+
+	public function getSlugOptions(): SlugOptions
+	{
+		return SlugOptions::createWithLocales(collect(config(LaravelLocalization::getSupportedLocales()))->keys()->toArray())
+			->generateSlugsFrom(function ($model, $locale) {
+				return "{$locale} {$model->parent?->name} {$model->name}";
+			})
+			->saveSlugsTo('slug');
+	}
+
+
+	public function getLocalizedRouteKey($locale)
+	{
+		return $this->getTranslation('slug', $locale);
+	}
+
+
+	public function resolveRouteBinding($value, $field = null)
+	{
+
+
+		$mm = static::where('slug->' . app()->getLocale(), $value)->first() ?? abort(404);
+
+		return $mm;
+
+
+
+
+
+
+	}
+
+
+
 }

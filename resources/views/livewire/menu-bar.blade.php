@@ -25,13 +25,15 @@ new class extends Component {
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.contact')</flux:button>
 			</div>
-			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+			<livewire:langswitcher />
+
+			{{-- <div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 
 				<flux:button class="{{ app()->getLocale() === 'pl' ? 'current' : '' }} md:!text-sm xl:!text-base" href="{{ LaravelLocalization::getLocalizedURL('pl', null, [], true) }}" inset variant="ghost">PL</flux:button>
 				&nbsp; / &nbsp;
 				<flux:button class="{{ app()->getLocale() === 'en' ? 'current' : '' }} md:!text-sm xl:!text-base" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" inset variant="ghost">EN</flux:button>
 
-			</div>
+			</div> --}}
 		</div>
 
 		<div class="h-full text-sm uppercase tracking-wider text-gray-800 lg:hidden">
@@ -51,11 +53,15 @@ new class extends Component {
 			</div>
 			<div class="border-l border-gray-200">
 				<x-ui.spacer class="px-4" py>
-					<div>
-						<flux:button class="{{ app()->getLocale() === 'pl' ? 'current' : '' }} !text-base" href="{{ LaravelLocalization::getLocalizedURL('pl', null, [], true) }}" inset variant="ghost">PL</flux:button>
+
+					<livewire:langswitcher />
+
+					{{-- <div>
+						<flux:button class="{{ app()->getLocale() === 'pl' ? 'current' : '' }} !text-base" href="{{ LaravelLocalization::getLocalizedURL('pl', 'null', [], true) }}" inset variant="ghost">PL</flux:button>
 						&nbsp; / &nbsp;
 						<flux:button class="{{ app()->getLocale() === 'en' ? 'current' : '' }} !text-base" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" inset variant="ghost">EN</flux:button>
-					</div>
+					</div> --}}
+
 					<flux:separator />
 					<div>
 						<flux:button class="!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.offer')</flux:button>

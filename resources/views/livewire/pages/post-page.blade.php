@@ -44,7 +44,7 @@ new class extends Component {
 			</div>
 
 		</div>
-		<x-works.masonry :workItems="$photos" />
+		{{-- <x-works.masonry :workItems="$photos" /> --}}
 
 		{{-- <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-12">
 			@php

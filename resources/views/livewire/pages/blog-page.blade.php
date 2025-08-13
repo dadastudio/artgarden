@@ -46,19 +46,19 @@ new class extends Component {
 		</div>
 	</div>
 
-	<div class="grid md:grid-cols-4">
+	<div class="grid max-sm:px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
 		@foreach ($blogItems as $item)
 			<div class="-ml-px -mt-px border border-gray-300">
 				<x-ui.spacer class="flex h-full flex-col p-5" type="xs">
 
 					{{ $item->getFirstMedia()->img('main')->attributes(['class' => 'object-center aspect-4/3 object-cover']) }}
-					<h2 class="flex-1s line-clamp-2 truncate text-pretty uppercase">{!! $item->title !!}</h2>
+					<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
 
-					<div class="prose flex-1s line-clamp-4 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
+					<div class="line-clamp-4 flex-1 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
 					<p>&nbsp;</p>
 
-					<flux:button class="flex-none place-self-start" href="{{ route('blog.show', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>czytaj więcej</flux:button>
+					<flux:button class="flex-none place-self-start" href="{{ route('post', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>@lang('ui.read_more_btn')</flux:button>
 				</x-ui.spacer>
 			</div>
 		@endforeach

@@ -6,7 +6,9 @@
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
 	<meta content="{{ csrf_token() }}" name="csrf-token" />
-	@vite('resources/css/app.css')
+	{{-- @vite('resources/css/app.css') --}}
+	@vite(['resources/css/app.css', 'resources/js/app.js'])
+
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">

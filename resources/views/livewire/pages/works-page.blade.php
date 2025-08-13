@@ -22,18 +22,19 @@ new class extends Component {
 
 		<div class="relative flex-row lg:flex">
 			<div class="2xl:w-75/100 xl:w-70/100 lg:w-65/100 flex flex-row px-5 md:w-full lg:px-16 lg:py-10 xl:px-20">
-				<img class="max-h-max w-full border border-gray-100 p-5" src="/img/oferta.jpg">
+				<img class="max-h-max w-full border border-gray-100 p-5" src="/img/realizacje.jpg">
 
 			</div>
 
 			<x-index.hero-text buttonText="{{ __('ui.contact_us_btn') }}" link="{{ route('contact') }}" text="{!! __('texts.works') !!}" title="{{ __('ui.work') }}">
+				<a class="text-gray-700 no-underline transition-colors hover:text-green-700" href="{{ route('download') }}">
+					<div class="flex flex-row items-center gap-x-5">
+						<img class="max-w-max" src="/img/download.svg" />
+						<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('ui.catalog_info') }}
+						</p>
+					</div>
 
-				<div class="flex flex-row items-center gap-x-5">
-
-					<img class="max-w-max" src="/img/download.svg" />
-					<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('ui.catalog_info') }}
-					</p>
-				</div>
+				</a>
 			</x-index.hero-text>
 		</div>
 

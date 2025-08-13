@@ -149,11 +149,9 @@
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a>
 					{{-- <a class="max-md:hidden" href="{{ route('contact') }}" wire:navigate>@lang('ui.contact')</a> --}}
 					<a class="max-md:hidden" href="{{ route('download') }}">@lang('ui.download')</a>
-					<div>
-						<a class="{{ app()->getLocale() === 'pl' ? 'currents' : '' }}" href="{{ LaravelLocalization::getLocalizedURL('pl', null, [], true) }}">PL</a>
-						&nbsp; / &nbsp;
-						<a class="{{ app()->getLocale() === 'en' ? 'currents' : '' }}" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">EN</a>
-					</div>
+
+					<livewire:langswitcher :isMenu="false" />
+
 				</div>
 
 			</div>

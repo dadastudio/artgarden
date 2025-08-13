@@ -2,6 +2,9 @@
 // resources/lang/en/routes.php
 return [
 	"blog" => "blog",
+	"post" => "post/{post}",
+
+
 	"work" => "work",
 	"contact" => "contact",
 	"offer-1" => "offer/wedding-floristry",

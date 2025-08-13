@@ -82,7 +82,7 @@
 			</div>
 			@if ($workItem->post)
 				<div class="p-4">
-					<flux:button href="{{ route('blog.show', ['post' => $workItem->post->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>
+					<flux:button href="{{ route('post', ['post' => $workItem->post->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>
 						obejrzyj więcej
 					</flux:button>
 				</div>

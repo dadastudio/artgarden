@@ -47,10 +47,10 @@
 
 								<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
 
-								<div class="prose line-clamp-3 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
+								<div class="line-clamp-3 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
 								<p>&nbsp;</p>
 
-								<flux:button class="flex-none place-self-start" href="{{ route('blog.show', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>{!! $buttonsText !!}</flux:button>
+								<flux:button class="flex-none place-self-start" href="{{ route('post', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>{!! $buttonsText !!}</flux:button>
 							</x-ui.spacer>
 						</div>
 

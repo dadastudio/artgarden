@@ -78,11 +78,7 @@
 }
 
 @layer base {
-  /* h1 {
 
-		@apply text-4xl font-semibold text-gray-800 mb-6;
-
-  }*/
 	.current{
 
 		&:before {
@@ -114,7 +110,10 @@
 
 		&:after {
 			content: url("/public/img/arrow.svg");
-			@apply ml-2;
+			
+			
+
+			
 		}
 
 	}
@@ -134,7 +133,9 @@
 [data-flux-checkbox-indicator]{
 	@apply shrink-0 size-[1.125rem] rounded-[.3rem] flex justify-center items-center text-sm text-gray-700 dark:text-gray-800 shadow-xs [ui-checkbox[disabled]_&]:opacity-75 [ui-checkbox[data-checked][disabled]_&]:opacity-50 [ui-checkbox[disabled]_&]:shadow-none [ui-checkbox[data-checked]_&]:shadow-none [ui-checkbox[data-indeterminate]_&]:shadow-none [ui-checkbox[data-checked]:not([data-indeterminate])_&>svg:first-child]:block [ui-checkbox[data-indeterminate]_&>svg:last-child]:block border border-gray-300 dark:border-white/10 [ui-checkbox[disabled]_&]:border-gray-200 dark:[ui-checkbox[disabled]_&]:border-white/5 [ui-checkbox[data-checked]_&]:border-transparent [ui-checkbox[data-indeterminate]_&]:border-transparent [ui-checkbox[disabled][data-checked]_&]:border-transparent [ui-checkbox[disabled][data-indeterminate]_&]:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-checkbox[data-checked]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-checked]_&]:bg-(--color-accent) focus:[ui-checkbox[data-checked]_&]:bg-(--color-accent) [ui-checkbox[data-indeterminate]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent) focus:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent)
 }
-
+[data-flux-icon]{
+	@apply max-sm:scale-80  ;
+}
 
 
 .carousel {
