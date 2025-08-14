@@ -61,7 +61,7 @@
 				</div>
 
 			</x-ui.spacer>
-
+			<livewire:contactform />
 		</div>
 
 	</x-ui.spacer>

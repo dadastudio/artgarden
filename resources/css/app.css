@@ -120,11 +120,28 @@
 }
 
 
-[data-flux-control] {
-	@apply !border-x-0 !border-t-0 !border-b-gray-900 !rounded-none;
-}
+/* [data-flux-control] {
+	@apply  !border-x-0 !border-t-0 !border-b-gray-900 !rounded-none !bg-transparent;
+
+
+
+
+} */
+
+
+/* w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-10 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 */
+
+
 [data-flux-label]{
-	@apply !text-gray-500 !mb-0;
+	@apply !text-gray-800 !mb-0 !text-[12px];
+
+	/* &:before {
+		content: url("/public/img/pencil.svg");
+		
+		@apply relative left-0 top-8;
+
+		
+	} */
 }
 [data-flux-button]{	
 	@apply !font-normal hover:!bg-zinc-800/0 hover:!text-green-700/100 transition-colors !text-left !text-gray-950 !uppercase !tracking-widest !text-[14px];
@@ -133,8 +150,27 @@
 [data-flux-checkbox-indicator]{
 	@apply shrink-0 size-[1.125rem] rounded-[.3rem] flex justify-center items-center text-sm text-gray-700 dark:text-gray-800 shadow-xs [ui-checkbox[disabled]_&]:opacity-75 [ui-checkbox[data-checked][disabled]_&]:opacity-50 [ui-checkbox[disabled]_&]:shadow-none [ui-checkbox[data-checked]_&]:shadow-none [ui-checkbox[data-indeterminate]_&]:shadow-none [ui-checkbox[data-checked]:not([data-indeterminate])_&>svg:first-child]:block [ui-checkbox[data-indeterminate]_&>svg:last-child]:block border border-gray-300 dark:border-white/10 [ui-checkbox[disabled]_&]:border-gray-200 dark:[ui-checkbox[disabled]_&]:border-white/5 [ui-checkbox[data-checked]_&]:border-transparent [ui-checkbox[data-indeterminate]_&]:border-transparent [ui-checkbox[disabled][data-checked]_&]:border-transparent [ui-checkbox[disabled][data-indeterminate]_&]:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-checkbox[data-checked]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-checked]_&]:bg-(--color-accent) focus:[ui-checkbox[data-checked]_&]:bg-(--color-accent) [ui-checkbox[data-indeterminate]_&]:bg-[var(--color-accent)] hover:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent) focus:[ui-checkbox[data-indeterminate]_&]:bg-(--color-accent)
 }
+[data-flux-radio-indicator]{
+@apply !shadow-none border-2 ;
+}
+
+
+
+
+
+[data-flux-textarea]{
+
+	@apply !pl-5 !pt-1.5 !text-gray-900 !shadow-none !border-x-0 !border-t-0  !rounded-none !border-b-gray-800 ;
+}
+
+ /* [data-flux-control]{
+
+	@apply !pt-0 !pb-0  ;
+}  */
+
+/* block p-3 w-full shadow-xs disabled:shadow-none border rounded-lg bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] resize-y text-base sm:text-sm text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 border-zinc-200 border-b-zinc-300/80 dark:border-white/10 */
 [data-flux-icon]{
-	@apply max-sm:scale-80  ;
+	/* @apply max-sm:scale-80  ; */
 }
 
 
@@ -160,3 +196,21 @@
     @apply hidden;
   }
 }
+
+
+
+
+select:-webkit-autofill,
+select:-webkit-autofill:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s;
+}
+
+
+ 
+*:focus {
+
+	@apply outline-0 outline-cyan-800 outline-offset-8 ; 
+	box-shadow: none;
+} 

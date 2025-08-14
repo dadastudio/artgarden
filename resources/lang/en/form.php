@@ -15,6 +15,14 @@ return [
 	"terms" => "I agree to the terms and conditions",
 
 
+
+	"type_option_1" => "Wedding",
+	"type_option_2" => "Corporate Event",
+	"type_option_3" => "Birthday",
+	"type_option_4" => "Name Day",
+	"type_option_5" => "Funeral",
+	"type_option_6" => "Other",
+
 	"survey_title" => "How did you find out about ArtGarden?",
 
 	"survey_1" => "Internet (Google, Yahoo, etc.)",

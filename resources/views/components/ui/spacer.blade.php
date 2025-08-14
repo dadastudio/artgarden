@@ -12,7 +12,7 @@
 	    'sm' => 'space-y-4 sm:space-y-5 md:space-y-5 lg:space-y-6 xl:space-y-7 2xl:space-y-8',
 
 	    'xs' => 'space-y-3 sm:space-y-3 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-4',
-	    'xxs' => 'space-y-[1px] sm:space-y-1 md:space-y-1 lg:space-y-2 xl:space-y-2 2xl:space-y-[1px]',
+	    'xxs' => 'space-y-[1px] sm:space-y-1 md:space-y-1 lg:space-y-2 xl:space-y-2 2xl:space-y-[2px]',
 
 	    'grid' => 'space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 xl:space-y-6 2xl:space-y-8',
 	];
