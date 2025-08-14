@@ -1,5 +1,6 @@
 @props([
     'workItems' => [],
+    'showButton' => true,
 ])
 <div class="grid gap-5 px-2.5 md:grid-cols-12 xl:gap-y-20">
 
@@ -48,6 +49,7 @@
 		// ];
 
 	@endphp
+
 	@foreach ($workItems as $index => $workItem)
 		@php
 			$row = intdiv($index, 3) % count($spanPatterns);
@@ -58,21 +60,20 @@
 			$colMd = $index % 2; // position in the row (0..2)
 			$spanMd = $spanPatternsMd[$rowMd][$colMd];
 
-			// $ratio = $ratioPatterns[$row][$col];
-
-			// Tailwind aspect helpers
-			// $aspectClass = $ratio === '1/1' ? 'aspect-square' : "aspect-$ratio";
-
 		@endphp
 
 		<div class="md:col-span-{{ $spanMd }} xl:col-span-{{ $span }}">
-			{{-- {{ $row + 1 }} --}}
 			<div class="border border-gray-100 p-5">
 
-				{{-- <div class="{{ $aspectClass }} overflow-hidden"> --}}
 				<div class="overflow-hiddens">
 
-					{{ $workItem->getFirstMedia()->img('main')->attributes(['class' => 'h-full w-full ']) }}
+					{{-- {{ $workItem->getFirstMedia()->img('main')->attributes(['class' => '']) }} --}}
+					{{-- @dd($workItem->getFirstMedia()->getUrl('main')) --}}
+
+					{{-- {{ $workItem->getFirstMedia() }} --}}
+					{{-- {{ $workItem->getFirstMedia()->img('main')->attributes(['class' => 'h-full w-full ']) }} --}}
+
+					<img src="{{ $workItem->getFirstMediaUrl() }}" />
 				</div>
 
 				<div class="row flex items-center justify-between pt-5 uppercase text-gray-800">
@@ -80,7 +81,7 @@
 					<h3 class="text-pretty text-right">{{ $workItem->title }}</h3>
 				</div>
 			</div>
-			@if ($workItem->post)
+			@if ($showButton && $workItem->post)
 				<div class="p-4">
 					<flux:button href="{{ route('post', ['post' => $workItem->post->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>
 						obejrzyj więcej

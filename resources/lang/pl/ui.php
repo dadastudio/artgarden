@@ -27,9 +27,9 @@ return [
 
 
 	"contact_us_btn" => "Skontaktuj się z nami",
-	"more_btn" => "odkryj więcej",
-	"read_more_btn" => "czytaj więcej",
-	"see_more_btn" => "obejrzy więcej",
+	"more_btn" => "<span class='hidden lg:inline'>odkryj </span>więcej",
+	"read_more_btn" => "<span class='hidden lg:inline'>przeczytaj </span>więcej",
+	"see_more_btn" => "<span class='hidden lg:inline'>obejrzyj </span>więcej",
 	"know_more_btn" => "<span class='hidden lg:inline'>dowiedz się </span>więcej",
 	"browse_posts_btn" => "<span class='hidden lg:inline'>przeglądaj</span> artykuły",
 

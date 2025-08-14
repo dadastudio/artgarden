@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Service;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -10,6 +11,7 @@ new class extends Component {
     {
         return [
             'blogItems' => Post::all(),
+            'services' => Service::all(),
             'workItems' => collect([(object) ['title' => 'Florystyka</br>ślubna', 'slug' => 'florystyka-slubna', 'text' => 'Planujesz ślub? Pozwól nam zadbać o&nbsp;kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną.', 'img' => '/img/oferta1.jpg'], (object) ['title' => 'Florystyka</br>okolicznościowa', 'slug' => 'florystyka-okolicznościowa', 'text' => 'Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową.', 'img' => '/img/oferta2.jpg'], (object) ['title' => 'Florystyka</br>dla firm', 'slug' => 'florystyka-dla-firm', 'text' => 'lChcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy.', 'img' => '/img/oferta3.jpg']]),
         ];
     }
@@ -55,6 +57,38 @@ new class extends Component {
 
 	{{-- <x-index.blog-items :items="$workItems" buttonLink="contact" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>" buttonsText="dowiedz się więcej" text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p><p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" /> --}}
 
+	<div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4">
+
+		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
+
+			<div class="">
+				<img src="/img/up_rect.svg" />
+
+			</div>
+			<div class="prose prose-sm relative">
+
+				<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p>
+				<p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>
+				<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+
+			</div>
+
+			<p>&nbsp;</p>
+
+			<flux:button href="{{ route('offer') }}" icon:trailing="arrow" inset variant="ghost">{!! __('ui.contact_us_btn') !!}</flux:button>
+
+		</x-ui.spacer>
+
+		<div class="col-span-3 grid border border-gray-200 md:grid-cols-3">
+
+			@foreach ($services as $s)
+				<x-slot img="{{ $s->getFirstMedia()->getUrl('main') }}" route="{{ route('offer', $s->slug) }}" text="{!! $s->intro !!}" title="{!! Str::replaceFirst(' ', '</br>', $s->title) !!}" />
+			@endforeach
+
+		</div>
+
+	</div>
+
 	<div>
 		<x-index.baner quoteAuthor="{{ __('quotes.q_2_a') }}" quote="{{ __('quotes.q_2') }}" />
 
@@ -91,6 +125,8 @@ new class extends Component {
 	</div>
 
 	{{-- BLOG ITEMS --}}
-	<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{{ __('texts.blog') }}" title="Blog" />
+	<div class="px-4">
+		<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{{ __('texts.blog') }}" title="Blog" />
+	</div>
 
 </x-ui.spacer>

@@ -36,16 +36,12 @@ class PhotosRelationManager extends RelationManager
 
 				Forms\Components\SpatieMediaLibraryFileUpload::make('Photos')
 
-					->label(" Photo")
-
-					->conversion(conversion: 'preview')
-
-					->manipulations([
-						'preview' => ['orientation' => '90'],
-					])
 					->responsiveImages()
+					->imageEditor()
 
-				,
+					->imageEditorAspectRatios(['4:3', '3:4', '1:1']),
+
+
 			]);
 	}
 
@@ -56,8 +52,10 @@ class PhotosRelationManager extends RelationManager
 			->columns([
 
 
+
+
 				Tables\Columns\SpatieMediaLibraryImageColumn::make("images")
-					->conversion("preview")
+					->conversion("main")->width('100%')->height(150)
 					->label(""),
 
 				Tables\Columns\TextColumn::make('title')->grow()->searchable(),

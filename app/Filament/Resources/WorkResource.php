@@ -63,13 +63,13 @@ class WorkResource extends Resource
 
 
 					Tables\Columns\SpatieMediaLibraryImageColumn::make("images")
-						->conversion("main")
+						->conversion("main")->width("100%")->height(180)
 						->label(""),
 
-					Tables\Columns\TextColumn::make('title')->grow()
+					Tables\Columns\TextColumn::make('title')
 						->searchable(),
-					Tables\Columns\TextColumn::make('post.title')->label('Linked to '),
-					Tables\Columns\IconColumn::make('enabled')->boolean(),
+					// Tables\Columns\TextColumn::make('post.title')->label('Linked to '),
+					// Tables\Columns\IconColumn::make('enabled')->boolean(),
 				]),
 
 

@@ -21,7 +21,7 @@ new class extends Component {
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 
 	<div class="relative">
-		<div class="lg:aspect-100/55 aspect-9/10 bg-[url(/public/img/Hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/blog_hero.jpg)] lg:bg-right">
+		<div class="lg:aspect-86/55 aspect-9/10 bg-[url(/public/img/Hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/blog_hero.jpg)] lg:bg-right">
 
 		</div>
 
@@ -49,8 +49,11 @@ new class extends Component {
 	<div class="grid max-sm:px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
 		@foreach ($blogItems as $item)
-			<div class="-ml-px -mt-px border border-gray-300">
-				<x-ui.spacer class="flex h-full flex-col p-5" type="xs">
+			{{-- <div class="-ml-px -mt-px"> --}}
+
+			<x-slot buttonText="{!! __('ui.read_more_btn') !!}" class="-ml-px -mt-px" img="{{ $item->getFirstMedia()->getUrl('main') }}" route="{{ route('post', $item->slug) }}" text="{!! $item->text !!}" title="{!! $item->title !!}" />
+
+			{{-- <x-ui.spacer class="flex h-full flex-col p-5" type="xs">
 
 					{{ $item->getFirstMedia()->img('main')->attributes(['class' => 'object-center aspect-4/3 object-cover']) }}
 					<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
@@ -59,8 +62,9 @@ new class extends Component {
 					<p>&nbsp;</p>
 
 					<flux:button class="flex-none place-self-start" href="{{ route('post', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>@lang('ui.read_more_btn')</flux:button>
-				</x-ui.spacer>
-			</div>
+				</x-ui.spacer> --}}
+
+			{{-- </div> --}}
 		@endforeach
 
 	</div>

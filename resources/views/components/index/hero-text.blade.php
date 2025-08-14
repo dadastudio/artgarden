@@ -13,7 +13,7 @@
 
 		<div class="lg:max-w-[325px]">
 			<img src="/img/up_rect.svg" />
-			<h1 class="{{ $invert ? 'text-white' : '' }} text-pretty">{!! $title !!}</h1>
+			<h1 class="{{ $invert ? 'text-white' : '' }}">{!! $title !!}</h1>
 		</div>
 
 		<div class="prose prose-sm {{ $invert ? 'prose-invert' : '' }} relative lg:max-w-[325px]">

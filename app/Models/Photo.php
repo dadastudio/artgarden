@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Photo extends Model implements Sortable, HasMedia
 {
@@ -32,6 +32,13 @@ class Photo extends Model implements Sortable, HasMedia
 		'enabled',
 
 	];
+
+
+	public function post(): BelongsTo
+	{
+		return $this->belongsTo(Post::class);
+	}
+
 
 	public function scopeEnabled(Builder $query): void
 	{

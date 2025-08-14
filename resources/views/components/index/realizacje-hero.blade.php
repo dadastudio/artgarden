@@ -30,7 +30,7 @@
 			<img class="w-full border border-green-900 p-2" src="/img/realizacje3.jpg">
 		</div>
 
-		<x-index.hero-text buttonText="{{ __('ui.see_more_btn') }}" invert link="{{ route('works') }}" text="{!! __('texts.works') !!}" title="{{ __('ui.work') }}" />
+		<x-index.hero-text buttonText="{!! __('ui.see_more_btn') !!}" invert link="{{ route('works') }}" text="{!! __('texts.works') !!}" title="{{ __('ui.work') }}" />
 
 	</div>
 </div>

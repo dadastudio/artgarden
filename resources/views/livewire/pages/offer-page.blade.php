@@ -51,14 +51,14 @@ new class extends Component {
 				<div class="">
 					<img src="/img/up_rect.svg" />
 
-					<h1 class="text-pretty text-2xl">
+					<h1 class="text-pretty text-xl lg:text-2xl">
 
 						{{ $service->subtitle }}
 
 					</h1>
 				</div>
 				<div class="grow">
-					<div class="flex h-full flex-col gap-x-8 gap-y-6 md:flex-row">
+					<div class="flex h-full flex-col gap-x-8 gap-y-4 md:flex-row">
 
 						<div class="prose prose-sm basis-1/2">
 							{!! $service->text_1 !!}
@@ -71,16 +71,13 @@ new class extends Component {
 
 								<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 							</div>
-							{{-- <div class="">
-								<flux:button class="" href="{{ route('contact') }}" icon:trailing="arrow" variant="subtle">skontaktuj się z nami</flux:button>
-							</div> --}}
 
 						</div>
 					</div>
 				</div>
 			</x-ui.spacer>
 
-			<div class="grid border border-gray-200 max-sm:divide-y max-sm:divide-gray-300 md:grid-cols-2">
+			<div class="grid border border-gray-200 md:grid-cols-2">
 
 				@foreach ($services as $s)
 					@if ($s->slug != $service->slug)

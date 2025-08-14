@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Work;
+use App\Models\Photo;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -10,6 +11,7 @@ new class extends Component {
     {
         return [
             'workItems' => Work::ordered()->get(),
+            'photo' => Photo::find(13),
         ];
     }
     public function rendering(\Illuminate\View\View $view): void
@@ -22,7 +24,8 @@ new class extends Component {
 
 		<div class="relative flex-row lg:flex">
 			<div class="2xl:w-75/100 xl:w-70/100 lg:w-65/100 flex flex-row px-5 md:w-full lg:px-16 lg:py-10 xl:px-20">
-				<img class="max-h-max w-full border border-gray-100 p-5" src="/img/realizacje.jpg">
+
+				{{ $photo->getFirstMedia()->img('main')->attributes(['class' => 'max-h-max w-full border border-gray-100 p-5']) }}
 
 			</div>
 
