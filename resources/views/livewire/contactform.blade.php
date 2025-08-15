@@ -9,7 +9,7 @@ new class extends Component {
     public $email;
     public $name;
     public $phone;
-    public $type;
+    public string $type;
     public $date;
     public $location;
     public $additional_info;
@@ -26,7 +26,7 @@ new class extends Component {
         $this->email = fake()->email();
         $this->name = fake()->name();
         $this->phone = fake()->phoneNumber();
-        $this->type = 'Wedding';
+        $this->type = '';
         $this->date = fake()->date();
         $this->location = fake()->city();
         $this->additional_info = fake()->text();
@@ -99,36 +99,42 @@ new class extends Component {
 		<x-honeypot livewire-model="extraFields" />
 		<x-ui.spacer pb type="xs">
 
-			<flux:input icon="pencil" label="{{ __('form.email') }}*" size="sm" type="email" wire:model.defer="email" />
+			<flux:input icon="pencil" label="{{ __('form.email') }}*" size="sm" type="email" wire:model="email" />
 
-			<flux:input icon="pencil" label="{{ __('form.name') }}*" size="sm" wire:model.defer="name" />
-			<flux:input icon="pencil" label="{{ __('form.phone') }}*" size="sm" wire:model.defer="phone" />
-
-			{{-- <flux:select label="{{ __('form.type') }}" placeholder="wybierz..." wire:model.defer="type">
-				<flux:select.option value="{{ __('form.type_option_1') }}">{{ __('form.type_option_1') }}</flux:select.option>
-				<flux:select.option value="{{ __('form.type_option_2') }}">{{ __('form.type_option_2') }}</flux:select.option>
-				<flux:select.option value="{{ __('form.type_option_3') }}">{{ __('form.type_option_3') }}</flux:select.option>
-				<flux:select.option value="{{ __('form.type_option_4') }}">{{ __('form.type_option_4') }}</flux:select.option>
-				<flux:select.option value="{{ __('form.type_option_5') }}">{{ __('form.type_option_5') }}</flux:select.option>
-				<flux:select.option value="{{ __('form.type_option_6') }}">{{ __('form.type_option_6') }}</flux:select.option>
-			</flux:select> --}}
-
-			<flux:input icon="pencil" label="{{ __('form.type') }}*" size="sm" wire:model.defer="type" />
-
-			<flux:input icon="pencil" label="{{ __('form.date') }}*" size="sm" type="date" wire:model.defer="date" />
-
-			<flux:input icon="pencil" label="{{ __('form.location') }}*" size="sm" wire:model.defer="location" />
+			<flux:input icon="pencil" label="{{ __('form.name') }}*" size="sm" wire:model="name" />
+			<flux:input icon="pencil" label="{{ __('form.phone') }}*" size="sm" wire:model="phone" />
 
 			<div class="relative">
 
-				<div class="absolute left-0 top-9">
+				<div class="absolute left-0 top-[35px]">
 					<flux:icon.pencil />
 				</div>
-				<flux:textarea label="{{ __('form.additional_info') }}" size="sm" wire:model.defer="additional_info" />
+				<flux:select label="{{ __('form.type') }}" placeholder="Wybierz..." size="sm" wire:model="type">
+					<flux:select.option value="{{ __('form.type_option_1') }}">{{ __('form.type_option_1') }}</flux:select.option>
+					<flux:select.option value="{{ __('form.type_option_2') }}">{{ __('form.type_option_2') }}</flux:select.option>
+					<flux:select.option value="{{ __('form.type_option_3') }}">{{ __('form.type_option_3') }}</flux:select.option>
+					<flux:select.option value="{{ __('form.type_option_4') }}">{{ __('form.type_option_4') }}</flux:select.option>
+					<flux:select.option value="{{ __('form.type_option_5') }}">{{ __('form.type_option_5') }}</flux:select.option>
+					<flux:select.option value="{{ __('form.type_option_6') }}">{{ __('form.type_option_6') }}</flux:select.option>
+				</flux:select>
+			</div>
+
+			{{-- <flux:input icon="pencil" label="{{ __('form.type') }}*" size="sm" wire:model="type" /> --}}
+
+			<flux:input icon="pencil" label="{{ __('form.date') }}*" size="sm" type="date" wire:model="date" />
+
+			<flux:input icon="pencil" label="{{ __('form.location') }}*" size="sm" wire:model="location" />
+
+			<div class="relative">
+
+				<div class="absolute left-0 top-[35px]">
+					<flux:icon.pencil />
+				</div>
+				<flux:textarea label="{{ __('form.additional_info') }}" size="sm" wire:model="additional_info" />
 			</div>
 
 			<flux:field variant="inline">
-				<flux:checkbox wire:model.defer="terms" />
+				<flux:checkbox wire:model="terms" />
 				<flux:label>@lang('form.terms')*</flux:label>
 				<flux:error name="terms" />
 			</flux:field>
@@ -136,7 +142,7 @@ new class extends Component {
 			<x-ui.spacer py type="sm">
 				<h2 class="text-pretty">@lang('form.survey_title')</h2>
 
-				<flux:radio.group wire:model.defer="survey">
+				<flux:radio.group wire:model="survey">
 					<flux:radio label="{{ __('form.survey_1') }}" value="{{ __('form.survey_1') }}" />
 					<flux:radio label="{{ __('form.survey_2') }}" value="{{ __('form.survey_2') }}" />
 					<flux:radio label="{{ __('form.survey_3') }}" value="{{ __('form.survey_3') }}" />
