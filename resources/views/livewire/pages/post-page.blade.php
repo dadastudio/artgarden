@@ -40,7 +40,9 @@ new class extends Component {
 
 		<x-works.masonry :showButton="false" :workItems="$photos" />
 
-		<x-index.blog-items :items="$blogItems" buttonText="<span class='hidden lg:inline'>przeglądaj</span> artykuły" text="<p>Zapraszamy do zapoznania się z pozostałymi wpisami na naszym blogu.</p>" title="Blog" />
+		<div class="px-5">
+			<x-index.blog-items :items="$blogItems" buttonText="<span class='hidden lg:inline'>przeglądaj</span> artykuły" text="<p>Zapraszamy do zapoznania się z pozostałymi wpisami na naszym blogu.</p>" title="Blog" />
+		</div>
 
 	</x-ui.spacer>
 </div>
