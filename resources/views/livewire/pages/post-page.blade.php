@@ -2,12 +2,20 @@
 
 use App\Models\Post;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
     public $terms = false;
     public $industry = false;
     public Post $post;
 
+    public function mount(Post $post): void
+    {
+        $this->post = $post;
+
+        SEOManager::title($this->post->title);
+        SEOManager::description($this->post->text);
+    }
     public function with(): array
     {
         return [

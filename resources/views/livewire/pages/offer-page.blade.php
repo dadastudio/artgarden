@@ -2,6 +2,7 @@
 
 use App\Models\Service;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
     public $terms = false;
@@ -14,6 +15,9 @@ new class extends Component {
         if (!$service->id) {
             $this->service = Service::first();
         }
+
+        SEOManager::title($this->service->title);
+        SEOManager::description($this->service->intro);
     }
 
     public function with(): array

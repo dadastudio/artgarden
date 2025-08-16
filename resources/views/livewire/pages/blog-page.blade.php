@@ -2,10 +2,18 @@
 
 use App\Models\Post;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
     public $terms = false;
     public $industry = false;
+
+    public function mount(): void
+    {
+        SEOManager::title(__('ui.blog'));
+        SEOManager::description(__('texts.blog_page'));
+    }
+
     public function with(): array
     {
         return [
@@ -49,26 +57,9 @@ new class extends Component {
 	<div class="grid max-sm:px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
 		@foreach ($blogItems as $item)
-			{{-- <div class="-ml-px -mt-px"> --}}
-
 			<x-slot buttonText="{!! __('ui.read_more_btn') !!}" class="-ml-px -mt-px" img="{{ $item->getFirstMedia()->getUrl('main') }}" route="{{ route('post', $item->slug) }}" text="{!! $item->text !!}" title="{!! $item->title !!}" />
-
-			{{-- <x-ui.spacer class="flex h-full flex-col p-5" type="xs">
-
-					{{ $item->getFirstMedia()->img('main')->attributes(['class' => 'object-center aspect-4/3 object-cover']) }}
-					<h2 class="line-clamp-2 flex-1 truncate text-pretty uppercase">{!! $item->title !!}</h2>
-
-					<div class="line-clamp-4 flex-1 text-[10px]/[14px] uppercase text-gray-700">{!! $item->text !!}</div>
-					<p>&nbsp;</p>
-
-					<flux:button class="flex-none place-self-start" href="{{ route('post', ['post' => $item->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>@lang('ui.read_more_btn')</flux:button>
-				</x-ui.spacer> --}}
-
-			{{-- </div> --}}
 		@endforeach
 
 	</div>
-
-	{{-- <flux:pagination :paginator="$blogItems" /> --}}
 
 </x-ui.spacer>

@@ -46,11 +46,10 @@
 			</div>
 
 		</div>
-		<div class="absolute inset-x-0 -bottom-12">
+		<div class="-bottom-10.5 absolute inset-x-0 md:-bottom-12 xl:-bottom-12">
 
 			<div class="flex flex-row items-center justify-center gap-3.5">
 
-				{{-- <flux:icon.arrow-left class="text-green-600" /> --}}
 				<flux:button icon="arrow-left" inline variant="ghost" />
 				<flux:icon.gallery-horizontal class="text-gray-400" />
 				<flux:button icon="arrow-right" inline variant="ghost" />

@@ -3,10 +3,18 @@
 use App\Models\Work;
 use App\Models\Photo;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
     public $terms = false;
     public $industry = false;
+
+    public function mount(): void
+    {
+        SEOManager::title(__('ui.work'));
+        SEOManager::description(__('texts.works'));
+    }
+
     public function with(): array
     {
         return [
