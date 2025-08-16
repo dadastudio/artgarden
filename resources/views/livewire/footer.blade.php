@@ -70,7 +70,7 @@
 
 		<div class="grid grid-cols-2 border-y border-green-50 text-sm md:flex md:flex-row md:justify-around">
 
-			<div class="flex justify-center md:basis-1/3">
+			<div class="flex pl-5 md:basis-1/3 md:pl-10 lg:pl-12 xl:pl-32">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="{{ route('offer') }}" wire:navigate>@lang('ui.offer')</a>
 					<a href="{{ route('works') }}" wire:navigate>@lang('ui.work')</a>
@@ -79,8 +79,9 @@
 				</div>
 			</div>
 
-			<div class="border-l-1 flex justify-center border-green-50 md:basis-1/3">
+			<div class="border-l-1 xl- flex border-green-50 pl-5 md:basis-1/3 md:pl-10 lg:pl-12">
 				<div class="flex flex-col gap-y-5 py-10">
+
 					<a href="{{ route('faq') }}" wire:navigate>@lang('ui.faq')</a>
 					<a href="{{ route('privacy') }}" wire:navigate>@lang('ui.privacy')</a>
 					<a href="{{ route('terms') }}" wire:navigate>@lang('ui.terms')</a>
@@ -90,7 +91,7 @@
 
 			</div>
 
-			<div class="flex justify-center border-green-50 max-md:border-t md:basis-1/3 md:border-l">
+			<div class="xl- flex border-green-50 pl-5 max-md:border-t md:basis-1/3 md:border-l md:pl-10 lg:pl-12">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Facebook</a>
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a>
@@ -102,7 +103,7 @@
 
 			</div>
 
-			<div class="flex justify-center border-l border-green-50 max-md:border-t md:hidden md:basis-1/3">
+			<div class="xl- flex border-l border-green-50 pl-5 max-md:border-t md:hidden md:basis-1/3 md:pl-10 lg:pl-12">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="{{ route('index') }}" wire:navigate>@lang('ui.contact')</a>
 					<a href="{{ route('index') }}" wire:navigate>@lang('ui.download')</a>
