@@ -20,11 +20,11 @@ new class extends Component {
 
 				<div>
 					<img src="/img/up_rect.svg" />
-					<h1 class="text-pretty">@lang('texts.terms_header')</h1>
+					<h1 class="text-pretty">@lang('terms.title')</h1>
 				</div>
 
 				<div class="prose prose-sm relative lg:max-w-[325px]">
-					<p>@lang('texts.faq_text')</p>
+					@lang('terms.intro')
 					<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 				</div>
 
@@ -34,9 +34,8 @@ new class extends Component {
 	</div>
 
 	<div class="prose prose-sm mx-auto">
-		<h2>@lang('texts.terms_header')</h2>
 
-		@lang('texts.terms')
+		@lang('terms.text')
 
 	</div>
 </x-ui.spacer>
