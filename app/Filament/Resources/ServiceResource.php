@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 
 class ServiceResource extends Resource
 {
@@ -42,67 +43,16 @@ class ServiceResource extends Resource
 
 
 
-				Forms\Components\Tabs::make()->tabs([
-					Forms\Components\Tabs\Tab::make('Title PL')
-						->schema([
-							Forms\Components\TextInput::make('title.pl')->label(''),
-						]),
+				TranslatableTabs::make('anyLabel')
+					->schema([
+						Forms\Components\TextInput::make("title"),
+						Forms\Components\RichEditor::make('intro')->label('Intro Text')->toolbarButtons(self::$rteButtons),
+						Forms\Components\TextInput::make("subtitle"),
+						Forms\Components\RichEditor::make('text_1')->label('Text Column 1')->toolbarButtons(self::$rteButtons),
+						Forms\Components\RichEditor::make('text_2')->label('Text Column 2')->toolbarButtons(self::$rteButtons),
 
-					Forms\Components\Tabs\Tab::make('Title EN')
-						->schema([
-							Forms\Components\TextInput::make('title.en')->label(''),
-						]),
-				]),
+					]),
 
-
-				Forms\Components\Tabs::make()->tabs([
-					Forms\Components\Tabs\Tab::make('Subtitle PL')
-						->schema([
-							Forms\Components\TextInput::make('subtitle.pl')->label(''),
-						]),
-
-					Forms\Components\Tabs\Tab::make('Subtitle EN')
-						->schema([
-							Forms\Components\TextInput::make('subtitle.en')->label(''),
-						]),
-				]),
-
-				Forms\Components\Tabs::make("Intro Text ")->tabs([
-					Forms\Components\Tabs\Tab::make('Intro Text EN')
-						->schema([
-							Forms\Components\RichEditor::make('intro.en')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-					Forms\Components\Tabs\Tab::make('Intro Text PL')
-						->schema([
-							Forms\Components\RichEditor::make('intro.pl')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-
-				]),
-
-
-				Forms\Components\Tabs::make("Text 1")->tabs([
-					Forms\Components\Tabs\Tab::make('Text EN')
-						->schema([
-							Forms\Components\RichEditor::make('text_1.en')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-					Forms\Components\Tabs\Tab::make('Text PL')
-						->schema([
-							Forms\Components\RichEditor::make('text_1.pl')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-
-				]),
-
-				Forms\Components\Tabs::make("Text 2")->tabs([
-					Forms\Components\Tabs\Tab::make('Text EN')
-						->schema([
-							Forms\Components\RichEditor::make('text_2.en')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-					Forms\Components\Tabs\Tab::make('Text PL')
-						->schema([
-							Forms\Components\RichEditor::make('text_2.pl')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-
-				]),
 
 				Forms\Components\SpatieMediaLibraryFileUpload::make('Main Photo')
 

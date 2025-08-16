@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 
 class PostResource extends Resource
 {
@@ -44,31 +45,17 @@ class PostResource extends Resource
 			->schema([
 
 
-				Forms\Components\Tabs::make()->tabs([
-					Forms\Components\Tabs\Tab::make('Title PL')
-						->schema([
-							Forms\Components\TextInput::make('title.pl')->label(''),
-						]),
+				TranslatableTabs::make('anyLabel')
+					->schema([
+						Forms\Components\TextInput::make("title"),
+						Forms\Components\RichEditor::make('text')->toolbarButtons(self::$rteButtons),
 
-					Forms\Components\Tabs\Tab::make('Title EN')
-						->schema([
-							Forms\Components\TextInput::make('title.en')->label(''),
-						]),
-				]),
+					]),
 
 
 
-				Forms\Components\Tabs::make("Text")->tabs([
-					Forms\Components\Tabs\Tab::make('Text EN')
-						->schema([
-							Forms\Components\RichEditor::make('text.en')->label('')->toolbarButtons(self::$rteButtons),
-						]),
-					Forms\Components\Tabs\Tab::make('Text PL')
-						->schema([
-							Forms\Components\RichEditor::make('text.pl')->label('')->toolbarButtons(self::$rteButtons),
-						]),
 
-				]),
+
 
 				Forms\Components\SpatieMediaLibraryFileUpload::make('Main Photo')
 

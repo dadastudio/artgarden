@@ -25,17 +25,9 @@ class WorkResource extends Resource
 			->schema([
 
 
-				Forms\Components\Tabs::make()->tabs([
-					Forms\Components\Tabs\Tab::make('Title PL')
-						->schema([
-							Forms\Components\TextInput::make('title.pl')->label(''),
-						]),
+				Forms\Components\TextInput::make('title')->translatableTabs(),
 
-					Forms\Components\Tabs\Tab::make('Title EN')
-						->schema([
-							Forms\Components\TextInput::make('title.en')->label(''),
-						]),
-				]),
+
 
 
 				Forms\Components\SpatieMediaLibraryFileUpload::make('Main Photo')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\LanguageLine;
 use Livewire\Volt\Component;
 use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
@@ -15,6 +16,7 @@ new class extends Component {
     public $additional_info;
     public $terms = false;
     public $survey;
+
     public $successMessage;
     public $errorMessage;
     public HoneypotData $extraFields;
@@ -45,6 +47,13 @@ new class extends Component {
             'additional_info' => 'nullable|string',
             'terms' => 'accepted',
             'survey' => 'nullable|string',
+        ];
+    }
+
+    public function with(): array
+    {
+        return [
+            'options' => LanguageLine::where('key', 'like', 'type_option%')->get(),
         ];
     }
 
@@ -109,13 +118,12 @@ new class extends Component {
 				<div class="absolute left-0 top-[35px]">
 					<flux:icon.pencil />
 				</div>
-				<flux:select label="{{ __('form.type') }}" placeholder="Wybierz..." size="sm" wire:model="type">
-					<flux:select.option value="{{ __('form.type_option_1') }}">{{ __('form.type_option_1') }}</flux:select.option>
-					<flux:select.option value="{{ __('form.type_option_2') }}">{{ __('form.type_option_2') }}</flux:select.option>
-					<flux:select.option value="{{ __('form.type_option_3') }}">{{ __('form.type_option_3') }}</flux:select.option>
-					<flux:select.option value="{{ __('form.type_option_4') }}">{{ __('form.type_option_4') }}</flux:select.option>
-					<flux:select.option value="{{ __('form.type_option_5') }}">{{ __('form.type_option_5') }}</flux:select.option>
-					<flux:select.option value="{{ __('form.type_option_6') }}">{{ __('form.type_option_6') }}</flux:select.option>
+				<flux:select label="{{ __('form.type') }}" placeholder="{{ __('form.choose') }}..." size="sm" wire:model="type">
+
+					@foreach ($options as $option)
+						<flux:select.option value="{{ $option->getTranslation('text', app()->getLocale()) }}">{{ $option->getTranslation('text', app()->getLocale()) }}</flux:select.option>
+					@endforeach
+
 				</flux:select>
 			</div>
 

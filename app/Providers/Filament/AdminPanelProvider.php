@@ -18,9 +18,30 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Enums\ThemeMode;
+use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 
 class AdminPanelProvider extends PanelProvider
 {
+
+	public function boot(): void
+	{
+		//
+
+		TranslatableTabs::configureUsing(function (TranslatableTabs $component) {
+			$component
+				// locales labels
+				->localesLabels([
+					'pl' => "Polski",
+					'en' => "English"
+				])
+				// default locales
+				->locales(['pl', 'en']);
+		});
+
+
+	}
+
+
 	public function panel(Panel $panel): Panel
 	{
 		return $panel

@@ -10,6 +10,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "^8.2",
+		"abdulmajeed-jamaan/filament-translatable-tabs": "^3.0",
 		"fakerphp/faker": "^1.23",
 		"filament/filament": "^3.2",
 		"filament/spatie-laravel-media-library-plugin": "^3.2",
@@ -28,6 +29,7 @@
 		"spatie/laravel-sluggable": "^3.7",
 		"spatie/laravel-tags": "^4.10",
 		"spatie/laravel-translatable": "^6.11",
+		"spatie/laravel-translation-loader": "^2.8",
 		"spatie/schema-org": "^3.23"
 	},
 	"require-dev": {
