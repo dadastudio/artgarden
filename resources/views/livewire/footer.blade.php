@@ -79,7 +79,7 @@
 				</div>
 			</div>
 
-			<div class="flex justify-center border-l-[0.5px] border-green-50 md:basis-1/3">
+			<div class="border-l-1 flex justify-center border-green-50 md:basis-1/3">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="{{ route('faq') }}" wire:navigate>@lang('ui.faq')</a>
 					<a href="{{ route('privacy') }}" wire:navigate>@lang('ui.privacy')</a>
@@ -89,11 +89,11 @@
 				</div>
 
 			</div>
+
 			<div class="flex justify-center border-green-50 max-md:border-t md:basis-1/3 md:border-l">
 				<div class="flex flex-col gap-y-5 py-10">
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Facebook</a>
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a>
-					{{-- <a class="max-md:hidden" href="{{ route('contact') }}" wire:navigate>@lang('ui.contact')</a> --}}
 					<a class="max-md:hidden" href="{{ route('download') }}">@lang('ui.download')</a>
 
 					<livewire:langswitcher :isMenu="false" />
@@ -113,8 +113,7 @@
 
 		</div>
 
-		<img alt="Logo" class="w-full px-4 md:px-32" src="{{ asset('img/logo_white.svg') }}">
-		{{-- <x-logo /> --}}
+		<img alt="Logo" class="w-full px-10 md:px-32" src="{{ asset('img/logo_white.svg') }}">
 		<hr class="h-[0.5px] opacity-70">
 
 	</x-ui.spacer>
