@@ -36,7 +36,7 @@
 			<div class="scrollbar-hide inline-flex snap-x snap-mandatory overflow-x-scroll scroll-smooth">
 
 				@foreach ($items as $item)
-					<div class="flex w-full flex-none snap-start md:w-1/2 xl:w-1/3" id="{{ $loop->iteration }}">
+					<div class="flex w-1/2 flex-none snap-start sm:w-1/2 xl:w-1/3" id="{{ $loop->iteration }}">
 
 						<x-slot buttonText="{!! __('ui.read_more_btn') !!}" img="{{ $item->getFirstMedia()->getUrl('main') }}" route="{{ route('post', $item->slug) }}" text="{!! $item->text !!}" title="{!! $item->title !!}" />
 
