@@ -5,25 +5,17 @@ use Livewire\Volt\Component;
 use App\Actions\SEOManager;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
-
     public function mount(): void
     {
         SEOManager::title(__('ui.blog'));
-        SEOManager::description(__('texts.blog_page'));
+        SEOManager::description(__('blog.meta_description'));
     }
 
     public function with(): array
     {
         return [
             'blogItems' => Post::all(),
-            // 'blogItems' => Post::factory()->count(11)->make(),
         ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
@@ -38,11 +30,11 @@ new class extends Component {
 
 				<div>
 					<img src="/img/up_rect.svg" />
-					<h1 class="text-pretty">Blog</h1>
+					<h1 class="text-pretty">@lang('ui.blog')</h1>
 				</div>
 
 				<div class="prose prose-sm relative lg:max-w-[325px]">
-					@lang('texts.blog_page')
+					@lang('blog.text')
 					<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 				</div>
 				<p class="max-xl:hidden">&nbsp;</p>

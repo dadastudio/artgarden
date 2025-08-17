@@ -35,6 +35,7 @@ class Service extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 		'title',
 		'slug',
 		'subtitle',
+		'meta_description',
 
 		'intro',
 
@@ -45,7 +46,7 @@ class Service extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 
 	];
 
-	public $translatable = ['title', 'subtitle', 'intro', 'text_1', 'text_2', 'slug'];
+	public $translatable = ['title', 'subtitle', 'intro', 'text_1', 'text_2', 'slug', 'meta_description'];
 
 
 	public function registerMediaConversions(Media|null $media = null): void

@@ -50,6 +50,7 @@ class ServiceResource extends Resource
 						Forms\Components\TextInput::make("subtitle"),
 						Forms\Components\RichEditor::make('text_1')->label('Text Column 1')->toolbarButtons(self::$rteButtons),
 						Forms\Components\RichEditor::make('text_2')->label('Text Column 2')->toolbarButtons(self::$rteButtons),
+						Forms\Components\Textarea::make("meta_description")->label('Meta Description (SEO)')->disableGrammarly(),
 
 					]),
 

@@ -5,9 +5,6 @@ use Livewire\Volt\Component;
 use App\Actions\SEOManager;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
-
     public Service $service;
 
     public function mount(Service $service): void
@@ -23,14 +20,8 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'currentRoute' => \Route::currentRouteName(),
-
-            'services' => Service::all(),
+            'services' => Service::whereNot('id', $this->service->id)->get(),
         ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
 
@@ -84,9 +75,7 @@ new class extends Component {
 			<div class="grid border border-gray-200 md:grid-cols-2">
 
 				@foreach ($services as $s)
-					@if ($s->slug != $service->slug)
-						<x-slot img="{{ $s->getFirstMedia()->getUrl('main') }}" route="{{ route('offer', $s->slug) }}" text="{!! $s->intro !!}" title="{!! $s->title !!}" />
-					@endif
+					<x-slot img="{{ $s->getFirstMedia()->getUrl('main') }}" route="{{ route('offer', $s->slug) }}" text="{!! $s->intro !!}" title="{!! $s->title !!}" />
 				@endforeach
 
 			</div>

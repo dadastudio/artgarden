@@ -6,13 +6,10 @@ use Livewire\Volt\Component;
 use App\Actions\SEOManager;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
-
     public function mount(): void
     {
         SEOManager::title(__('ui.work'));
-        SEOManager::description(__('texts.works'));
+        SEOManager::description(__('work.meta_description'));
     }
 
     public function with(): array
@@ -21,10 +18,6 @@ new class extends Component {
             'workItems' => Work::ordered()->get(),
             'photo' => Photo::find(13),
         ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
 <div>
@@ -37,11 +30,11 @@ new class extends Component {
 
 			</div>
 
-			<x-index.hero-text buttonText="{{ __('ui.contact_us_btn') }}" link="{{ route('contact') }}" text="{!! __('texts.works') !!}" title="{{ __('ui.work') }}">
+			<x-index.hero-text buttonText="{{ __('ui.contact_us_btn') }}" link="{{ route('contact') }}" text="{!! __('work.text') !!}" title="{{ __('ui.work') }}">
 				<a class="text-gray-700 no-underline transition-colors hover:text-green-700" href="{{ route('download') }}">
 					<div class="flex flex-row items-center gap-x-5">
 						<img class="max-w-max" src="/img/download.svg" />
-						<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('ui.catalog_info') }}
+						<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('work.catalog_download') }}
 						</p>
 					</div>
 

@@ -1,12 +1,16 @@
 <?php
 
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
-    public function rendering(\Illuminate\View\View $view): void
+    public function mount(): void
     {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
+        SEOManager::title(__('faq.title'));
+        SEOManager::description(__('faq.meta_description'));
     }
+
+    public function rendering(\Illuminate\View\View $view): void {}
 }; ?>
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 
