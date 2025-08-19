@@ -54,6 +54,7 @@ new class extends Component {
     {
         return [
             'options' => LanguageLine::where('key', 'like', 'type_option%')->get(),
+            'surveys' => LanguageLine::where('key', 'like', 'survey_%')->get(),
         ];
     }
 
@@ -62,8 +63,8 @@ new class extends Component {
         $this->protectAgainstSpam();
         $validated = $this->validate();
         try {
-            \Mail::raw("Imię i nazwisko: {$this->name}\n" . "Email: {$this->email}\n" . "Telefon: {$this->phone}\n" . "Typ wydarzenia: {$this->type}\n" . "Data: {$this->date}\n" . "Lokalizacja: {$this->location}\n" . "Dodatkowe informacje: {$this->additional_info}\n" . "Jak się dowiedział: {$this->survey}\n", function ($message) {
-                $message->to(config('mail.from.address'))->subject('Nowa wiadomość z formularza kontaktowego');
+            \Mail::raw("Imię i nazwisko: {$validated['name']}\n" . "Email: {$validated['email']}\n" . "Telefon: {$validated['phone']}\n" . "Typ wydarzenia: {$validated['type']}\n" . "Data: {$validated['date']}\n" . "Lokalizacja: {$validated['location']}\n" . "Dodatkowe informacje: {$validated['additional_info']}\n" . "Jak się dowiedział: {$validated['survey']}\n", function ($message) use ($validated) {
+                $message->to($validated['email'])->subject('Nowa wiadomość z formularza kontaktowego');
             });
             $this->reset(['email', 'name', 'phone', 'type', 'date', 'location', 'additional_info', 'terms', 'survey']);
             $this->successMessage = __('messages.contact_success');
@@ -81,8 +82,10 @@ new class extends Component {
 	<flux:modal name="messageModal">
 		<x-ui.spacer class="border border-green-400 px-8 text-center font-semibold" py type="xs">
 
-			<p class="text-[19px]">{!! __('messages.contactform_success_detailed') !!}</p>
-			<p class="text-[19px]">{!! __('messages.contactform_signoff') !!}</p>
+			{!! __('form.message_sent') !!}
+
+			{{-- <p class="text-[19px]">{!! __('form.message_sent') !!}</p>
+			<p class="text-[19px]">{!! __('messages.contactform_signoff') !!}</p> --}}
 			<p>&nbsp;</p>
 			<div class="flex justify-center"><img alt="ArtGardenLogo" class="max-w-36" src="{{ asset('img/logo.svg') }}"></div>
 
@@ -101,7 +104,7 @@ new class extends Component {
 	<x-ui.spacer type="xxs">
 
 		<h2 class="text-pretty">@lang('form.title')</h2>
-		<p class="text-xs text-gray-700">@lang('messages.required_fields')</p>
+		<p class="text-xs text-gray-700">* @lang('form.required')</p>
 	</x-ui.spacer>
 
 	<form wire:submit.prevent="sendMail">
@@ -121,7 +124,7 @@ new class extends Component {
 				<flux:select label="{{ __('form.type') }}" placeholder="{{ __('form.choose') }}..." size="sm" wire:model="type">
 
 					@foreach ($options as $option)
-						<flux:select.option value="{{ $option->getTranslation('text', app()->getLocale()) }}">{{ $option->getTranslation('text', app()->getLocale()) }}</flux:select.option>
+						<flux:select.option value="{{ $option->text[app()->getLocale()] }}">{{ $option->text[app()->getLocale()] }}</flux:select.option>
 					@endforeach
 
 				</flux:select>
@@ -151,11 +154,9 @@ new class extends Component {
 				<h2 class="text-pretty">@lang('form.survey_title')</h2>
 
 				<flux:radio.group wire:model="survey">
-					<flux:radio label="{{ __('form.survey_1') }}" value="{{ __('form.survey_1') }}" />
-					<flux:radio label="{{ __('form.survey_2') }}" value="{{ __('form.survey_2') }}" />
-					<flux:radio label="{{ __('form.survey_3') }}" value="{{ __('form.survey_3') }}" />
-					<flux:radio label="{{ __('form.survey_4') }}" value="{{ __('form.survey_4') }}" />
-					<flux:radio label="{{ __('form.survey_5') }}" value="{{ __('form.survey_5') }}" />
+					@foreach ($surveys as $survey)
+						<flux:radio label="{{ $survey->text[app()->getLocale()] }}" value="{{ $survey->text[app()->getLocale()] }}" />
+					@endforeach
 				</flux:radio.group>
 			</x-ui.spacer>
 

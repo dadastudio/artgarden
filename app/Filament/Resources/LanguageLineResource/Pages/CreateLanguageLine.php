@@ -8,5 +8,21 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateLanguageLine extends CreateRecord
 {
-    protected static string $resource = LanguageLineResource::class;
+	protected static string $resource = LanguageLineResource::class;
+
+
+	protected function afterFill(): void
+	{
+		// Runs before the form fields are populated with their default values.
+
+		$this->form->fill([
+			'group' => 'test',
+		]);
+
+
+
+
+	}
+
+
 }

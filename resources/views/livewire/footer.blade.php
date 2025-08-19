@@ -1,31 +1,21 @@
+<?php
+
+use Livewire\Volt\Component;
+use App\Models\Photo;
+
+new class extends Component {
+    public function with(): array
+    {
+        return [
+            'heroImg' => Photo::find(104),
+        ];
+    }
+}; ?>
 <footer class="">
 
 	<x-ui.spacer type="md">
 
-		<div class="relative">
-			<div class="lg:aspect-100/40 aspect-13/8 bg-[url(/public/img/konsultacje.jpg)] bg-cover bg-left bg-no-repeat lg:bg-[url(/public/img/konsultacje.jpg)] lg:bg-left">
-
-			</div>
-
-			<div class="right-15 bottom-5 max-lg:px-5 max-lg:py-5 lg:absolute">
-				<x-ui.spacer pb>
-
-					<div>
-						<img src="/img/up_rect.svg" />
-						<h1 class="text-pretty">@lang('texts.consultations_header')</h1>
-					</div>
-
-					<div class="prose prose-sm relative lg:max-w-[325px]">
-
-						<p>@lang('texts.consultations')</p>
-						</p>
-						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
-					</div>
-
-				</x-ui.spacer>
-
-			</div>
-		</div>
+		<x-hero :heroImg="$heroImg" :is_left="false" text="{!! __('consultations.text') !!}" title="{!! __('consultations.title') !!}" />
 
 		<div class="grid gap-8 px-4 md:grid-cols-2">
 
@@ -36,8 +26,8 @@
 					<x-ui.spacer type="xs">
 
 						<h2>{{ __('form.phone') }}</h2>
-						<p>+48 538 543 307</br>
-							+48 698 227 022</p>
+
+						@lang('contact.phones')
 					</x-ui.spacer>
 				</div>
 
@@ -47,15 +37,15 @@
 					<x-ui.spacer class="" type="xs">
 
 						<h2>Email</h2>
-						<p><a class="transition-colors hover:text-green-700" href="mailto:office@artgarden.waw.pl">office@artgarden.waw.pl</a></p>
+						<p><a class="transition-colors hover:text-green-700" href="mailto:{{ __('contact.email') }}">@lang('contact.email')</a></p>
 					</x-ui.spacer>
 				</div>
 				<div class="flex flex-row items-baseline gap-x-1">
 					<img src="/img/up_rect.svg" />
 					<x-ui.spacer class="" type="xs">
 
-						<h2>@lang('ui.hours_of_work')</h2>
-						<p>@lang('ui.hours')
+						<h2>@lang('contact.hours_title')</h2>
+						<p>@lang('contact.hours')
 						</p>
 					</x-ui.spacer>
 				</div>

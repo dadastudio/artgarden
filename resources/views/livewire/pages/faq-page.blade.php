@@ -2,6 +2,7 @@
 
 use Livewire\Volt\Component;
 use App\Actions\SEOManager;
+use App\Models\Photo;
 
 new class extends Component {
     public function mount(): void
@@ -10,35 +11,18 @@ new class extends Component {
         SEOManager::description(__('faq.meta_description'));
     }
 
-    public function rendering(\Illuminate\View\View $view): void {}
+    public function with(): array
+    {
+        return [
+            'heroImg' => Photo::find(103),
+        ];
+    }
 }; ?>
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 
-	<div class="relative">
-		<div class="lg:aspect-100/55 aspect-9/10 bg-[url(/public/img/Hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/faq.jpg)] lg:bg-right">
+	<x-hero :heroImg="$heroImg" text="{!! __('faq.intro') !!}" title="{!! __('faq.title') !!}" />
 
-		</div>
-
-		<div class="bottom-5 left-10 max-lg:px-5 max-lg:py-5 lg:absolute">
-			<x-ui.spacer>
-
-				<div>
-					<img src="/img/up_rect.svg" />
-					<h1 class="text-pretty">@lang('faq.title')</h1>
-				</div>
-
-				<div class="prose prose-sm relative lg:max-w-[325px]">
-					{!! __('faq.intro') !!}
-					<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
-				</div>
-
-			</x-ui.spacer>
-
-		</div>
-	</div>
-
-	<div class="prose mx-auto">
-
+	<div class="prose mx-auto px-5">
 		{!! __('faq.text') !!}
 	</div>
 </x-ui.spacer>

@@ -17,23 +17,39 @@ class PhotoResource extends Resource
 {
 	protected static ?string $model = Photo::class;
 
-	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+	protected static ?string $modelLabel = 'Photo';
+
+	protected static ?string $pluralModelLabel = 'All Photos';
+
+	protected static ?int $navigationSort = 3;
+
+	protected static ?string $navigationIcon = 'heroicon-o-photo';
 
 	public static function form(Form $form): Form
 	{
 		return $form
 			->schema([
+				Forms\Components\TextInput::make('id')->readOnly(),
 				Forms\Components\TextInput::make('title')->translatableTabs(),
 
 
-				Forms\Components\SpatieMediaLibraryFileUpload::make('Photos')
+				Forms\Components\Toggle::make('is_hero')->label('Can be a hero image'),
+
+				Forms\Components\SpatieMediaLibraryFileUpload::make('Photos Desktop')
 
 					->responsiveImages()
 					->imageEditor()
-
 					->imageEditorAspectRatios(['4:3', '3:4', '1:1']),
 
-			]);
+
+				Forms\Components\SpatieMediaLibraryFileUpload::make('Photos Mobile')
+					->visible(fn($get) => $get('is_hero'))
+					->imageEditor()
+					->conversion('hero_mobile')->collection("mobile")
+					->imageEditorAspectRatios(['1:1', '1:1']),
+
+
+			])->columns(1);
 	}
 
 	public static function table(Table $table): Table
@@ -59,7 +75,8 @@ class PhotoResource extends Resource
 
 					->label('Photos without linked post'),
 
-			])
+			])->persistFiltersInSession()
+
 			->actions([
 				Tables\Actions\EditAction::make(),
 			])
@@ -76,7 +93,10 @@ class PhotoResource extends Resource
 			//
 		];
 	}
-
+	public static function getNavigationBadge(): ?string
+	{
+		return Photo::all()->count();
+	}
 	public static function getPages(): array
 	{
 		return [

@@ -17,7 +17,17 @@ class WorkResource extends Resource
 {
 	protected static ?string $model = Work::class;
 
-	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+	protected static ?string $navigationIcon = 'heroicon-o-sparkles';
+
+
+	protected static ?int $navigationSort = 1;
+
+
+
+
+	protected static ?string $modelLabel = 'Item';
+
+	protected static ?string $pluralModelLabel = 'Portfolio';
 
 	public static function form(Form $form): Form
 	{

@@ -20,6 +20,7 @@ class Photo extends Model implements Sortable, HasMedia
 	use HasTranslations;
 
 	use InteractsWithMedia;
+	public $registerMediaConversionsUsingModelInstance = true;
 
 
 	public $translatable = ['title'];
@@ -28,6 +29,7 @@ class Photo extends Model implements Sortable, HasMedia
 
 		'title',
 		'post_id',
+		'is_hero',
 
 		'enabled',
 
@@ -52,6 +54,22 @@ class Photo extends Model implements Sortable, HasMedia
 			->addMediaConversion('preview')
 			->fit(Fit::Contain, 40, 40)
 			->nonQueued();
+
+
+
+		if ($this->is_hero) {
+
+			$this->addMediaConversion('hero')
+				->withResponsiveImages()
+				->width(1536)->nonQueued();
+
+			$this->addMediaConversion('hero_mobile')
+				->fit(Fit::Crop, 640, desiredHeight: 640)
+				->nonQueued();
+
+		}
+
+
 
 
 		$this->addMediaConversion('main')

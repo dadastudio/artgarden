@@ -5,8 +5,6 @@ use Livewire\Volt\Component;
 use App\Actions\SEOManager;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
     public Post $post;
 
     public function mount(Post $post): void
@@ -14,20 +12,13 @@ new class extends Component {
         $this->post = $post;
 
         SEOManager::title($this->post->title);
-        SEOManager::description($this->post->text);
+        SEOManager::description($this->post->meta_description);
     }
     public function with(): array
     {
         return [
             'blogItems' => Post::whereNot('id', $this->post->id)->get(),
-
-            'mediaItem' => $this->post->getFirstMedia(),
-            'photos' => $this->post->photos,
         ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
 <div>
@@ -46,7 +37,7 @@ new class extends Component {
 
 		</div>
 
-		<x-works.masonry :showButton="false" :workItems="$photos" />
+		<x-works.masonry :showButton="false" :workItems="$this->post->photos" />
 
 		<div class="px-5">
 			<x-index.blog-items :items="$blogItems" buttonText="<span class='hidden lg:inline'>przeglądaj</span> artykuły" text="<p>Zapraszamy do zapoznania się z pozostałymi wpisami na naszym blogu.</p>" title="Blog" />

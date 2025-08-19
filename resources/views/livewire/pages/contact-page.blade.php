@@ -2,20 +2,13 @@
 
 use App\Models\Post;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
-    public function with(): array
+    public function mount(): void
     {
-        return [
-            'blogItems' => Post::factory()->count(6)->make(),
-            'workItems' => Post::factory()->count(12)->make(),
-        ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
+        SEOManager::title(__('ui.contact'));
+        SEOManager::description(__('consultations.text'));
     }
 }; ?>
 <div>

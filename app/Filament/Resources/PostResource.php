@@ -49,6 +49,7 @@ class PostResource extends Resource
 					->schema([
 						Forms\Components\TextInput::make("title"),
 						Forms\Components\RichEditor::make('text')->toolbarButtons(self::$rteButtons),
+						Forms\Components\Textarea::make("meta_description")->label('Meta Description (SEO)')->disableGrammarly(),
 
 					]),
 

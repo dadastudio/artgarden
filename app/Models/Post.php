@@ -34,11 +34,13 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 		'slug',
 		'text',
 		'order_column',
+		'meta_description',
 
 		'enabled',
 
 	];
-	public $translatable = ['title', 'text', 'slug'];
+
+	public $translatable = ['title', 'text', 'slug', 'meta_description',];
 	public function next()
 	{
 		$nextProject = self::enabled()->where('id', '>', $this->id)->ordered()->first();

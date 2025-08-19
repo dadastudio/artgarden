@@ -18,9 +18,11 @@ class ServiceResource extends Resource
 {
 	protected static ?string $model = Service::class;
 
+	protected static ?int $navigationSort = 2;
 
 
-	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+	protected static ?string $navigationIcon = 'heroicon-o-square-3-stack-3d';
 	protected static ?array $rteButtons = [
 
 		'bold',
@@ -102,7 +104,7 @@ class ServiceResource extends Resource
 			])
 			->bulkActions([
 				Tables\Actions\BulkActionGroup::make([
-					Tables\Actions\DeleteBulkAction::make(),
+					// Tables\Actions\DeleteBulkAction::make(),
 				]),
 			]);
 	}
@@ -113,7 +115,10 @@ class ServiceResource extends Resource
 			//
 		];
 	}
-
+	public static function getNavigationBadge(): ?string
+	{
+		return Service::all()->count();
+	}
 	public static function getPages(): array
 	{
 		return [

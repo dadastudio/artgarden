@@ -9,12 +9,18 @@
 
 	@metadata
 
-	{{-- @vite('resources/css/app.css') --}}
 	@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+	<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+	<link href="/favicon.ico" rel="shortcut icon" />
+	<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+	<meta content="ArtGarden" name="apple-mobile-web-app-title" />
+	<link href="/site.webmanifest" rel="manifest" />
 
 </head>
 
@@ -31,7 +37,6 @@
 	</div>
 
 	<div class="container mx-auto">
-		{{-- <div class="container mx-auto px-4 sm:px-6 lg:px-8"> --}}
 
 		@livewire('menu-bar')
 		{{ $slot }}

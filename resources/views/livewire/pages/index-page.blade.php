@@ -2,32 +2,32 @@
 
 use App\Models\Post;
 use App\Models\Service;
+use App\Models\Photo;
 use Livewire\Volt\Component;
 
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
     public function with(): array
     {
         return [
             'blogItems' => Post::all(),
             'services' => Service::all(),
-            'workItems' => collect([(object) ['title' => 'Florystyka</br>ślubna', 'slug' => 'florystyka-slubna', 'text' => 'Planujesz ślub? Pozwól nam zadbać o&nbsp;kompleksową aranżację Twojej uroczystości: od bukietu dla panNy młodej, przez dekoracje florystyczne, po oprawę graficzną.', 'img' => '/img/oferta1.jpg'], (object) ['title' => 'Florystyka</br>okolicznościowa', 'slug' => 'florystyka-okolicznościowa', 'text' => 'Zbliża się koniec roku, chrzest lub komunia? Organizujesz imprezę firmową, wieczór panieński lub inne wydarzenie? przygotujemy Ci piękną aranżację kwiatową.', 'img' => '/img/oferta2.jpg'], (object) ['title' => 'Florystyka</br>dla firm', 'slug' => 'florystyka-dla-firm', 'text' => 'lChcesz udekorować przestrzeń swojej restauracji, recepcję w hotelu, biuro? Planujesz sesję zdjęciową? skontaktuj sie z nami, z&nbsp;przyjemnością się tym zajmiemy.', 'img' => '/img/oferta3.jpg']]),
+
+            'heroImg' => Photo::find(101),
+            'ofertaImg' => Photo::find(102),
         ];
-    }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
     }
 }; ?>
 
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 	<div>
 
-		<div class="relative">
-			<div class="lg:aspect-100/55 aspect-9/10 bg-[url(/public/img/Hero-mobile.webp)] bg-cover bg-bottom bg-no-repeat lg:bg-[url(/public/img/Hero.jpg)] lg:bg-right">
+		<x-hero :$heroImg buttonText="{!! __('ui.more_btn') !!}" href="#oferta-hero" text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" />
 
-			</div>
+		<div class="relative hidden">
+
+			{{ $heroImg->getFirstMedia()->img('hero')->attributes(['class' => 'hidden sm:block']) }}
+
+			{{ $heroImg->getFirstMedia('mobile')->img('hero_mobile')->attributes(['class' => 'sm:hidden']) }}
 
 			<div class="bottom-5 left-10 max-lg:px-5 max-lg:py-5 lg:absolute">
 				<x-ui.spacer>
@@ -53,9 +53,7 @@ new class extends Component {
 		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
 	</div>
 
-	<x-oferta.hero id="oferta-hero" img="oferta.jpg" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
-
-	{{-- <x-index.blog-items :items="$workItems" buttonLink="contact" buttonText="skontaktuj się <span class='hidden lg:inline'>z nami</span>" buttonsText="dowiedz się więcej" text="<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p><p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>" /> --}}
+	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="false" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
 
 	<div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4">
 

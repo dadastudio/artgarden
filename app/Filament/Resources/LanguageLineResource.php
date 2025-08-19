@@ -17,6 +17,14 @@ use Filament\Forms\Get;
 class LanguageLineResource extends Resource
 {
 	protected static ?string $model = LanguageLine::class;
+
+	protected static ?string $modelLabel = 'Translation';
+
+	protected static ?string $pluralModelLabel = 'Translations';
+
+	protected static ?string $navigationGroup = '__';
+
+
 	protected static ?array $rteButtons = [
 
 		'bold',
@@ -32,7 +40,7 @@ class LanguageLineResource extends Resource
 		'underline',
 		'undo',
 	];
-	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+	protected static ?string $navigationIcon = 'heroicon-o-language';
 
 	public static function form(Form $form): Form
 	{
@@ -111,12 +119,15 @@ class LanguageLineResource extends Resource
 			//
 		];
 	}
-
+	public static function getNavigationBadge(): ?string
+	{
+		return LanguageLine::all()->count();
+	}
 	public static function getPages(): array
 	{
 		return [
 			'index' => Pages\ListLanguageLines::route('/'),
-			'create' => Pages\CreateLanguageLine::route('/create'),
+			// 'create' => Pages\CreateLanguageLine::route('/create'),
 			'edit' => Pages\EditLanguageLine::route('/{record}/edit'),
 		];
 	}
