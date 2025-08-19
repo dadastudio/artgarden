@@ -64,7 +64,7 @@ class Photo extends Model implements Sortable, HasMedia
 				->width(1536)->nonQueued();
 
 			$this->addMediaConversion('hero_mobile')
-				->fit(Fit::Crop, 640, desiredHeight: 640)
+				// ->fit(Fit::Crop, 640, desiredHeight: 640)
 				->nonQueued();
 
 		}

@@ -14,6 +14,7 @@ new class extends Component {
 
             'heroImg' => Photo::find(101),
             'ofertaImg' => Photo::find(102),
+            'realizacjeImgs' => [Photo::find(105), Photo::find(106), Photo::find(107)],
         ];
     }
 }; ?>
@@ -118,7 +119,7 @@ new class extends Component {
 
 		</div>
 
-		<x-index.realizacje-hero />
+		<x-index.realizacje-hero :imgs="$realizacjeImgs" />
 
 	</div>
 

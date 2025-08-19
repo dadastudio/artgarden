@@ -39,14 +39,14 @@ class PhotoResource extends Resource
 
 					->responsiveImages()
 					->imageEditor()
-					->imageEditorAspectRatios(['4:3', '3:4', '1:1']),
+					->imageEditorAspectRatios(['4:3', '3:4', '1:1', '1440:860']),
 
 
 				Forms\Components\SpatieMediaLibraryFileUpload::make('Photos Mobile')
 					->visible(fn($get) => $get('is_hero'))
 					->imageEditor()
 					->conversion('hero_mobile')->collection("mobile")
-					->imageEditorAspectRatios(['1:1', '1:1']),
+					->imageEditorAspectRatios(['4:3', '3:4', '1:1']),
 
 
 			])->columns(1);
