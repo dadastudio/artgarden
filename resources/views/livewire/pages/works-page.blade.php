@@ -4,18 +4,32 @@ use App\Models\Work;
 use App\Models\Photo;
 use Livewire\Volt\Component;
 use App\Actions\SEOManager;
+use Spatie\SchemaOrg\Schema;
 
 new class extends Component {
+    public $workItems;
     public function mount(): void
     {
         SEOManager::title(__('ui.work'));
-        SEOManager::description(__('work.meta_description'));
+        SEOManager::description(__('work.text'));
+
+        $this->workItems = Work::ordered()->get();
+
+        $examples = [];
+        foreach ($this->workItems as $photo) {
+            $examples[] = Schema::creativeWork()
+                ->image($photo->getFirstMedia()->getUrl('main'))
+                ->abstract($photo->title);
+        }
+
+        $graph = Schema::blogPosting()->name(__('ui.work'))->exampleOfWork($examples)->publisher(SEOManager::organization());
+
+        seo()->jsonLdImport($graph);
     }
 
     public function with(): array
     {
         return [
-            'workItems' => Work::ordered()->get(),
             'photo' => Photo::find(13),
         ];
     }

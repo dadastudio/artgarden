@@ -7,6 +7,8 @@ use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
 
 new class extends Component {
     use UsesSpamProtection;
+    public HoneypotData $extraFields;
+
     public $email;
     public $name;
     public $phone;
@@ -19,16 +21,18 @@ new class extends Component {
 
     public $successMessage;
     public $errorMessage;
-    public HoneypotData $extraFields;
+    public $options;
 
     public function mount()
     {
         $this->extraFields = new HoneypotData();
 
+        $this->options = LanguageLine::where('key', 'like', 'type_option%')->get();
+
         $this->email = fake()->email();
         $this->name = fake()->name();
         $this->phone = fake()->phoneNumber();
-        $this->type = '';
+        $this->type = $this->options->first()->text[app()->getLocale()];
         $this->date = fake()->date();
         $this->location = fake()->city();
         $this->additional_info = fake()->text();
@@ -53,7 +57,6 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'options' => LanguageLine::where('key', 'like', 'type_option%')->get(),
             'surveys' => LanguageLine::where('key', 'like', 'survey_%')->get(),
         ];
     }
@@ -67,10 +70,10 @@ new class extends Component {
                 $message->to($validated['email'])->subject('Nowa wiadomość z formularza kontaktowego');
             });
             $this->reset(['email', 'name', 'phone', 'type', 'date', 'location', 'additional_info', 'terms', 'survey']);
-            $this->successMessage = __('messages.contact_success');
+            $this->successMessage = __('form.message_sent');
             $this->errorMessage = null;
         } catch (\Exception $e) {
-            $this->errorMessage = __('messages.send_error');
+            $this->errorMessage = 'Error: ' . $e->getMessage(); // ?: __('messages.send_error');
             $this->successMessage = null;
         }
         Flux::modal('messageModal')->show();
@@ -81,23 +84,19 @@ new class extends Component {
 
 	<flux:modal name="messageModal">
 		<x-ui.spacer class="border border-green-400 px-8 text-center font-semibold" py type="xs">
+			@if ($successMessage)
+				<div class="text-pretty">{!! $this->successMessage !!}</div>
 
-			{!! __('form.message_sent') !!}
-
-			{{-- <p class="text-[19px]">{!! __('form.message_sent') !!}</p>
-			<p class="text-[19px]">{!! __('messages.contactform_signoff') !!}</p> --}}
-			<p>&nbsp;</p>
-			<div class="flex justify-center"><img alt="ArtGardenLogo" class="max-w-36" src="{{ asset('img/logo.svg') }}"></div>
+				<p>&nbsp;</p>
+				<div class="flex justify-center"><img alt="ArtGardenLogo" class="max-w-36" src="{{ asset('img/logo.svg') }}"></div>
+			@endif
+			@if ($errorMessage)
+				<div class="text-red-500">
+					{!! $this->errorMessage !!}
+				</div>
+			@endif
 
 		</x-ui.spacer>
-		{{-- @if ($successMessage)
-			<div class="mb-4 rounded bg-green-100 p-4 text-green-800">{{ $successMessage }}</div>
-		@endif
-		@if ($errorMessage)
-			<div class="mb-4 rounded bg-red-100 p-4 text-red-800">{{ $errorMessage }}</div>
-
-			
-		@endif --}}
 
 	</flux:modal>
 
@@ -129,8 +128,6 @@ new class extends Component {
 
 				</flux:select>
 			</div>
-
-			{{-- <flux:input icon="pencil" label="{{ __('form.type') }}*" size="sm" wire:model="type" /> --}}
 
 			<flux:input icon="pencil" label="{{ __('form.date') }}*" size="sm" type="date" wire:model="date" />
 

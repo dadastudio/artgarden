@@ -170,25 +170,45 @@ class SEOManager
 
 	}
 
-	protected static function contactPoint(): ContactPoint
+	public static function contactPoint(): ContactPoint
 	{
 
+
+		$phones = explode('+', strip_tags(__('contact.phones')));
+
 		return Schema::contactPoint()
-			->telephone("+48 501 160 590")
-			->email("fonts@capitalics.wtf")
+			->telephone('+' . $phones[1])
+
+			->email(__('contact.email'))
 			->contactType('customer support')
-			->areaServed('Worldwide')
+			->areaServed('Poland')
 			->availableLanguage(['English', 'Polish']);
 	}
 
-	protected static function organization()
+	public static function organization()
 	{
 
 		return Schema::organization()
-			->name("Capitalics Warsaw Type Foundry")
+			->name(config('app.name'))
 			->url(config('app.url'))
-			->vatID("PL9511919298")
-			->logo("logo.png")
+			// ->vatID("PL9511919298")
+			// ->logo(asset('img/logo-512.png'))
+
+			->logo(Schema::imageObject()->url(asset('img/logo-512.png')))
 			->contactPoint(self::contactPoint());
 	}
+
+	protected static function localBusiness()
+	{
+
+		return Schema::localBusiness()
+			->name(config('app.name'))
+
+			->url(config('app.url'))
+			// ->vatID("PL9511919298")
+			// ->logo("logo.png")
+			->contactPoint(self::contactPoint());
+	}
+
+
 }

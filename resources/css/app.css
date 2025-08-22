@@ -93,6 +93,10 @@
 		@apply !leading-[150%] ;
 	}
 
+	.prose{
+		@apply hyphens-auto;
+	}
+
 	h1 {
 		@apply text-pretty tracking-tight text-[28px] lg:text-[34px] font-semibold text-gray-800 leading-snug ;
   } 

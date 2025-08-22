@@ -4,12 +4,30 @@ use App\Models\Post;
 use App\Models\Photo;
 use Livewire\Volt\Component;
 use App\Actions\SEOManager;
+use Spatie\SchemaOrg\Schema;
 
 new class extends Component {
     public function mount(): void
     {
         SEOManager::title(__('ui.blog'));
         SEOManager::description(__('blog.meta_description'));
+
+        $posts = Post::all();
+
+        $items = $posts
+            ->values()
+            ->map(function ($post, $i) {
+                return Schema::blogPosting()
+                    ->position($i + 1)
+                    ->url(route('post', $post->slug))
+                    ->name($post->title);
+            })
+            ->all();
+
+        $graph = Schema::blog()->blogPost($items)->name(__('ui.blog'))->url(route('blog'))->publisher(SEOManager::organization());
+        // $graph = Schema::itemList()->itemListOrder('http://schema.org/ItemListOrderAscending')->itemListElement($items);
+
+        seo()->jsonLdImport($graph);
     }
 
     public function with(): array

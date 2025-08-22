@@ -71,6 +71,7 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 			->nonQueued();
 
 
+
 		$this->addMediaConversion('main')
 			->fit(Fit::Contain, 950, 950)
 			->withResponsiveImages()

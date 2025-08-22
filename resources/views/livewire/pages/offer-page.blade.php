@@ -3,6 +3,7 @@
 use App\Models\Service;
 use Livewire\Volt\Component;
 use App\Actions\SEOManager;
+use App\Models\Photo;
 
 new class extends Component {
     public Service $service;
@@ -21,6 +22,7 @@ new class extends Component {
     {
         return [
             'services' => Service::whereNot('id', $this->service->id)->get(),
+            'realizacjeImgs' => [Photo::find(105), Photo::find(106), Photo::find(107)],
         ];
     }
 }; ?>
@@ -84,5 +86,7 @@ new class extends Component {
 
 	</x-ui.spacer>
 
-	<x-index.realizacje-hero />
+	{{-- <x-index.realizacje-hero /> --}}
+	<x-index.realizacje-hero :imgs="$realizacjeImgs" />
+
 </div>

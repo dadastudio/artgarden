@@ -65,16 +65,7 @@
 		<div class="md:col-span-{{ $spanMd }} xl:col-span-{{ $span }}">
 			<div class="border border-gray-100 p-5">
 
-				<div class="overflow-hiddens">
-
-					{{-- {{ $workItem->getFirstMedia()->img('main')->attributes(['class' => '']) }} --}}
-					{{-- @dd($workItem->getFirstMedia()->getUrl('main')) --}}
-
-					{{-- {{ $workItem->getFirstMedia() }} --}}
-					{{-- {{ $workItem->getFirstMedia()->img('main')->attributes(['class' => 'h-full w-full ']) }} --}}
-
-					<img src="{{ $workItem->getFirstMediaUrl() }}" />
-				</div>
+				{{ $workItem->getFirstMedia()('main') }}
 
 				<div class="row flex items-center justify-between pt-5 uppercase text-gray-800">
 					<h3 class="pr-5"> {{ str_pad($loop->index + 1, 2, '0', STR_PAD_LEFT) }}.</h3>

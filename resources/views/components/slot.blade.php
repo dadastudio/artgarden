@@ -24,7 +24,7 @@ border border-gray-200
 
 		<h2 class="line-clamp-2 flex-1 text-pretty uppercase">{!! $title !!}</h2>
 
-		<div class="line-clamp-3 text-[10px]/[14px] uppercase text-gray-700">{!! $text !!}</div>
+		<div class="line-clamp-3 hyphens-auto text-[10px]/[14px] uppercase text-gray-700">{!! $text !!}</div>
 
 		<p>&nbsp;</p>
 

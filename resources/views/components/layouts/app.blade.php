@@ -2,14 +2,14 @@
 <html lang="{{ LaravelLocalization::getCurrentLocale() }}">
 
 <head>
+	@metadata
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
 	<meta content="{{ csrf_token() }}" name="csrf-token" />
 
-	@metadata
-
-	@vite(['resources/css/app.css', 'resources/js/app.js'])
+	{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+	@vite(['resources/css/app.css'])
 
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">

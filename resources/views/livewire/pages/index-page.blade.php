@@ -4,8 +4,14 @@ use App\Models\Post;
 use App\Models\Service;
 use App\Models\Photo;
 use Livewire\Volt\Component;
+use App\Actions\SEOManager;
 
 new class extends Component {
+    public function mount(): void
+    {
+        SEOManager::title(__('texts.about_header'));
+        SEOManager::description(__('texts.about'));
+    }
     public function with(): array
     {
         return [
@@ -39,7 +45,7 @@ new class extends Component {
 					</div>
 
 					<div class="prose prose-sm relative lg:max-w-[325px]">
-						<p>@lang('texts.about')</p>
+						<p class="hyphens-auto">@lang('texts.about')</p>
 						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 					</div>
 					<p class="max-xl:hidden">&nbsp;</p>
@@ -125,7 +131,7 @@ new class extends Component {
 
 	{{-- BLOG ITEMS --}}
 	<div class="px-4">
-		<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{{ __('texts.blog') }}" title="Blog" />
+		<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{!! __('blog.text') !!}" title="Blog" />
 	</div>
 
 </x-ui.spacer>

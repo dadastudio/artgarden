@@ -3,6 +3,7 @@
 use App\Models\Post;
 use Livewire\Volt\Component;
 use App\Actions\SEOManager;
+use Spatie\SchemaOrg\Schema;
 
 new class extends Component {
     public Post $post;
@@ -13,6 +14,20 @@ new class extends Component {
 
         SEOManager::title($this->post->title);
         SEOManager::description($this->post->meta_description);
+
+        $examples = [];
+        foreach ($this->post->photos as $photo) {
+            $examples[] = Schema::creativeWork()
+                ->image($photo->getFirstMedia()->getUrl('main'))
+                ->abstract($photo->title);
+        }
+        $graph = Schema::blogPosting()
+            ->name($this->post->title)
+            ->exampleOfWork($examples)
+            ->articleBody(strip_tags($this->post->text))
+            ->publisher(SEOManager::organization());
+
+        seo()->jsonLdImport($graph);
     }
     public function with(): array
     {
@@ -25,17 +40,7 @@ new class extends Component {
 
 	<x-ui.spacer pb pt type="md">
 
-		<div class="relative flex-row lg:flex">
-
-			<div class="2xl:w-75/100 xl:w-70/100 lg:w-65/100 flex flex-row px-5 md:w-full lg:px-16 lg:py-10 xl:px-20">
-
-				{{ $post->getFirstMedia()->img('main')->attributes(['class' => 'max-h-max w-full border border-gray-100 p-5']) }}
-
-			</div>
-
-			<x-index.hero-text text="{!! $post->text !!}" title="{{ $post->title }}" />
-
-		</div>
+		<x-hero :heroImg="$post" :imgFull="false" :is_left="false" text="{!! $post->text !!}" title="{{ $post->title }}" />
 
 		<x-works.masonry :showButton="false" :workItems="$this->post->photos" />
 
