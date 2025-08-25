@@ -1,21 +1,28 @@
 <?php
 
-use App\Models\Post;
 use Livewire\Volt\Component;
-
+use App\Actions\SEOManager;
+use App\Models\Photo;
 new class extends Component {
-    public $terms = false;
-    public $industry = false;
+    public function mount(): void
+    {
+        SEOManager::title(__('cookies.title'));
+        SEOManager::description(__('cookies.meta_description'));
+    }
     public function with(): array
     {
         return [
-            'blogItems' => Post::factory()->count(6)->make(),
-            'workItems' => Post::factory()->count(6)->make(),
+            'heroImg' => Photo::find(103),
         ];
     }
-    public function rendering(\Illuminate\View\View $view): void
-    {
-        // seo()->title('Capitalics Warsaw Type Foundry', template: false);
-    }
 }; ?>
-<div>cookies</div>
+<x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
+
+	<x-hero :heroImg="$heroImg" text="{!! __('cookies.intro') !!}" title="{!! __('cookies.title') !!}" />
+
+	<div class="prose prose-sm mx-auto px-5">
+
+		@lang('cookies.text')
+
+	</div>
+</x-ui.spacer>

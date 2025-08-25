@@ -105,7 +105,7 @@
   } 
 
 
-	.btn{
+	/* .btn{
 		@apply text-gray-950 uppercase tracking-widest text-xs md:text-sm xl:text-sm transition duration-300 ease-out;
 
 		&:hover {
@@ -120,32 +120,16 @@
 			
 		}
 
-	}
+	} */
 }
 
 
-/* [data-flux-control] {
-	@apply  !border-x-0 !border-t-0 !border-b-gray-900 !rounded-none !bg-transparent;
-
-
-
-
-} */
-
-
-/* w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-10 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 */
 
 
 [data-flux-label]{
 	@apply !text-gray-800 !mb-0 !text-[12px];
 
-	/* &:before {
-		content: url("/public/img/pencil.svg");
-		
-		@apply relative left-0 top-8;
-
-		
-	} */
+	
 }
 [data-flux-button]{	
 	@apply !font-normal hover:!bg-zinc-800/0 hover:!text-green-700/100 transition-colors !text-left !text-gray-950 !uppercase !tracking-widest !text-[14px];
@@ -162,21 +146,13 @@
 
 
 
-[data-flux-textarea]{
+ [data-flux-textarea]{
 
 	@apply !pl-5 !pt-1.5 !text-gray-900 !shadow-none !border-x-0 !border-t-0  !rounded-none !border-b-gray-800 ;
-}
-
- /* [data-flux-control]{
-
-	@apply !pt-0 !pb-0  ;
-}  */
-
-/* block p-3 w-full shadow-xs disabled:shadow-none border rounded-lg bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] resize-y text-base sm:text-sm text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 border-zinc-200 border-b-zinc-300/80 dark:border-white/10 */
+} 
 
 
 [data-flux-modal] > dialog::backdrop {
-	/* background-color: rgba(0, 0, 0, 0.55); */
 
 	@apply backdrop-blur-sm;
 }
@@ -208,7 +184,7 @@
 
 
 
-
+/* 
 select:-webkit-autofill,
 select:-webkit-autofill:focus,
 input:-webkit-autofill,
@@ -222,7 +198,7 @@ input:-webkit-autofill:focus {
 
 	@apply outline-0 outline-cyan-800 outline-offset-8 ; 
 	box-shadow: none;
-} 
+}  */
 
 
 /* [data-flux-select-native]{

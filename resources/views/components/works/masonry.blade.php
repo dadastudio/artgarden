@@ -75,7 +75,7 @@
 			@if ($showButton && $workItem->post)
 				<div class="p-4">
 					<flux:button href="{{ route('post', ['post' => $workItem->post->slug]) }}" icon:trailing="arrow" inset variant="ghost" wire:navigate>
-						obejrzyj więcej
+						{!! __('ui.see_more_btn') !!}
 					</flux:button>
 				</div>
 			@endif
