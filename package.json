@@ -5,7 +5,7 @@
 		"build": "vite build",
 		"dev": "vite",
 		"push": "vite build && git add . && git commit -m 'Stage all changes, commit and push' && git push",
-		"ssh": "ssh forge@104.248.33.177 -t 'cd artgarden.dadastudio.pl && exec $SHELL -l'"
+		"ssh": "sshpass -p 'Farmazone1980' ssh -p 22222 serwer2529539@serwer2529539.home.pl"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.11",
