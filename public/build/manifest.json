@@ -1,0 +1,24 @@
+{
+  "public/img/dot.svg": {
+    "file": "assets/dot-Bk6MNxnd.svg",
+    "src": "public/img/dot.svg"
+  },
+  "public/img/sala.jpg": {
+    "file": "assets/sala-D1bRhyZA.jpg",
+    "src": "public/img/sala.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-JS4Xsxbu.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

@@ -106,13 +106,17 @@ new class extends Component {
             ];
 
             Mail::send('emails.contact', $emailData, function ($message) use ($validated) {
-                $message->to(config('mail.admin_email', $validated['email']))->subject('Nowa wiadomość z formularza kontaktowego - ' . $validated['name']);
+                $message
+                    ->replyTo($validated['email'])
+                    ->to(config('mail.from.address'))
+                    ->subject('Nowa wiadomość z formularza kontaktowego - ' . $validated['name']);
             });
 
             // Send confirmation to user
+
             if (config('mail.send_confirmation', true)) {
                 Mail::send('emails.confirmation', $emailData, function ($message) use ($validated) {
-                    $message->to($validated['email'])->subject('Potwierdzenie otrzymania wiadomości');
+                    $message->replyTo(config('mail.replyTo.address'))->to($validated['email'])->subject('Potwierdzenie otrzymania wiadomości');
                 });
             }
 
