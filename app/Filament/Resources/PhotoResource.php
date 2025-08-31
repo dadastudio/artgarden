@@ -29,7 +29,7 @@ class PhotoResource extends Resource
 	{
 		return $form
 			->schema([
-				Forms\Components\TextInput::make('id')->readOnly(),
+				// Forms\Components\TextInput::make('id')->disabled(),
 				Forms\Components\TextInput::make('title')->translatableTabs(),
 
 

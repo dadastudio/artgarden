@@ -48,12 +48,13 @@ class LanguageLineResource extends Resource
 			->schema([
 
 				Forms\Components\Split::make([
-					Forms\Components\TextInput::make('group')->required(),
-					Forms\Components\TextInput::make('key')->required(),
+					Forms\Components\TextInput::make('group')->disabled(),
+					Forms\Components\TextInput::make('key')->disabled(),
 
 				]),
 
-
+				Forms\Components\Checkbox::make('rich')->label("Rich Text Editor")
+					->live(),
 				Forms\Components\Section::make('Translation')
 					->visible(fn(Get $get): bool => !$get('rich'))
 
@@ -77,8 +78,7 @@ class LanguageLineResource extends Resource
 
 				])->hidden(fn(Get $get): bool => !$get('rich')),
 
-				Forms\Components\Checkbox::make('rich')->label("Rich Text Editor")
-					->live(),
+
 
 			])->columns(1);
 	}
