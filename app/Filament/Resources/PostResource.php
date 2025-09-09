@@ -17,6 +17,7 @@ use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 class PostResource extends Resource
 {
 	protected static ?string $model = Post::class;
+	protected static ?string $pluralModelLabel = 'Posty';
 
 	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 	protected static ?array $rteButtons = [

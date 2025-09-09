@@ -19,15 +19,16 @@ class WorkResource extends Resource
 
 	protected static ?string $navigationIcon = 'heroicon-o-sparkles';
 
-
+	protected static ?string $modelLabel = 'Realizacja';
+	protected static ?string $pluralModelLabel = 'Realizacje';
 	protected static ?int $navigationSort = 1;
 
 
 
 
-	protected static ?string $modelLabel = 'Item';
+	// protected static ?string $modelLabel = 'Item';
 
-	protected static ?string $pluralModelLabel = 'Portfolio';
+	// protected static ?string $pluralModelLabel = 'Portfolio';
 
 	public static function form(Form $form): Form
 	{

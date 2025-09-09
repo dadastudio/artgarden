@@ -17,7 +17,8 @@ use AbdulmajeedJamaan\FilamentTranslatableTabs\TranslatableTabs;
 class ServiceResource extends Resource
 {
 	protected static ?string $model = Service::class;
-
+	protected static ?string $modelLabel = 'oferta';
+	protected static ?string $pluralModelLabel = 'oferta';
 	protected static ?int $navigationSort = 2;
 
 
@@ -83,8 +84,7 @@ class ServiceResource extends Resource
 					->conversion("preview")
 					->label(""),
 
-				Tables\Columns\TextColumn::make('title')->grow()
-				,
+				Tables\Columns\TextColumn::make('title')->grow(),
 
 
 
@@ -97,7 +97,7 @@ class ServiceResource extends Resource
 			])
 			->actions([
 				Tables\Actions\EditAction::make(),
-				Tables\Actions\Action::make('Live')
+				Tables\Actions\Action::make('www')
 					->url(fn(Service $record): string => route('offer', $record->slug))
 					->icon('heroicon-m-link')
 					->openUrlInNewTab()

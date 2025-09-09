@@ -20,7 +20,7 @@ class LanguageLineResource extends Resource
 
 	protected static ?string $modelLabel = 'Translation';
 
-	protected static ?string $pluralModelLabel = 'Translations';
+	protected static ?string $pluralModelLabel = 'Tłumaczenia';
 
 	protected static ?string $navigationGroup = '__';
 
@@ -108,7 +108,7 @@ class LanguageLineResource extends Resource
 			])
 			->bulkActions([
 				Tables\Actions\BulkActionGroup::make([
-					Tables\Actions\DeleteBulkAction::make(),
+					// Tables\Actions\DeleteBulkAction::make(),
 				]),
 			]);
 	}
@@ -128,7 +128,7 @@ class LanguageLineResource extends Resource
 		return [
 			'index' => Pages\ListLanguageLines::route('/'),
 			// 'create' => Pages\CreateLanguageLine::route('/create'),
-			'edit' => Pages\EditLanguageLine::route('/{record}/edit'),
+			// 'edit' => Pages\EditLanguageLine::route('/{record}/edit'),
 		];
 	}
 }
