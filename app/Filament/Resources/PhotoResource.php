@@ -70,19 +70,20 @@ class PhotoResource extends Resource
 			->filters([
 				//
 
-				Tables\Filters\Filter::make('No post')
+				Tables\Filters\Filter::make('no_post')
 					->query(fn(Builder $query): Builder => $query->whereDoesntHave('post'))
+					->default()
+					->label('Hero images'),
 
-					->label('Photos without linked post'),
-
-			])->persistFiltersInSession()
+			])
+			->persistFiltersInSession()
 
 			->actions([
 				Tables\Actions\EditAction::make(),
 			])
 			->bulkActions([
 				Tables\Actions\BulkActionGroup::make([
-					Tables\Actions\DeleteBulkAction::make(),
+					// Tables\Actions\DeleteBulkAction::make(),
 				]),
 			]);
 	}

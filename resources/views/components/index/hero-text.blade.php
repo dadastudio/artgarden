@@ -2,7 +2,7 @@
     'title' => '',
     'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus vel ante bibendum facilisis.',
     'buttonText' => '',
-    'href' => route('index'),
+    'href' => route('contact'),
     'is_left' => false,
     'invert' => false,
 ])

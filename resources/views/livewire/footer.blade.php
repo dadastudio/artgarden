@@ -65,7 +65,6 @@ new class extends Component {
 					<a href="{{ route('offer') }}" wire:navigate>@lang('ui.offer')</a>
 					<a href="{{ route('works') }}" wire:navigate>@lang('ui.work')</a>
 					<a href="{{ route('blog') }}" wire:navigate>@lang('ui.blog')</a>
-					<a href="{{ route('contact') }}" wire:navigate>@lang('ui.contact')</a>
 				</div>
 			</div>
 
@@ -73,9 +72,9 @@ new class extends Component {
 				<div class="flex flex-col gap-y-5 py-10">
 
 					<a href="{{ route('faq') }}" wire:navigate>@lang('ui.faq')</a>
-					<a href="{{ route('privacy') }}" wire:navigate>@lang('ui.privacy')</a>
+					<a href="{{ route('privacy') }}" wire:navigate>@lang('ui.privacy') / @lang('ui.cookies')</a>
 					<a href="{{ route('terms') }}" wire:navigate>@lang('ui.terms')</a>
-					<a href="{{ route('cookies') }}" wire:navigate>@lang('ui.cookies')</a>
+					{{-- <a href="{{ route('cookies') }}" wire:navigate>@lang('ui.cookies')</a> --}}
 
 				</div>
 
@@ -83,9 +82,11 @@ new class extends Component {
 
 			<div class="xl- flex border-green-50 pl-5 max-md:border-t md:basis-1/3 md:border-l md:pl-10 lg:pl-12">
 				<div class="flex flex-col gap-y-5 py-10">
+					<a href="{{ route('contact') }}" wire:navigate>@lang('ui.contact')</a>
+
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Facebook</a>
-					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a>
-					<a class="max-md:hidden" href="{{ route('download') }}">@lang('ui.download')</a>
+					{{-- <a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a> --}}
+					{{-- <a class="max-md:hidden" href="{{ route('download') }}">@lang('ui.download')</a> --}}
 
 					<livewire:langswitcher :isMenu="false" />
 

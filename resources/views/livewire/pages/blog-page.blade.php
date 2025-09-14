@@ -40,7 +40,7 @@ new class extends Component {
 }; ?>
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 
-	<x-hero :heroImg="$heroImg" text="{{ __('blog.text') }}" title="{{ __('ui.blog') }}" />
+	<x-hero :heroImg="$heroImg" text="{!! __('blog.intro') !!}" title="{{ __('ui.blog') }}" />
 
 	<div class="grid max-sm:px-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 

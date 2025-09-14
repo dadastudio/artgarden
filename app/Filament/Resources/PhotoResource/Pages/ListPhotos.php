@@ -8,12 +8,19 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListPhotos extends ListRecords
 {
-    protected static string $resource = PhotoResource::class;
+	protected static string $resource = PhotoResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            Actions\CreateAction::make(),
-        ];
-    }
+	protected function getDefaultTableFiltersState(): array
+	{
+		return [
+			'no_post' => true,
+		];
+	}
+
+	protected function getHeaderActions(): array
+	{
+		return [
+			// Actions\CreateAction::make(),
+		];
+	}
 }

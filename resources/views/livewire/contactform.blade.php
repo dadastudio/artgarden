@@ -210,7 +210,7 @@ new class extends Component {
 			</flux:field>
 
 			<x-ui.spacer py type="sm">
-				<h2 class="text-pretty">@lang('form.survey_title')</h2>
+				<h2 class="text-pretty">@lang('form.title_survey')</h2>
 
 				<flux:radio.group wire:model="survey">
 					@foreach ($surveys as $survey)
@@ -223,8 +223,6 @@ new class extends Component {
 
 				<flux:button icon:trailing="arrow" type="submit" variant="ghost" wire:loading.attr="disabled">
 					@lang('form.send')
-					{{-- <span wire:loading.remove>@lang('form.send')</span>
-					<span wire:loading wire:target="sendMail">Wysyłanie...</span> --}}
 				</flux:button>
 
 			</div>

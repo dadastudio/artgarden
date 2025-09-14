@@ -45,14 +45,14 @@ new class extends Component {
 			</div>
 
 			<x-index.hero-text buttonText="{{ __('ui.contact_us_btn') }}" link="{{ route('contact') }}" text="{!! __('work.text') !!}" title="{{ __('ui.work') }}">
-				<a class="text-gray-700 no-underline transition-colors hover:text-green-700" href="{{ route('download') }}">
+				{{-- <a class="text-gray-700 no-underline transition-colors hover:text-green-700" href="{{ route('download') }}">
 					<div class="flex flex-row items-center gap-x-5">
 						<img class="max-w-max" src="/img/download.svg" />
 						<p class="max-w-[220px] text-[10px]/snug uppercase">{{ __('work.catalog_download') }}
 						</p>
 					</div>
 
-				</a>
+				</a> --}}
 			</x-index.hero-text>
 		</div>
 

@@ -27,35 +27,7 @@ new class extends Component {
 
 <x-ui.spacer class="lg:-mt-42 -mt-34" pb type="md">
 	<div>
-
-		<x-hero :$heroImg buttonText="{!! __('ui.more_btn') !!}" href="#oferta-hero" text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" />
-
-		<div class="relative hidden">
-
-			{{ $heroImg->getFirstMedia()->img('hero')->attributes(['class' => 'hidden sm:block']) }}
-
-			{{ $heroImg->getFirstMedia('mobile')->img('hero_mobile')->attributes(['class' => 'sm:hidden']) }}
-
-			<div class="bottom-5 left-10 max-lg:px-5 max-lg:py-5 lg:absolute">
-				<x-ui.spacer>
-
-					<div>
-						<img src="/img/up_rect.svg" />
-						<h1 class="text-pretty">@lang('texts.about_header')</h1>
-					</div>
-
-					<div class="prose prose-sm relative lg:max-w-[325px]">
-						<p class="hyphens-auto">@lang('texts.about')</p>
-						<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
-					</div>
-					<p class="max-xl:hidden">&nbsp;</p>
-
-					<flux:button class="mb-3" href="#oferta-hero" icon:trailing="arrow" inset variant="subtle">@lang('ui.more_btn')</flux:button>
-
-				</x-ui.spacer>
-
-			</div>
-		</div>
+		<x-hero :$heroImg text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" />
 
 		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
 	</div>
@@ -80,7 +52,7 @@ new class extends Component {
 
 			<p>&nbsp;</p>
 
-			<flux:button href="{{ route('offer') }}" icon:trailing="arrow" inset variant="ghost">{!! __('ui.contact_us_btn') !!}</flux:button>
+			<flux:button href="{{ route('contact') }}" icon:trailing="arrow" inset variant="ghost">{!! __('ui.contact_us_btn') !!}</flux:button>
 
 		</x-ui.spacer>
 
