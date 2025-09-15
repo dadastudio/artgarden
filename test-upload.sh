@@ -41,8 +41,39 @@ fi
 echo ""
 
 # Run the comprehensive upload test
-echo "🧪 Running Livewire upload tests..."
-php83-cli artisan test tests/Feature/LivewireUploadTest.php --verbose
+echo "🧪 Running Livewire upload diagnostics..."
+echo "⚠️  Test framework not available on shared hosting (dev dependencies not installed)"
+echo "Running manual diagnostics instead..."
+
+if [ -f "manual-upload-test.php" ]; then
+    php83-cli manual-upload-test.php
+else
+    echo "❌ Manual test file not found. Running basic diagnostics..."
+    
+    # Basic Livewire config check
+    echo "🔧 Checking Livewire configuration..."
+    php83-cli -r "
+    require 'bootstrap/app.php';
+    \$config = config('livewire.temporary_file_upload');
+    echo 'Disk: ' . (\$config['disk'] ?? 'null') . PHP_EOL;
+    echo 'Directory: ' . (\$config['directory'] ?? 'null') . PHP_EOL;
+    echo 'Rules: ' . implode(', ', \$config['rules'] ?? []) . PHP_EOL;
+    echo 'Max upload time: ' . (\$config['max_upload_time'] ?? 'null') . ' minutes' . PHP_EOL;
+    "
+    
+    # Check storage directory
+    echo ""
+    echo "🔧 Checking storage directory..."
+    if [ -d "storage/app/livewire-tmp" ]; then
+        echo "✓ Livewire temp directory exists"
+        ls -la storage/app/livewire-tmp/
+    else
+        echo "⚠️  Creating livewire-tmp directory..."
+        mkdir -p storage/app/livewire-tmp
+        chmod 755 storage/app/livewire-tmp
+        echo "✓ Directory created"
+    fi
+fi
 
 echo ""
 echo "📊 Additional System Information:"
