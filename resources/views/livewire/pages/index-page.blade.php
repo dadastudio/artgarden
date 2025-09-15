@@ -15,7 +15,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'blogItems' => Post::all(),
+            'blogItems' => Post::enabled()->ordered()->get(),
             'services' => Service::all(),
 
             'heroImg' => Photo::find(101),

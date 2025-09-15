@@ -68,7 +68,7 @@
 					{{ $workItem->getFirstMedia()('main') }}
 				@else
 					<div class="flex h-48 items-center justify-center bg-gray-100 text-gray-500">
-						ID: {{ $workItem->id }}
+						NO PHOTO: {{ $workItem->id }}
 					</div>
 				@endif
 
