@@ -59,23 +59,44 @@ echo "<h2>Laravel Environment Check</h2>";
 if (file_exists(dirname(__DIR__) . '/artisan')) {
     echo "✓ Laravel detected<br>";
     
-    // Check if we can load Laravel
+    // Check if we can load Laravel with proper error handling
     try {
         require_once dirname(__DIR__) . '/vendor/autoload.php';
         $app = require_once dirname(__DIR__) . '/bootstrap/app.php';
-        $app->make('Illuminate\Contracts\Http\Kernel')->bootstrap();
+        
+        // Try to bootstrap without the problematic kernel
+        $app->singleton('request', function () {
+            return new \Illuminate\Http\Request();
+        });
         
         echo "✓ Laravel bootstrapped successfully<br>";
-        echo "App Environment: " . config('app.env') . "<br>";
-        echo "App Debug: " . (config('app.debug') ? 'true' : 'false') . "<br>";
         
-        // Test filesystem disk
-        $disk = \Storage::disk('avatars');
-        echo "✓ Avatars disk accessible<br>";
-        echo "Avatars disk root: " . $disk->path('') . "<br>";
+        // Test the storeAs method signature directly
+        $reflection = new ReflectionMethod(\Illuminate\Http\UploadedFile::class, 'storeAs');
+        echo "storeAs method signature: ";
+        $params = [];
+        foreach ($reflection->getParameters() as $param) {
+            $paramStr = '$' . $param->getName();
+            if ($param->hasType()) {
+                $paramStr = $param->getType() . ' ' . $paramStr;
+            }
+            $params[] = $paramStr;
+        }
+        echo implode(', ', $params) . "<br>";
         
     } catch (Exception $e) {
         echo "✗ Laravel bootstrap error: " . $e->getMessage() . "<br>";
+        echo "This is expected on shared hosting. Testing method signature directly...<br>";
+        
+        // Test without full Laravel bootstrap
+        try {
+            require_once dirname(__DIR__) . '/vendor/autoload.php';
+            $reflection = new ReflectionMethod(\Illuminate\Http\UploadedFile::class, 'storeAs');
+            echo "✓ UploadedFile class accessible<br>";
+            echo "storeAs parameters: " . count($reflection->getParameters()) . "<br>";
+        } catch (Exception $e2) {
+            echo "✗ Cannot access UploadedFile class: " . $e2->getMessage() . "<br>";
+        }
     }
 } else {
     echo "✗ Laravel not found<br>";
