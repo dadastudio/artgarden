@@ -7,14 +7,16 @@ use App\Actions\SEOManager;
 use Spatie\SchemaOrg\Schema;
 
 new class extends Component {
+    public $posts;
+
     public function mount(): void
     {
         SEOManager::title(__('ui.blog'));
         SEOManager::description(__('blog.meta_description'));
 
-        $posts = Post::enabled()->get();
+        $this->posts = Post::enabled()->get();
 
-        $items = $posts
+        $items = $this->posts
             ->values()
             ->map(function ($post, $i) {
                 return Schema::blogPosting()
@@ -33,7 +35,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'blogItems' => Post::all(),
+            'blogItems' => $this->posts,
             'heroImg' => Photo::find(100),
         ];
     }
