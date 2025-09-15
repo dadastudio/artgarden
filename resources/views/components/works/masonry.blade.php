@@ -64,8 +64,13 @@
 
 		<div class="md:col-span-{{ $spanMd }} xl:col-span-{{ $span }}">
 			<div class="border border-gray-100 p-5">
-
-				{{ $workItem->getFirstMedia()('main') }}
+				@if ($workItem->getFirstMedia())
+					{{ $workItem->getFirstMedia()('main') }}
+				@else
+					<div class="flex h-48 items-center justify-center bg-gray-100 text-gray-500">
+						ID: {{ $workItem->id }}
+					</div>
+				@endif
 
 				<div class="row flex items-center justify-between pt-5 uppercase text-gray-800">
 					<h3 class="pr-5"> {{ str_pad($loop->index + 1, 2, '0', STR_PAD_LEFT) }}.</h3>
