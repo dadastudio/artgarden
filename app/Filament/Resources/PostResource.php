@@ -63,6 +63,7 @@ class PostResource extends Resource
 
 					->responsiveImages()
 					->imageEditor()
+					->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
 
 					->imageEditorAspectRatios([
 						'4:3',
