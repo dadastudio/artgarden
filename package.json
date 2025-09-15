@@ -5,7 +5,7 @@
 		"build": "vite build",
 		"dev": "vite",
 		"push": "vite build && git add . && git commit -m 'Stage all changes, commit and push' && git push",
-		"ssh": "ssh -t artgarden 'cd public_html/artgarden && git pull origin main && composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && php83-cli artisan config:clear && php83-cli artisan cache:clear && php83-cli artisan route:clear && php83-cli artisan view:clear && php83-cli artisan livewire:clear-cached && exec bash'"
+		"ssh": "ssh -t artgarden 'cd public_html/artgarden && git pull origin main && composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && php83-cli artisan config:clear && php83-cli artisan cache:clear && php83-cli artisan route:clear && php83-cli artisan view:clear && exec bash'"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.11",
