@@ -24,12 +24,12 @@ return [
 	 * This queue will be used to generate derived and responsive images.
 	 * Leave empty to use the default queue.
 	 */
-	'queue_name' => env('MEDIA_QUEUE', ''),
+	'queue_name' => env('MEDIA_QUEUE', 'sync'),
 
 	/*
 	 * By default all conversions will be performed on a queue.
 	 */
-	'queue_conversions_by_default' => env('QUEUE_CONVERSIONS_BY_DEFAULT', true),
+	'queue_conversions_by_default' => env('QUEUE_CONVERSIONS_BY_DEFAULT', false),
 
 	/*
 	 * Should database transactions be run after database commits?
