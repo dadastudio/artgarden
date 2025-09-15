@@ -34,6 +34,10 @@ Route::group(
 		});
 		// katalog do pobrania
 	
+
+		Volt::route('test', "pages.test-page")->name("test");
+
+
 		Route::get('download', function () {
 			// $filePath = storage_path('app/public/' . $file);
 			$filePath = storage_path('app/public/katalog.pdf');

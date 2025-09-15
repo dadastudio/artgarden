@@ -11,9 +11,11 @@ class UploadPhoto extends Component
 
 	public $photo;
 
-	public function upload($name)
+	public function save()
 	{
-		$this->photo->storeAs('/', $name, 'avatars');
+		// $this->photo->storeAs('/', "newphoto", 'avatars');
+		$this->photo->storeAs('/', 'avatar.jpg', 'avatars');
+
 	}
 	public function render()
 	{
