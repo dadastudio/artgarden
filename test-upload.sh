@@ -9,7 +9,7 @@ echo "Date: $(date)"
 echo ""
 
 # Change to your Laravel project directory
-cd /public_html/artgarden || {
+cd ~/public_html/artgarden || {
     echo "❌ Error: Could not change to Laravel project directory"
     echo "Please update the path in this script"
     exit 1
