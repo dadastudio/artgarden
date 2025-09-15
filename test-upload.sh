@@ -15,6 +15,17 @@ cd ~/public_html/artgarden || {
     exit 1
 }
 
+
+
+
+echo "🔧 Running git pull..."
+git pull origin main
+
+
+echo "🔧 Running composer install..."
+composer install --no-dev --prefer-dist --optimize-autoloader
+
+
 echo "📁 Current directory: $(pwd)"
 echo ""
 
