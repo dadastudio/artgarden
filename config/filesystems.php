@@ -60,8 +60,9 @@ return [
 
 		'avatars' => [
 			'driver' => 'local',
-			'root' => storage_path('app/avatars'),
-			'visibility' => 'private',
+			'root' => public_path('images/avatars'),
+			'url' => env('APP_URL') . '/images/avatars',
+			'visibility' => 'public',
 			'throw' => false,
 			'report' => false,
 		],
