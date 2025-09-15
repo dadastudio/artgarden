@@ -2,15 +2,13 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Config;
-use Tests\TestCase;
 
 class LivewireUploadTest extends TestCase
 {
-    use RefreshDatabase;
 
     protected function setUp(): void
     {
