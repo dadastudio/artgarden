@@ -5,7 +5,7 @@
 		"build": "vite build",
 		"dev": "vite",
 		"push": "vite build && git add . && git commit -m 'Stage all changes, commit and push' && git push",
-		"ssh": "sshpass -p 'Farmazone1980' ssh -p 22222 serwer2529539@serwer2529539.home.pl"
+		"ssh": "ssh -t artgarden 'cd public_html/artgarden && git pull origin main && composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && exec bash'"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.11",

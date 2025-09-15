@@ -33,7 +33,7 @@
 
 		<div class="relative flex flex-wrap items-center justify-center overflow-x-hidden border border-gray-100">
 
-			<div class="scrollbar-hide inline-flex snap-x snap-mandatory overflow-x-scroll scroll-smooth">
+			<div class="scrollbar-hide inline-flex snap-x snap-mandatory overflow-x-scroll scroll-smooth" id="blogItemsScroll">
 
 				@foreach ($items as $item)
 					<div class="flex w-full flex-none snap-start md:w-1/2 xl:w-1/3" id="{{ $loop->iteration }}">
@@ -50,9 +50,9 @@
 
 			<div class="flex flex-row items-center justify-center gap-3.5">
 
-				<flux:button icon="arrow-left" inline variant="ghost" />
+				<flux:button icon="arrow-left" id="scrollLeft" inline variant="ghost" />
 				<flux:icon.gallery-horizontal class="text-gray-400" />
-				<flux:button icon="arrow-right" inline variant="ghost" />
+				<flux:button icon="arrow-right" id="scrollRight" inline variant="ghost" />
 
 			</div>
 
@@ -63,30 +63,59 @@
 </div>
 @script
 	<script>
+		const scrollContainer = document.getElementById('blogItemsScroll');
+		const scrollLeftBtn = document.getElementById('scrollLeft');
+		const scrollRightBtn = document.getElementById('scrollRight');
+
+		// Calculate scroll amount based on container width
+		function getScrollAmount() {
+			const containerWidth = scrollContainer.offsetWidth;
+			// Scroll by one item width (container width divided by visible items)
+			return containerWidth / 3; // Adjust based on how many items are visible
+		}
+
+		// Scroll left functionality
+		scrollLeftBtn.addEventListener('click', () => {
+			const scrollAmount = getScrollAmount();
+			scrollContainer.scrollBy({
+				left: -scrollAmount,
+				behavior: 'smooth'
+			});
+		});
+
+		// Scroll right functionality
+		scrollRightBtn.addEventListener('click', () => {
+			const scrollAmount = getScrollAmount();
+			scrollContainer.scrollBy({
+				left: scrollAmount,
+				behavior: 'smooth'
+			});
+		});
+
+		// Existing carousel link functionality (if needed)
 		let activeLink = document.querySelectorAll('.carousel-link')[0];
-		// activeLink.classList.add('text-gray-600');
 
 		document.querySelectorAll('.carousel-link').forEach(link => {
-
-
 			link.addEventListener('click', event => {
 				event.preventDefault();
 
-				activeLink.classList.remove('text-gray-600');
-				activeLink.classList.add('text-green-600');
+				if (activeLink) {
+					activeLink.classList.remove('text-gray-600');
+					activeLink.classList.add('text-green-600');
+				}
 				activeLink = link;
-
 
 				activeLink.classList.add('text-gray-600');
 				activeLink.classList.remove('text-green-600');
 
-				target = document.getElementById(link.getAttribute('href').split('#')[1]);
-				target.scrollIntoView({
-					behavior: 'smooth',
-					inline: 'center',
-					block: 'nearest',
-				});
-
+				const target = document.getElementById(link.getAttribute('href').split('#')[1]);
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth',
+						inline: 'center',
+						block: 'nearest',
+					});
+				}
 			});
 		});
 	</script>

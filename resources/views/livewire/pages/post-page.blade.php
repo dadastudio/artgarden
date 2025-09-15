@@ -17,9 +17,14 @@ new class extends Component {
 
         $examples = [];
         foreach ($this->post->photos as $photo) {
-            $examples[] = Schema::creativeWork()
-                ->image($photo->getFirstMedia()->getUrl('main'))
-                ->abstract($photo->title);
+            $creativeWork = Schema::creativeWork()->abstract($photo->title);
+
+            $media = $photo->getFirstMedia();
+            if ($media) {
+                $creativeWork->image($media->getUrl('main'));
+            }
+
+            $examples[] = $creativeWork;
         }
         $graph = Schema::blogPosting()
             ->name($this->post->title)

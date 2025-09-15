@@ -21,7 +21,8 @@ class PhotoResource extends Resource
 
 	protected static ?string $pluralModelLabel = 'Zdjęcia';
 
-	protected static ?int $navigationSort = 3;
+	protected static ?string $navigationGroup = '__';
+	protected static ?int $navigationSort = 1;
 
 	protected static ?string $navigationIcon = 'heroicon-o-photo';
 
