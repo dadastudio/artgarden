@@ -13,8 +13,8 @@ class UploadPhoto extends Component
 
 	public function save()
 	{
-		// $this->photo->storeAs('/', "newphoto", 'avatars');
-		$this->photo->storeAs('/', 'avatar.jpg', 'avatars');
+		// Alternative approach for shared hosting compatibility
+		$this->photo->storeAs('/', 'avatar.jpg', ['disk' => 'avatars']);
 
 	}
 	public function render()
