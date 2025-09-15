@@ -12,7 +12,7 @@ new class extends Component {
         SEOManager::title(__('ui.blog'));
         SEOManager::description(__('blog.meta_description'));
 
-        $posts = Post::all();
+        $posts = Post::enabled()->get();
 
         $items = $posts
             ->values()
