@@ -1,3 +1,8 @@
+<IfModule mod_env.c>
+    SetEnv TMP "/home/serwer2529539/tmp"
+    SetEnv TEMP "/home/serwer2529539/tmp"
+    SetEnv TMPDIR "/home/serwer2529539/tmp"
+</IfModule>
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
