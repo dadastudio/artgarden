@@ -9,15 +9,7 @@ define('LARAVEL_START', microtime(true));
 if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
 	require $maintenance;
 }
-$customTmp = '/home/serwer2529539/tmp';
-if (is_dir($customTmp)) {
-	putenv("TMP=$customTmp");
-	putenv("TEMP=$customTmp");
-	putenv("TMPDIR=$customTmp");
-	// UWAGA: upload_tmp_dir jest SYSTEM i nie nadpiszemy go ini_setem,
-	// ale gdy pozostaje puste, PHP używa sys_get_temp_dir(),
-	// czyli trafi do $customTmp ustawionego powyżej.
-}
+
 // Register the Composer autoloader...
 require __DIR__ . '/../vendor/autoload.php';
 

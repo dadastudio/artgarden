@@ -64,7 +64,7 @@ return [
 	*/
 
 	'temporary_file_upload' => [
-		'disk' => 'avatars',        // Example: 'local', 's3'              | Default: 'default'
+		'disk' => 'public',        // Example: 'local', 's3'              | Default: 'default'
 		'rules' => ['required', 'file', 'max:52288'], // Example: ['file', 'mimes:png,jpg']  | Default: ['required', 'file', 'max:12288'] (12MB)
 		'directory' => 'livewire-tmp',   // Example: 'tmp'                      | Default: 'livewire-tmp'
 		'middleware' => 'throttle:10,1',  // Example: 'throttle:5,1'             | Default: 'throttle:60,1'
