@@ -80,7 +80,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'surveys' => LanguageLine::where('key', 'like', 'survey_%')->get(),
+            'surveys' => LanguageLine::where('key', 'regexp', '^survey_[0-9]+$')->get(),
         ];
     }
 
@@ -109,14 +109,14 @@ new class extends Component {
                 $message
                     ->replyTo($validated['email'])
                     ->to(config('mail.from.address'))
-                    ->subject('Nowa wiadomość z formularza kontaktowego - ' . $validated['name']);
+                    ->subject(__('email.contact_subject', ['name' => $validated['name']]));
             });
 
             // Send confirmation to user
 
             if (config('mail.send_confirmation', true)) {
                 Mail::send('emails.confirmation', $emailData, function ($message) use ($validated) {
-                    $message->replyTo(config('mail.replyTo.address'))->to($validated['email'])->subject('Potwierdzenie otrzymania wiadomości');
+                    $message->replyTo(config('mail.replyTo.address'))->to($validated['email'])->subject(__('email.confirmation_subject'));
                 });
             }
 

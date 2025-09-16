@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Potwierdzenie otrzymania wiadomości</title>
+    <title>{{ __('email.confirmation_title') }}</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
         .header { text-align: center; padding: 20px 0; border-bottom: 1px solid #eee; margin-bottom: 20px; }
@@ -14,37 +14,37 @@
 </head>
 <body>
     <div class="header">
-        <h1>Dziękujemy za wiadomość!</h1>
+        <h1>{{ __('email.confirmation_header') }}</h1>
     </div>
 
     <div class="content">
-        <p>Cześć {{ $name }},</p>
+        <p>{{ __('email.greeting', ['name' => $name]) }},</p>
         
-        <p>Otrzymaliśmy Twoją wiadomość. Skontaktujemy się z Tobą tak szybko, jak to możliwe.</p>
+        <p>{{ __('email.confirmation_message') }}</p>
 
         <div class="details">
-            <h3>Szczegóły zgłoszenia:</h3>
+            <h3>{{ __('email.details_header') }}:</h3>
             <div class="field">
-                <span class="field-label">Typ wydarzenia:</span>
+                <span class="field-label">{{ __('email.event_type_label') }}:</span>
                 <span>{{ $type }}</span>
             </div>
             <div class="field">
-                <span class="field-label">Data:</span>
+                <span class="field-label">{{ __('email.date_label') }}:</span>
                 <span>{{ \Carbon\Carbon::parse($date)->format('d.m.Y') }}</span>
             </div>
             <div class="field">
-                <span class="field-label">Lokalizacja:</span>
+                <span class="field-label">{{ __('email.location_label') }}:</span>
                 <span>{{ $location }}</span>
             </div>
         </div>
 
-        <p>W razie dodatkowych pytań, prosimy o kontakt pod adresem <a href="mailto:{{ config('mail.contact_email') }}">{{ config('mail.contact_email') }}</a> lub numerem telefonu {{ config('app.phone') }}.</p>
+        <p>{{ __('email.contact_info', ['email' => config('mail.contact_email'), 'phone' => config('app.phone')]) }}</p>
 
-        <p>Pozdrawiamy,<br>Zespół {{ config('app.name') }}</p>
+        <p>{{ __('email.closing') }},<br>{{ __('email.team', ['app_name' => config('app.name')]) }}</p>
     </div>
 
     <div class="footer">
-        © {{ date('Y') }} {{ config('app.name') }}. Wszelkie prawa zastrzeżone.
+        {{ __('email.footer', ['year' => date('Y'), 'app_name' => config('app.name')]) }}
     </div>
 </body>
 </html>
