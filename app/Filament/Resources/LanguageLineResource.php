@@ -48,8 +48,8 @@ class LanguageLineResource extends Resource
 			->schema([
 
 				Forms\Components\Split::make([
-					Forms\Components\TextInput::make('group')->disabled(),
-					Forms\Components\TextInput::make('key')->disabled(),
+					Forms\Components\TextInput::make('group'),
+					Forms\Components\TextInput::make('key'),
 
 				]),
 
