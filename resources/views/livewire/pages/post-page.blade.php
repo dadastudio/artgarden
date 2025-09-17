@@ -37,7 +37,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'blogItems' => Post::whereNot('id', $this->post->id)->get(),
+            'blogItems' => Post::whereNot('id', $this->post->id)->enabled()->ordered()->get(),
         ];
     }
 }; ?>
