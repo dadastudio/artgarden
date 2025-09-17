@@ -87,8 +87,9 @@ new class extends Component {
 					<a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Facebook</a>
 					{{-- <a href="https://www.facebook.com/profile.php?id=100057178280718" target="_blank">Instagram</a> --}}
 					{{-- <a class="max-md:hidden" href="{{ route('download') }}">@lang('ui.download')</a> --}}
-
-					<livewire:langswitcher :isMenu="false" />
+					<div class="max-md:hidden">
+						<livewire:langswitcher :isMenu="false" />
+					</div>
 
 				</div>
 
@@ -96,8 +97,11 @@ new class extends Component {
 
 			<div class="xl- flex border-l border-green-50 pl-5 max-md:border-t md:hidden md:basis-1/3 md:pl-10 lg:pl-12">
 				<div class="flex flex-col gap-y-5 py-10">
-					<a href="{{ route('index') }}" wire:navigate>@lang('ui.contact')</a>
-					<a href="{{ route('index') }}" wire:navigate>@lang('ui.download')</a>
+
+					<livewire:langswitcher :isMenu="false" />
+
+					{{-- <a href="{{ route('index') }}" wire:navigate>@lang('ui.contact')</a>
+					<a href="{{ route('index') }}" wire:navigate>@lang('ui.download')</a> --}}
 
 				</div>
 
