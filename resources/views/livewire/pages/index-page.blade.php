@@ -32,39 +32,7 @@ new class extends Component {
 		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
 	</div>
 
-	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="false" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
-
-	<div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4">
-
-		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
-
-			<div class="">
-				<img src="/img/up_rect.svg" />
-
-			</div>
-			<div class="prose prose-sm relative">
-
-				<p>Działamy głównie w Warszawie i okolicy (do 50 km). Ale jesteśmy też otwarci na propozycje z&nbsp;innych zakątków Polski.</p>
-				<p>Realizujemy dostawy na terenie całej Warszawy, lub umożliwiamy odbiór zamówień z&nbsp;naszej pracowni florystycznej.</p>
-				<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
-
-			</div>
-
-			<p>&nbsp;</p>
-
-			<flux:button href="{{ route('contact') }}" icon:trailing="arrow" inset variant="ghost">{!! __('ui.contact_us_btn') !!}</flux:button>
-
-		</x-ui.spacer>
-
-		<div class="col-span-3 grid border border-gray-200 md:grid-cols-3">
-
-			@foreach ($services as $s)
-				<x-slot img="{{ $s->getFirstMedia()->getUrl('main') }}" route="{{ route('offer', $s->slug) }}" text="{!! $s->intro !!}" title="{!! Str::replaceFirst(' ', '</br>', $s->title) !!}" />
-			@endforeach
-
-		</div>
-
-	</div>
+	<livewire:offer />
 
 	<div>
 		<x-index.baner quoteAuthor="{{ __('quotes.q_2_a') }}" quote="{{ __('quotes.q_2') }}" />
