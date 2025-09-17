@@ -12,8 +12,9 @@ new class extends Component {
     {
         // $this->services = Service::all();
 
-        // SEOManager::title($this->service->title);
-        // SEOManager::description($this->service->intro);
+        SEOManager::title(__(key: 'ui.offer'));
+
+        SEOManager::description(__('texts.offer'));
     }
 }; ?>
 <div>
