@@ -14,7 +14,7 @@ new class extends Component {
         SEOManager::title(__('ui.blog'));
         SEOManager::description(__('blog.meta_description'));
 
-        $this->posts = Post::enabled()->get();
+        $this->posts = Post::enabled()->ordered()->get();
 
         $items = $this->posts
             ->values()

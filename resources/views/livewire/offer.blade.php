@@ -10,7 +10,7 @@ new class extends Component {
     public function with(): array
     {
         return [
-            'services' => Service::all(),
+            'services' => Service::ordered()->get(),
             'ofertaImg' => Photo::find(102),
         ];
     }
