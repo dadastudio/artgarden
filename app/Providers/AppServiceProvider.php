@@ -27,7 +27,12 @@ class AppServiceProvider extends ServiceProvider
 	{
 		//
 
+		// Load translated cached routes for Laravel Localization (Laravel 11+)
+		// Required for 'php artisan route:trans:cache' to work correctly
+		// Uses LoadsTranslatedCachedRoutes trait to handle localized route caching
 		RouteServiceProvider::loadCachedRoutesUsing(fn() => $this->loadCachedRoutes());
+
+
 		LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
 			$switch
 				->locales(['pl', 'en'])
