@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
 
@@ -82,8 +80,9 @@
 	.current{
 
 		&:before {
-			content: url("/public/img/dot.svg");
-			@apply mr-0.5 mb-0.5;
+			content: "";
+
+			@apply bg-[url('/public/img/dot.svg')] bg-no-repeat bg-center bg-contain size-[10px] inline-block;
 
 		}
 

@@ -12,15 +12,15 @@
 	<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
 
 		<div>
-			<img src="/img/up_rect.svg" />
+			<img alt="" src="/img/up_rect.svg" />
 			@if ($title)
-				<h1>{{ $title }}</h1>
+				<h2>{{ $title }}</h2>
 			@endif
 		</div>
 		<div class="prose prose-sm relative">
 
 			{!! $text !!}
-			<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+			<img alt="" class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 
 		</div>
 		<p>&nbsp;</p>

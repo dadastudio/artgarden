@@ -22,11 +22,16 @@
 	<meta content="ArtGarden" name="apple-mobile-web-app-title" />
 	<link href="/site.webmanifest" rel="manifest" />
 
+	@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+		<link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" />
+	@endforeach
+	<link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('pl', null, [], true) }}" />
+
 </head>
 
 <body class="font-sans antialiased" data-route="{{ Route::currentRouteName() }}">
 
-	<div class="fixed bottom-0 right-0 p-2 text-xs text-gray-500">
+	{{-- <div class="fixed bottom-0 right-0 p-2 text-xs text-gray-500">
 		<div class="hidden 2xl:block">2xl</div>
 		<div class="hidden xl:max-2xl:block">xl</div>
 		<div class="hidden lg:max-xl:block">lg</div>
@@ -34,7 +39,7 @@
 		<div class="hidden sm:max-md:block">sm</div>
 		<div class="block sm:hidden">base</div>
 
-	</div>
+	</div> --}}
 
 	<div class="container mx-auto">
 

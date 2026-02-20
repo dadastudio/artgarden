@@ -29,7 +29,7 @@ new class extends Component {
 	<div>
 		<x-hero :$heroImg text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" />
 
-		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
+		{{-- <x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" /> --}}
 	</div>
 
 	<livewire:offer />
@@ -44,7 +44,7 @@ new class extends Component {
 			<div class="xl:px-30 grid grid-cols-2 gap-2 px-5 py-5 sm:px-10 md:px-20 md:py-10 lg:px-24">
 				<div class="col-start-1s col-end-3s">
 					<div class="max-w-[320px] bg-white p-2 shadow-xl md:p-5">
-						<img class="" src="/img/wianek.jpg">
+						<img alt="Wianek i korsarz na rękę" class="" src="/img/wianek.jpg">
 						<p class="mt-2.5 text-[10px] uppercase text-gray-600">wianek i korsarz na rękę</p>
 
 					</div>
@@ -54,7 +54,7 @@ new class extends Component {
 				<div class="place-self-end">
 
 					<div class="max-w-[300px] bg-white p-2 shadow-xl md:p-5">
-						<img class="" src="/img/przypinka.jpg">
+						<img alt="Przypinka do marynarki" class="" src="/img/przypinka.jpg">
 						<p class="mt-2.5 text-[10px] uppercase text-gray-600">przypinka do marynarki</p>
 
 					</div>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+    <loc>https://artgarden.test/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/about" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/about" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/about" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/about" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/work</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/work" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/realizacje" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/realizacje</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/work" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/realizacje" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/kontakt" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/contact" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/kontakt" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/offer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/oferta</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/faq" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/faq" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/faq" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/faq" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/vegetable-and-fruit-bouquets</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/vegetable-and-fruit-bouquets" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/bukiety-warzywne-i-owocowe" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/bukiety-warzywne-i-owocowe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/vegetable-and-fruit-bouquets" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/bukiety-warzywne-i-owocowe" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/dwor-konstancin-slub-w-plenerze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/dwor-konstancin-slub-w-plenerze" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/dwor-konstancin-slub-w-plenerze" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/dwor-konstancin-slub-w-plenerze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/dwor-konstancin-slub-w-plenerze" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/dwor-konstancin-slub-w-plenerze" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/hotel-borowina</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/hotel-borowina" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-borowina" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/hotel-borowina</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/hotel-borowina" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-borowina" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/kwiaty-ktore-mowia-symbolika-ukryta-w-bukietach" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/rozowa-aranzacja-pierwszej-komunii</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/rozowa-aranzacja-pierwszej-komunii" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/rozowa-aranzacja-pierwszej-komunii" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/rozowa-aranzacja-pierwszej-komunii</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/rozowa-aranzacja-pierwszej-komunii" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/rozowa-aranzacja-pierwszej-komunii" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/hotel-bristol-slub-i-wesele</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/hotel-bristol-slub-i-wesele" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-bristol-slub-i-wesele" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/hotel-bristol-slub-i-wesele</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/hotel-bristol-slub-i-wesele" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-bristol-slub-i-wesele" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/villa-foksal-elegancka-impreza-slubna</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/villa-foksal-elegancka-impreza-slubna" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/villa-foksal-elegancka-impreza-slubna" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/villa-foksal-elegancka-impreza-slubna</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/villa-foksal-elegancka-impreza-slubna" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/villa-foksal-elegancka-impreza-slubna" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/pink-lobster-kameralne-przyjecie-na-mokotowie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/pink-lobster-kameralne-przyjecie-na-mokotowie" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/pink-lobster-kameralne-przyjecie-na-mokotowie" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/pink-lobster-kameralne-przyjecie-na-mokotowie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/pink-lobster-kameralne-przyjecie-na-mokotowie" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/pink-lobster-kameralne-przyjecie-na-mokotowie" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/wiazanki-na-uroczystosc-wszystkich-swietych</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/wiazanki-na-uroczystosc-wszystkich-swietych" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/wiazanki-na-uroczystosc-wszystkich-swietych" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/wiazanki-na-uroczystosc-wszystkich-swietych</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/wiazanki-na-uroczystosc-wszystkich-swietych" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/wiazanki-na-uroczystosc-wszystkich-swietych" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/kwiaty-jadalne-piekne-wzbogacenie-smaku-dan" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/wianki-korsarze-na-reke-przypinki-do-marynarki</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/wianki-korsarze-na-reke-przypinki-do-marynarki" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/wianki-korsarze-na-reke-przypinki-do-marynarki" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/wianki-korsarze-na-reke-przypinki-do-marynarki</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/wianki-korsarze-na-reke-przypinki-do-marynarki" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/wianki-korsarze-na-reke-przypinki-do-marynarki" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/-1</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/-1" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/grand-hotel-lodz-wytworny-event-firmowy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/grand-hotel-lodz-wytworny-event-firmowy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/-1" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/grand-hotel-lodz-wytworny-event-firmowy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/blog/-2</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/-2" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-sheraton-sopot-event-firmowy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/blog/hotel-sheraton-sopot-event-firmowy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/blog/-2" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/blog/hotel-sheraton-sopot-event-firmowy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/offer/wedding-floristry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/wedding-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-slubna" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/oferta/florystyka-slubna</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/wedding-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-slubna" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/offer/event-floristry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/event-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-okolicznosciowa" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/oferta/florystyka-okolicznosciowa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/event-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-okolicznosciowa" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/en/offer/business-floristry</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/business-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-dla-firm" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://artgarden.test/pl/oferta/florystyka-dla-firm</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://artgarden.test/en/offer/business-floristry" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://artgarden.test/pl/oferta/florystyka-dla-firm" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+            </url>
+</urlset>

@@ -33,8 +33,8 @@ return [
             'creatorId' => '',
             'title' => '',
             'description' => '',
-            'image' => '',
-            'imageAlt' => '',
+            'image' => '/img/Hero.jpg',
+            'imageAlt' => 'ArtGarden Studio Florystyczne',
         ],
         Generators\OpenGraphGenerator::class => [
             'enabled' => true,
@@ -42,13 +42,15 @@ return [
             'type' => 'website',
             'title' => '',
             'description' => '',
-            'images' => [],
+            'images' => [
+                '/img/Hero.jpg',
+            ],
             'audio' => [],
             'videos' => [],
             'determiner' => '',
             'url' => null, // null to use current url
-            'locale' => '',
-            'alternateLocales' => [],
+            'locale' => 'pl_PL',
+            'alternateLocales' => ['en_GB'],
             'custom' => [],
         ],
         Generators\JsonLdGenerator::class => [

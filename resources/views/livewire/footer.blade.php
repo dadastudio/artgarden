@@ -22,7 +22,7 @@ new class extends Component {
 			<x-ui.spacer type="md">
 
 				<div class="flex flex-row items-baseline gap-x-1">
-					<img src="/img/up_rect.svg" />
+					<img alt="" src="/img/up_rect.svg" />
 					<x-ui.spacer type="xs">
 
 						<h2>{{ __('form.phone') }}</h2>
@@ -32,7 +32,7 @@ new class extends Component {
 				</div>
 
 				<div class="flex flex-row items-baseline gap-x-1">
-					<img src="/img/up_rect.svg" />
+					<img alt="" src="/img/up_rect.svg" />
 
 					<x-ui.spacer class="" type="xs">
 
@@ -41,7 +41,7 @@ new class extends Component {
 					</x-ui.spacer>
 				</div>
 				<div class="flex flex-row items-baseline gap-x-1">
-					<img src="/img/up_rect.svg" />
+					<img alt="" src="/img/up_rect.svg" />
 					<x-ui.spacer class="" type="xs">
 
 						<h2>@lang('contact.hours_title')</h2>
@@ -109,7 +109,7 @@ new class extends Component {
 
 		</div>
 
-		<img alt="Logo" class="w-full px-10 md:px-32" src="{{ asset('img/logo_white.svg') }}">
+		<img alt="ArtGarden Studio Florystyczne" class="w-full px-10 md:px-32" src="{{ asset('img/logo_white.svg') }}">
 		<hr class="h-[0.5px] opacity-70">
 
 	</x-ui.spacer>

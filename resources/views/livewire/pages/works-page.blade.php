@@ -22,7 +22,7 @@ new class extends Component {
                 ->abstract($photo->title);
         }
 
-        $graph = Schema::blogPosting()->name(__('ui.work'))->exampleOfWork($examples)->publisher(SEOManager::organization());
+        $graph = Schema::collectionPage()->name(__('ui.work'))->hasPart($examples)->publisher(SEOManager::organization());
 
         seo()->jsonLdImport($graph);
     }

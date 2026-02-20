@@ -20,7 +20,7 @@ border border-gray-200
 ]) }}>
 	<x-ui.spacer class="flex h-full w-full flex-col p-5" type="xs">
 
-		<img class="aspect-4/3 object-cover object-center" src="{{ $img }}">
+		<img alt="{{ strip_tags($title) }}" class="aspect-4/3 object-cover object-center" src="{{ $img }}">
 
 		<h2 class="line-clamp-2 flex-1 text-pretty uppercase">{!! $title !!}</h2>
 

@@ -105,16 +105,15 @@ class Post extends Model implements Sortable, HasMedia, LocalizedUrlRoutable
 
 	}
 
-
+	// To implement \Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable, one has to create the function getLocalizedRouteKey($locale), which must return for a given locale the translated slug. In the above example, inside the model article, getLocalizedRouteKey('en') should return important-change and getLocalizedRouteKey('es') should return cambio-importante.
 	public function getLocalizedRouteKey($locale)
 	{
 		return $this->getTranslation('slug', $locale);
 	}
 
-
+	//To use route-model-binding, one should overwrite the function resolveRouteBinding($slug) in the model. The function should return the model that belongs to the translated slug $slug.
 	public function resolveRouteBinding($value, $field = null)
 	{
-
 
 		return static::where('slug->' . app()->getLocale(), $value)->first() ?? abort(404);
 

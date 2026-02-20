@@ -46,13 +46,13 @@ new class extends Component {
 
 			<x-ui.spacer class="flex flex-col">
 				<div class="">
-					<img src="/img/up_rect.svg" />
+					<img alt="" src="/img/up_rect.svg" />
 
-					<h1 class="text-pretty text-xl lg:text-2xl">
+					<h2 class="text-pretty text-xl lg:text-2xl">
 
 						{{ $service->subtitle }}
 
-					</h1>
+					</h2>
 				</div>
 				<div class="grow">
 					<div class="flex h-full flex-col gap-x-8 gap-y-4 md:flex-row">
@@ -66,7 +66,7 @@ new class extends Component {
 
 								{!! $service->text_2 !!}
 
-								<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+								<img alt="" class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 							</div>
 
 						</div>

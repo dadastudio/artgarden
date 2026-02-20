@@ -24,14 +24,14 @@ new class extends Component {
 		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
 
 			<div class="">
-				<img src="/img/up_rect.svg" />
+				<img alt="" src="/img/up_rect.svg" />
 
 			</div>
 			<div class="prose prose-sm relative">
 
 				{!! __('offer.main_text') !!}
 
-				<img class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+				<img alt="" class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 
 			</div>
 

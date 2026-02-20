@@ -12,14 +12,14 @@
 	<x-ui.spacer>
 
 		<div class="lg:max-w-[325px]">
-			<img src="/img/up_rect.svg" />
+			<img alt="" src="/img/up_rect.svg" />
 			<h1 class="{{ $invert ? 'text-white' : '' }} text-pretty">{!! $title !!}</h1>
 		</div>
 
 		<div class="prose prose-sm {{ $invert ? 'prose-invert' : '' }} relative lg:max-w-[325px]">
 			{!! $text !!}
 			{{ $slot }}
-			<img class="absolute -bottom-4 right-0 rotate-180" src="/img/up_rect.svg" />
+			<img alt="" class="absolute -bottom-4 right-0 rotate-180" src="/img/up_rect.svg" />
 		</div>
 
 		<p class="max-xl:hidden">&nbsp;</p>
