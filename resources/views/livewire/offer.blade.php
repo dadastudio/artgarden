@@ -17,7 +17,7 @@ new class extends Component {
 }; ?>
 
 <div>
-	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="false" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
+	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="true" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
 
 	<div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4">
 

@@ -7,29 +7,31 @@
     'items' => [],
 ])
 
-<div class="grid grid-cols-1 gap-8 px-0 md:grid-cols-3 xl:grid-cols-4">
+<div class="grid grid-cols-1 gap-8 px-0 {{ $title || $text ? 'md:grid-cols-3 xl:grid-cols-4' : '' }}">
 
-	<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
+	@if ($title || $text)
+		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
 
-		<div>
-			<img alt="" src="/img/up_rect.svg" />
-			@if ($title)
-				<h2>{{ $title }}</h2>
-			@endif
-		</div>
-		<div class="prose prose-sm relative">
+			<div>
+				<img alt="" src="/img/up_rect.svg" />
+				@if ($title)
+					<h2>{{ $title }}</h2>
+				@endif
+			</div>
+			<div class="prose prose-sm relative">
 
-			{!! $text !!}
-			<img alt="" class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
+				{!! $text !!}
+				<img alt="" class="absolute -bottom-6 right-0 rotate-180" src="/img/up_rect.svg" />
 
-		</div>
-		<p>&nbsp;</p>
+			</div>
+			<p>&nbsp;</p>
 
-		<flux:button href="{{ route($buttonLink) }}" icon:trailing="arrow" inset variant="ghost">{!! $buttonText !!}</flux:button>
+			<flux:button href="{{ route($buttonLink) }}" icon:trailing="arrow" inset variant="ghost">{!! $buttonText !!}</flux:button>
 
-	</x-ui.spacer>
+		</x-ui.spacer>
+	@endif
 
-	<div class="relative col-span-1 md:col-span-2 xl:col-span-3">
+	<div class="relative col-span-1 {{ $title || $text ? 'md:col-span-2 xl:col-span-3' : '' }}">
 
 		<div class="relative flex flex-wrap items-center justify-center overflow-x-hidden border border-gray-100">
 

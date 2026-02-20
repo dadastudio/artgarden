@@ -1,6 +1,6 @@
 {
   "public/img/dot.svg": {
-    "file": "assets/dot-Bk6MNxnd.svg",
+    "file": "assets/dot-W1COQk--.svg",
     "src": "public/img/dot.svg"
   },
   "public/img/sala.jpg": {
@@ -8,9 +8,10 @@
     "src": "public/img/sala.jpg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CcCoAjyf.css",
+    "file": "assets/app-Bb4xckCR.css",
     "src": "resources/css/app.css",
     "isEntry": true,
+    "name": "app",
     "names": [
       "app.css"
     ]

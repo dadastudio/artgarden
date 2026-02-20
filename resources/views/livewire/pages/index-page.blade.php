@@ -70,8 +70,8 @@ new class extends Component {
 	</div>
 
 	{{-- BLOG ITEMS --}}
-	<div class="px-4">
+	{{-- <div class="px-4">
 		<x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{!! __('blog.text') !!}" title="Blog" />
-	</div>
+	</div> --}}
 
 </x-ui.spacer>

@@ -22,8 +22,6 @@ new class extends Component {
 <x-ui.spacer class="lg:-mt-42 -mt-34" type="md">
 	<div>
 		<x-hero :$heroImg text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" />
-
-		<x-index.baner quoteAuthor="{{ __('quotes.q_1_a') }}" quote="{{ __('quotes.q_1') }}" />
 	</div>
 
 </x-ui.spacer>
