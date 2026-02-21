@@ -17,7 +17,8 @@ new class extends Component {
         SEOManager::description(__('texts.offer'));
     }
 }; ?>
-<div>
+<x-ui.spacer pb type="md">
+
 	<livewire:offer />
 
-</div>
+</x-ui.spacer>
