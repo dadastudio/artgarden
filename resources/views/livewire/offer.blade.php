@@ -17,11 +17,13 @@ new class extends Component {
 }; ?>
 
 <div>
-	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="true" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" />
+	<x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="true" id="oferta-hero" text="{!! __('texts.offer') !!} {!! __('offer.main_text') !!}" title="{{ __('ui.offer') }}" />
+	{{-- <x-hero :heroImg="$ofertaImg" :imgFull="false" :is_left="true" id="oferta-hero" text="{{ __('texts.offer') }}" title="{{ __('ui.offer') }}" /> --}}
 
-	<div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4">
+	<div class="relative px-4">
+		{{-- <div class="relative grid gap-8 bg-gray-100 p-5 md:p-10 xl:grid-cols-4"> --}}
 
-		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
+		{{-- <x-ui.spacer class="mb-4.5 hidden md:place-self-end" type="xs">
 
 			<div class="">
 				<img alt="" src="/img/up_rect.svg" />
@@ -39,7 +41,7 @@ new class extends Component {
 
 			<flux:button href="{{ route('contact') }}" icon:trailing="arrow" inset variant="ghost">{!! __('ui.contact_us_btn') !!}</flux:button>
 
-		</x-ui.spacer>
+		</x-ui.spacer> --}}
 
 		<div class="col-span-3 grid border border-gray-200 md:grid-cols-3">
 

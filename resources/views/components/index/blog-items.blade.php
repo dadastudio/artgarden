@@ -7,7 +7,7 @@
     'items' => [],
 ])
 
-<div class="grid grid-cols-1 gap-8 px-0 {{ $title || $text ? 'md:grid-cols-3 xl:grid-cols-4' : '' }}">
+<div class="{{ $title || $text ? 'md:grid-cols-3 xl:grid-cols-4' : '' }} grid grid-cols-1 gap-8 px-0">
 
 	@if ($title || $text)
 		<x-ui.spacer class="mb-4.5 md:place-self-end" type="xs">
@@ -31,7 +31,7 @@
 		</x-ui.spacer>
 	@endif
 
-	<div class="relative col-span-1 {{ $title || $text ? 'md:col-span-2 xl:col-span-3' : '' }}">
+	<div class="{{ $title || $text ? 'md:col-span-2 xl:col-span-3' : '' }} relative col-span-1">
 
 		<div class="relative flex flex-wrap items-center justify-center overflow-x-hidden border border-gray-100">
 
