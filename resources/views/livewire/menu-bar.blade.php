@@ -16,11 +16,12 @@ new class extends Component {
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.offer')</flux:button>
 			</div>
-			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
-				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
-			</div>
+
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.blog')</flux:button>
+			</div>
+			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
+				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
 			</div>
 			<div class="flex h-full items-center border-l border-gray-200 lg:px-5 xl:px-10">
 				<flux:button class="md:!text-sm xl:!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.contact')</flux:button>
@@ -67,11 +68,12 @@ new class extends Component {
 						<flux:button class="!text-base" href="{{ route('offer') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.offer')</flux:button>
 					</div>
 					<div>
-						<flux:button class="!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
-					</div>
-					<div>
 						<flux:button class="!text-base" href="{{ route('blog') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.blog')</flux:button>
 					</div>
+					<div>
+						<flux:button class="!text-base" href="{{ route('works') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.work')</flux:button>
+					</div>
+
 					<div>
 						<flux:button class="!text-base" href="{{ route('contact') }}" inset variant="ghost" wire:current="current" wire:navigate>@lang('ui.contact')</flux:button>
 					</div>
