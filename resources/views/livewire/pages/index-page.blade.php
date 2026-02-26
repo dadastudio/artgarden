@@ -17,6 +17,8 @@ new class extends Component {
         return [
             'blogItems' => Post::enabled()->ordered()->get(),
             'services' => Service::all(),
+            'photo' => Photo::find(13),
+            'heroImg2' => Photo::find(100),
 
             'heroImg' => Photo::find(101),
             'ofertaImg' => Photo::find(102),
@@ -69,10 +71,13 @@ new class extends Component {
 
 	</div>
 
+	<x-hero :heroImg="$heroImg2" text="{!! __('blog.intro') !!}" title="{{ __('ui.blog') }}" />
+
 	{{-- BLOG ITEMS --}}
-	<div class="px-4">
+	{{-- <x-hero :$heroImg text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" /> --}}
+
+	{{-- <div class="px-4">
 		<x-index.blog-items :items="$blogItems" />
-		{{-- <x-index.blog-items :items="$blogItems" buttonText="{!! __('ui.browse_posts_btn') !!}" text="{!! __('work.text') !!}" title="{{ __('ui.work') }}" /> --}}
-	</div>
+	</div> --}}
 
 </x-ui.spacer>

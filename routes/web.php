@@ -11,11 +11,18 @@ Route::group(
 	],
 	function () {
 		Volt::route('/', 'pages.index-page')->name('index');
-		Volt::route('/blog', 'pages.blog-page')->name('blog');
+
+		Volt::route(LaravelLocalization::transRoute('routes.portfolio'), 'pages.blog-page')->name('blog');
+
+		// Volt::route('/blog', 'pages.blog-page')->name('blog');
+	
+
 		Volt::route('/about', 'pages.about-page')->name('about');
 		Volt::route(LaravelLocalization::transRoute('routes.post'), 'pages.post-page')->name('post');
 
+
 		Volt::route(LaravelLocalization::transRoute('routes.work'), 'pages.works-page')->name('works');
+
 
 
 		Volt::route(LaravelLocalization::transRoute('routes.contact'), 'pages.contact-page')->name('contact');
