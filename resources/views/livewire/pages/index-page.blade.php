@@ -69,9 +69,9 @@ new class extends Component {
 
 		<x-index.realizacje-hero :imgs="$realizacjeImgs" />
 
-	</div>
+		<x-hero :heroImg="$heroImg2" buttonText="{!! __('ui.see_more_btn') !!}" href="{{ route('blog') }}" text="{!! __('blog.intro') !!}" title="{{ __('ui.blog') }}" />
 
-	<x-hero :heroImg="$heroImg2" text="{!! __('blog.intro') !!}" title="{{ __('ui.blog') }}" />
+	</div>
 
 	{{-- BLOG ITEMS --}}
 	{{-- <x-hero :$heroImg text="{{ __('texts.about') }}" title="{{ __('texts.about_header') }}" /> --}}
